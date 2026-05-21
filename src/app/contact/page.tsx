@@ -132,22 +132,11 @@ export default function ContactPage() {
           >
             Enquiry Form
           </h2>
-          {/* Note: form action wired to Netlify Forms */}
           <form
             name="tune-enquiry"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
             className="space-y-4"
             aria-label="Tune enquiry form"
           >
-            <input type="hidden" name="form-name" value="tune-enquiry" />
-            <p className="hidden">
-              <label htmlFor="bot-field">
-                Don&apos;t fill this out if you&apos;re human:
-                <input id="bot-field" name="bot-field" />
-              </label>
-            </p>
 
             <div className="grid sm:grid-cols-2 gap-4">
               <div>

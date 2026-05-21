@@ -4,8 +4,6 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-    disableNetlifyForms = true
 
 [build.environment]
   NODE_VERSION = "22"
