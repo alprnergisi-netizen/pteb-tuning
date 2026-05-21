@@ -1,0 +1,321 @@
+@import "tailwindcss";
+
+/* ── PTEB Brand Theme ──────────────────────────────────────────────── */
+@theme {
+  --color-pteb-red: #FC222D;
+  --color-pteb-red-dark: #CC1B25;
+  --color-pteb-red-glow: rgba(252, 34, 45, 0.3);
+  --color-pteb-black: #000000;
+  --color-pteb-dark: #0A0A0A;
+  --color-pteb-surface: #111111;
+  --color-pteb-surface-mid: #181818;
+  --color-pteb-border: #222222;
+  --color-pteb-border-light: #333333;
+  --color-pteb-grey: #9CA3AF;
+  --color-pteb-grey-dark: #6B7280;
+  --color-pteb-white: #FFFFFF;
+
+  --font-heading: var(--font-barlow), "Barlow Condensed", "Impact", sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+}
+
+/* ── Custom utilities ──────────────────────────────────────────────── */
+@utility font-heading {
+  font-family: var(--font-heading);
+}
+
+/* Eyebrow label — replaces the stretched tracking-[0.3em] uppercase pattern.
+   Renders as: ── Label text
+   Use: <p className="eyebrow mb-4">Section name</p>  */
+@utility eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #FC222D;
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 1.25rem;
+  height: 1px;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Color tokens ──────────────────────────────────────────────────── */
+:root {
+  /* Dark (default) */
+  --bg:         #000000;
+  --surface:    #0a0a0a;
+  --surface-2:  #111111;
+  --surface-3:  #1a1a1a;
+  --surface-4:  #181818;
+  --border:     #1a1a1a;
+  --border-2:   #2a2a2a;
+  --fg:         #ffffff;
+  --fg-muted:   #9CA3AF;
+  --fg-dim:     #6B7280;
+  --fg-faint:   #4B5563;
+
+  /* Kept for legacy compatibility */
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+[data-theme="light"] {
+  --bg:         #f8fafc;
+  --surface:    #ffffff;
+  --surface-2:  #f1f5f9;
+  --surface-3:  #e8edf2;
+  --surface-4:  #edf2f7;
+  --border:     #e2e8f0;
+  --border-2:   #cbd5e1;
+  --fg:         #0f172a;
+  --fg-muted:   #475569;
+  --fg-dim:     #64748b;
+  --fg-faint:   #94a3b8;
+
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+/* ── Base ──────────────────────────────────────────────────────────── */
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+/* ── Focus ─────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #FC222D;
+  outline-offset: 2px;
+}
+
+/* ── Scroll fade-in animation ──────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes redGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(252, 34, 45, 0.4); }
+  50%       { box-shadow: 0 0 28px rgba(252, 34, 45, 0.7); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-fade-up    { animation: fadeUp 0.6s ease forwards; }
+.animate-fade-in    { animation: fadeIn 0.5s ease forwards; }
+.animate-slide-left { animation: slideInLeft 0.6s ease forwards; }
+.animate-red-glow   { animation: redGlow 2.5s ease-in-out infinite; }
+.animate-pulse-red  { animation: pulse-red 2s ease-in-out infinite; }
+
+/* ── Section scroll reveal (top to bottom fade in) ──────────────────── */
+[data-scroll-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-scroll-reveal].reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Child element staggered reveal ────────────────────────────────── */
+[data-reveal-child] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal-child].reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 4rem;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+/* ── Utility: red accent bar ───────────────────────────────────────── */
+.red-bar::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: #FC222D;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Section divider ───────────────────────────────────────────────── */
+.section-divider {
+  border: none;
+  border-top: 1px solid #222;
+}
+
+/* ── Respect reduced motion preference ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-scroll-reveal],
+  [data-reveal-child] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* ── Gradient text ─────────────────────────────────────────────────── */
+.text-gradient-red {
+  background: linear-gradient(135deg, #FC222D 0%, #FF4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Card hover ────────────────────────────────────────────────────── */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(252, 34, 45, 0.2);
+}
+
+/* ── Number counter ────────────────────────────────────────────────── */
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: #FC222D;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+
+/* ── Service card ──────────────────────────────────────────────────── */
+.service-card {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.3s ease;
+}
+.service-card:hover {
+  border-color: rgba(252, 34, 45, 0.5);
+}
+
+/* ── Light mode overrides ──────────────────────────────────────────── */
+/*
+   The site uses Tailwind arbitrary color classes (text-white, bg-[#111111], etc.)
+   that are explicit and won't inherit from body. We override the most common
+   dark-text classes here so light mode content reads correctly.
+*/
+[data-theme="light"] .text-white {
+  color: var(--fg);
+}
+/* Keep white text on intentionally red or dark backgrounds */
+[data-theme="light"] .bg-\[\#FC222D\] .text-white,
+[data-theme="light"] .bg-\[\#CC1B25\] .text-white,
+[data-theme="light"] .bg-\[\#CC1B25\] .text-white,
+[data-theme="light"] .bg-\[\#111\] .text-white,
+[data-theme="light"] .bg-\[\#25D366\] .text-white,
+[data-theme="light"] .text-white.text-keep-white {
+  color: #ffffff;
+}
+/* Hero text over dark image overlay stays white */
+[data-theme="light"] .hero .text-white {
+  color: #ffffff;
+}
+/* Headings use --fg */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4 {
+  color: var(--fg);
+}
+/* Muted text */
+[data-theme="light"] .text-\[\#9CA3AF\] { color: var(--fg-muted); }
+[data-theme="light"] .text-\[\#6B7280\] { color: var(--fg-dim); }
+[data-theme="light"] .text-\[\#4B5563\] { color: var(--fg-faint); }
+[data-theme="light"] .text-\[\#888888\] { color: var(--fg-dim); }
+/* Backgrounds */
+[data-theme="light"] .bg-\[\#0a0a0a\]  { background-color: var(--surface); }
+[data-theme="light"] .bg-\[\#0A0A0A\]  { background-color: var(--surface); }
+[data-theme="light"] .bg-\[\#111111\]  { background-color: var(--surface-2); }
+[data-theme="light"] .bg-\[\#111\]     { background-color: var(--surface-2); }
+[data-theme="light"] .bg-\[\#1a1a1a\]  { background-color: var(--surface-3); }
+[data-theme="light"] .bg-\[\#1A1A1A\]  { background-color: var(--surface-3); }
+[data-theme="light"] .bg-\[\#0D0D0D\]  { background-color: var(--surface); }
+[data-theme="light"] .bg-\[\#181818\]  { background-color: var(--surface-4); }
+[data-theme="light"] .bg-black         { background-color: var(--bg); }
+/* Borders */
+[data-theme="light"] .border-\[\#1a1a1a\] { border-color: var(--border); }
+[data-theme="light"] .border-\[\#1E1E1E\] { border-color: var(--border); }
+[data-theme="light"] .border-\[\#2a2a2a\] { border-color: var(--border-2); }
+[data-theme="light"] .border-\[\#2A2A2A\] { border-color: var(--border-2); }
+[data-theme="light"] .border-\[\#222\]    { border-color: var(--border-2); }
+[data-theme="light"] .border-\[\#222222\] { border-color: var(--border-2); }
+[data-theme="light"] .border-y.border-\[\#2a2a2a\] { border-color: var(--border-2); }
+/* Navbar in light mode */
+[data-theme="light"] header.bg-black\/95 {
+  background-color: rgba(255,255,255,0.95) !important;
+  border-bottom-color: var(--border);
+}
+/* Trust bar */
+[data-theme="light"] .bg-\[\#111\] {
+  background-color: var(--surface-2);
+}
