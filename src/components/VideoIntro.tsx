@@ -6,7 +6,6 @@ export function VideoIntro() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  // Effect 1: decide whether to show — runs once on mount
   useEffect(() => {
     if (!sessionStorage.getItem('pteb-intro-seen')) {
       setIsVisible(true);
@@ -18,18 +17,25 @@ export function VideoIntro() {
     setIsVisible(false);
     document.body.classList.remove('intro-active');
     sessionStorage.setItem('pteb-intro-seen', '1');
+
+    // Stagger-reveal nav → hero → each subsequent section
+    const nav = document.querySelector('nav');
+    const sections = Array.from(document.querySelectorAll('main > section'));
+    const rows = [nav, ...sections].filter(Boolean) as HTMLElement[];
+
+    rows.forEach((el, i) => {
+      el.style.transition = `opacity 0.65s ease ${i * 0.1}s, transform 0.65s ease ${i * 0.1}s`;
+      el.classList.add('intro-revealed');
+    });
   }, []);
 
-  // Effect 2: wire up video events — only runs after isVisible becomes true
   useEffect(() => {
     if (!isVisible) return;
     const video = videoRef.current;
     if (!video) return;
-
-    const onError = () => setTimeout(dismiss, 1000);
+    const onError = () => setTimeout(dismiss, 800);
     video.addEventListener('ended', dismiss);
     video.addEventListener('error', onError);
-
     return () => {
       video.removeEventListener('ended', dismiss);
       video.removeEventListener('error', onError);
@@ -50,7 +56,6 @@ export function VideoIntro() {
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
-      {/* onClick directly on button — no getElementById needed */}
       <button id="intro-skip" onClick={dismiss}>Skip</button>
 
       <style>{`
@@ -62,30 +67,6 @@ export function VideoIntro() {
           display: flex;
           align-items: center;
           justify-content: center;
-          opacity: 1;
-          visibility: visible;
-          transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-
-        #intro-overlay.done {
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-        }
-
-        body:not(.intro-active) main {
-          animation: pageReveal 1.2s ease-out forwards;
-        }
-
-        @keyframes pageReveal {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
         }
 
         #intro-video {
@@ -98,10 +79,10 @@ export function VideoIntro() {
           position: absolute;
           bottom: 32px;
           right: 32px;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255,255,255,0.1);
           backdrop-filter: blur(8px);
           -webkit-backdrop-filter: blur(8px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(255,255,255,0.2);
           color: #fff;
           font-family: sans-serif;
           font-size: 0.8rem;
@@ -113,7 +94,20 @@ export function VideoIntro() {
         }
 
         #intro-skip:hover {
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(255,255,255,0.2);
+        }
+
+        /* Hide all rows while intro plays */
+        body.intro-active nav,
+        body.intro-active main > section {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+
+        /* Revealed state */
+        .intro-revealed {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
         }
 
         body.intro-active {

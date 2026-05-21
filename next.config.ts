@@ -15,7 +15,7 @@ const CSP = [
   "img-src 'self' data: https:",
   "font-src 'self' https://fonts.gstatic.com",
   "connect-src 'self' https://api.cal.com https://api.resend.com",
-  "frame-src https://www.google.com",
+  "frame-src https://www.google.com https://www.instagram.com https://www.tiktok.com https://www.facebook.com",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
