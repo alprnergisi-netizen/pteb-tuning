@@ -4,12 +4,12 @@ import { ChevronRight, MapPin, Clock, CheckCircle, Phone } from "lucide-react";
 import { LOCATIONS } from "@/lib/locations";
 
 export const metadata: Metadata = {
-  title: "Remote ECU Tuning Australia & New Zealand — PTEB Warport | $499",
-  description: "Get a professional custom ECU tune delivered anywhere in Australia and New Zealand. The PTEB Warport OBD2 device ships nationwide — plug in, connect, and our Melbourne tuners calibrate your engine remotely. $499 AUD. Free compatibility check.",
+  title: "Remote ECU Tuning Worldwide — PTEB Warport | $499",
+  description: "Get a professional custom ECU tune delivered anywhere in the world. The PTEB Warport OBD2 device ships internationally — plug in, connect, and our Melbourne tuner calibrates your engine remotely. $499 AUD. Free compatibility check.",
   alternates: { canonical: "/remote-tuning" },
   openGraph: {
-    title: "Remote ECU Tuning Australia & New Zealand | PTEB Warport $499",
-    description: "Custom ECU tuning delivered anywhere in Australia and NZ. No workshop visit — plug the Warport into your OBD port and our tuners calibrate remotely. BMW, Audi, VW, Mercedes, Porsche.",
+    title: "Remote ECU Tuning Worldwide | PTEB Warport $499",
+    description: "Custom ECU tuning delivered anywhere in the world. No workshop visit — plug the Warport into your OBD port and our tuner calibrates remotely. BMW, Audi, VW, Mercedes, Porsche.",
     url: "/remote-tuning",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
@@ -28,7 +28,7 @@ const schema = {
     {
       "@type": "Service",
       name: "PTEB Warport Remote ECU Tuning",
-      description: "Remote OBD2 ECU tuning service available Australia-wide and in New Zealand. The PTEB Warport device delivers a fully custom engine calibration to any location without a workshop visit.",
+      description: "Remote OBD2 ECU tuning service available worldwide. The PTEB Warport device delivers a fully custom engine calibration to any location without a workshop visit.",
       provider: {
         "@type": "AutomotiveBusiness",
         name: "PTEB Tuning",
@@ -55,12 +55,12 @@ const schema = {
         {
           "@type": "Question",
           name: "What is remote ECU tuning?",
-          acceptedAnswer: { "@type": "Answer", text: "Remote ECU tuning is the process of recalibrating your car's Engine Control Unit (ECU) without visiting a workshop. Using the PTEB Warport OBD2 device, your vehicle's ECU data is read via a smartphone app and sent to PTEB's tuners in Melbourne. They build a fully custom calibration and deliver it back to your car — all without you leaving home." },
+          acceptedAnswer: { "@type": "Answer", text: "Remote ECU tuning is the process of recalibrating your car's Engine Control Unit (ECU) without visiting a workshop. Using the PTEB Warport OBD2 device, your vehicle's ECU data is read via our software and sent to PTEB's tuner in Melbourne. A fully custom calibration is built and delivered back to your car — all without you leaving home." },
         },
         {
           "@type": "Question",
           name: "How much does remote ECU tuning cost in Australia?",
-          acceptedAnswer: { "@type": "Answer", text: "The PTEB Warport device costs $499 AUD with free shipping anywhere in Australia. The custom tune file is priced separately based on your platform and required features. This compares to $800–$2,500+ for a workshop dyno tune, making Warport significantly better value for most platforms." },
+          acceptedAnswer: { "@type": "Answer", text: "The PTEB Warport device costs $499 AUD. The custom tune file is priced separately based on your platform and required features. This compares to $800–$2,500+ for a workshop dyno tune, making Warport significantly better value for most platforms." },
         },
         {
           "@type": "Question",
@@ -101,13 +101,13 @@ export default function RemoteTuningPage() {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="eyebrow mb-5">Available Australia-wide & New Zealand</p>
+              <p className="eyebrow mb-5">Available Worldwide</p>
               <h1 className="font-black uppercase leading-none mb-6" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', color: '#ffffff' }}>
                 Remote ECU Tuning.<br />
                 <span style={{ color: '#FC222D' }}>Anywhere.</span>
               </h1>
               <p className="text-lg leading-relaxed mb-8 max-w-lg" style={{ color: '#9CA3AF' }}>
-                The PTEB Warport delivers a fully custom ECU calibration to your door — no workshop visit, no interstate drive. Our Melbourne-based tuners calibrate your engine remotely via OBD2. Available to every state in Australia and New Zealand.
+                The PTEB Warport delivers a fully custom ECU calibration to your door — no workshop visit, no matter where you are. Our Melbourne-based tuner calibrates your engine remotely via OBD2. Available worldwide.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/warport" className="inline-flex items-center gap-2 px-8 py-4 bg-[#FC222D] text-white text-sm font-bold tracking-widest uppercase hover:bg-[#CC1B25] transition-colors">
@@ -124,7 +124,7 @@ export default function RemoteTuningPage() {
               {[
                 { value: "$499", label: "AUD device + tune", sub: "vs $800–$2,500+ workshop" },
                 { value: "7 days", label: "avg delivery metro AU", sub: "10–14 days New Zealand" },
-                { value: "500+", label: "vehicles tuned", sub: "Australia-wide & NZ" },
+                { value: "500+", label: "vehicles tuned", sub: "Worldwide" },
                 { value: "< 24h", label: "tuner response", sub: "Mon–Sat, fast replies" },
               ].map(({ value, label, sub }) => (
                 <div key={label} className="p-6 border border-[#1E1E1E]" style={{ backgroundColor: '#111' }}>
@@ -147,9 +147,9 @@ export default function RemoteTuningPage() {
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { n: "01", title: "Order & receive", body: "Order the Warport device online. Ships Australia-wide (5–10 days) and to NZ (10–14 days). Tracking provided." },
-              { n: "02", title: "Connect & read", body: "Plug the Warport into your OBD2 port and pair with the PTEB app. It reads your ECU and TCU data securely." },
-              { n: "03", title: "Custom calibration", body: "PTEB's tuners build a fully custom map for your vehicle, mods, and fuel — not a generic off-the-shelf file." },
+              { n: "01", title: "Order & receive", body: "Order the Warport device online. Ships worldwide — Australia-wide (5–10 days) and internationally. Tracking provided." },
+              { n: "02", title: "Connect & read", body: "Plug the Warport into your OBD2 port and pair with our software. It reads your ECU and TCU data securely." },
+              { n: "03", title: "Custom calibration", body: "PTEB's tuner builds a fully custom map for your vehicle, mods, and fuel — not a generic off-the-shelf file." },
               { n: "04", title: "Flash & refine", body: "The tune is flashed via your phone. Live logs let us refine boost, timing, and fuelling until it's perfect." },
             ].map(({ n, title, body }) => (
               <div key={n} className="p-6 border border-[#1E1E1E]" style={{ backgroundColor: '#0a0a0a' }}>
@@ -262,7 +262,7 @@ export default function RemoteTuningPage() {
       <div className="py-16 text-center border-t border-[#1E1E1E]" style={{ backgroundColor: '#FC222D' }}>
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-4xl font-black uppercase mb-4" style={{ color: '#ffffff' }}>Ready to tune remotely?</h2>
-          <p className="text-sm mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>Free compatibility check. No payment until you're confirmed. Ships Australia-wide & New Zealand.</p>
+          <p className="text-sm mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>Free compatibility check. No payment until you're confirmed. Ships worldwide.</p>
           <Link href="/warport#apply" className="inline-flex items-center gap-2 px-10 py-4 text-sm font-bold tracking-widest uppercase transition-opacity hover:opacity-90" style={{ backgroundColor: '#000', color: '#fff' }}>
             Check My Compatibility <ChevronRight size={14} aria-hidden="true" />
           </Link>

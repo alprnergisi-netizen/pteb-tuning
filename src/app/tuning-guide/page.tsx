@@ -21,7 +21,6 @@ const TOC = [
   { id: "stages", label: "Stage 1 vs Stage 2 vs Stage 3" },
   { id: "flex-fuel", label: "Flex Fuel & Ethanol Tuning" },
   { id: "features", label: "Anti-Lag, Launch Control & More" },
-  { id: "power-gains", label: "Expected Power Gains" },
   { id: "safety", label: "Safety Considerations" },
   { id: "choosing-tuner", label: "How to Choose a Tuner" },
   { id: "brand-audi", label: "Audi Tuning Guide" },
@@ -70,7 +69,7 @@ const BRAND_GUIDES = [
         notes: "Single-scroll turbo inline-6. Great drivability gains, excellent torque curve.",
       },
     ],
-    features: ["Boost by gear", "Launch control", "Multi-map", "True flex fuel", "No lift shift", "Anti-lag (RS platforms)"],
+    features: ["Boost by gear", "Launch control", "Multi-map", "True flex fuel", "Rolling anti-lag (RS platforms)"],
     ecu: "Bosch MED17 / MG1CS / Continental Simos 18/19",
     color: "#FC222D",
   },
@@ -111,8 +110,8 @@ const BRAND_GUIDES = [
         notes: "Next-gen M engine. Massive turbochargers that reward aggressive fuelling strategy.",
       },
     ],
-    features: ["Launch control", "Boost by gear", "Multi-map (Race/Street/Valet)", "Flat-foot shift", "Rev limiter lift", "True flex fuel"],
-    ecu: "Bosch DME MSD80 / MSD87 / MG1 / MSS70",
+    features: ["Launch control", "Boost by gear", "Multi-map (Race/Street/Valet)", "Rev limiter lift", "True flex fuel"],
+    ecu: "Bosch DME MSD80 / MSD87 / MG1",
     color: "#FC222D",
   },
   {
@@ -153,7 +152,7 @@ const BRAND_GUIDES = [
       },
     ],
     features: ["Launch control", "Multi-map", "Boost by gear", "Race throttle calibration", "Rev limit adjustment", "Torque management per gear"],
-    ecu: "Bosch ME9.7 / MED17 / Continental EMS / Delphi MT86",
+    ecu: "Bosch ME9.7 / MED17 / Continental EMS",
     color: "#FC222D",
   },
   {
@@ -193,8 +192,8 @@ const BRAND_GUIDES = [
         notes: "Older but proven platform. Cost-effective tuning with strong aftermarket support.",
       },
     ],
-    features: ["Launch control", "Boost by gear", "Anti-lag (R/GTI platforms)", "Multi-map", "DSG tune available", "True flex fuel"],
-    ecu: "Bosch MED17 / Simos 18.1 / Simos 19.6 / Continental",
+    features: ["Launch control", "Boost by gear", "Rolling anti-lag (R/GTI platforms)", "Multi-map", "DSG tune available", "True flex fuel"],
+    ecu: "Bosch MED17 / Simos 18.1 / Continental",
     color: "#FC222D",
   },
   {
@@ -242,20 +241,12 @@ const BRAND_GUIDES = [
 
 const FAQ_GUIDE = [
   {
-    q: "What is the difference between a tune and a remap?",
-    a: "They refer to the same process. ECU tuning, remapping, and chipping are interchangeable terms for recalibrating the engine management software. A tune specifically refers to a custom calibration tailored to your vehicle, modifications, and fuel — whereas an off-the-shelf remap uses a generic file.",
-  },
-  {
     q: "Will tuning void my car's warranty?",
     a: "In most cases, yes. Modifying the factory ECU calibration constitutes a modification that most manufacturer warranties do not cover. In Australia, however, the ACCC and Australian Consumer Law provide some protections — a dealer must prove that the modification directly caused the fault to deny a warranty claim. Consult your dealer or a consumer rights specialist before tuning a vehicle still under warranty.",
   },
   {
     q: "Can any car be tuned?",
     a: "Any car with an electronically controlled engine can technically be tuned. However, not all ECU platforms have widely available tuning tools. The best platforms for significant gains are modern turbocharged engines: 2.0 TFSI (EA888), N55/S55/B58/S58 (BMW), 2JZ-GTE, EJ20/EJ25 (Subaru), FA20 (Subaru/Toyota), and most modern VAG turbo-petrol and diesel engines.",
-  },
-  {
-    q: "How much does a professional dyno tune cost in Australia?",
-    a: "A quality custom dyno tune in Australia typically ranges from $800 to $2,500+ depending on the platform, complexity, features required, and tuning hours needed. Remote tuning options like PTEB Warport start at $499 for the device and setup, with the tune file priced separately based on your build.",
   },
   {
     q: "Is ethanol (E85) better than 98 RON for tuning?",
@@ -537,7 +528,7 @@ export default function TuningGuidePage() {
               <ol className="space-y-3 list-none">
                 {[
                   { n: "1", title: "Pre-Health Check", text: "Before touching the calibration, we check for fault codes, boost and exhaust leaks, injector condition, fuel pressure, and overall mechanical health. Tuning a sick engine compounds problems." },
-                  { n: "2", title: "Baseline Run", text: "A stock (or current tune) pull establishes the starting point. We log boost, lambda (air-fuel ratio), timing, intake air temperature (IAT), and coolant temperature across the full RPM range." },
+                  { n: "2", title: "Baseline Run", text: "A stock (or current tune) pull establishes the starting point. We log boost, lambda (air-fuel ratio), timing, and intake air temperature (IAT) across the full RPM range." },
                   { n: "3", title: "Calibration Iteration", text: "The tuner adjusts boost targets, fuel tables, and ignition maps incrementally. Each change is followed by a dyno pull to measure the effect. This is repeated until the map is optimised." },
                   { n: "4", title: "Repeatability Verification", text: "Multiple back-to-back pulls confirm the tune is consistent — not a one-time result that degrades due to heat soak or timing pull. Lambda stability and knock margin are verified." },
                   { n: "5", title: "Road Validation", text: "The car is driven on real roads to confirm the tune behaves correctly under variable conditions — partial throttle, transient loads, cold starts, and temperature cycling." },
@@ -590,7 +581,7 @@ export default function TuningGuidePage() {
                     stage: "Stage 2",
                     colour: "#e63946",
                     mods: "Performance hardware",
-                    gains: "+35–50% power",
+                    gains: "+35–45% power",
                     req: "Downpipe, intercooler, intake",
                     notes: "Requires a high-flow downpipe (removes or replaces the catalytic converter), upgraded intercooler, and typically an intake upgrade. Opens up significantly more headroom.",
                   },
@@ -704,24 +695,20 @@ export default function TuningGuidePage() {
             <div className="space-y-6 text-sm text-[#9CA3AF] leading-relaxed">
               {[
                 {
-                  title: "Rolling Anti-Lag (ALS)",
-                  text: "Anti-lag keeps the turbocharger spinning at boost pressure during gear changes or throttle-off moments by retarding ignition timing and maintaining exhaust gas flow. The result is instant boost response when the throttle is reapplied — eliminating turbo lag between shifts. PTEB implements rolling (driving) anti-lag, which is more refined than the harsh stationary anti-lag used in rally racing.",
+                  title: "Rolling Anti-Lag (RAL)",
+                  text: "Rolling anti-lag allows the turbo to maintain full boost while you are on throttle without the car accelerating — at a specific RPM threshold, the turbo is held at peak boost pressure while driving. When you release the RAL button, the car slingshots forward with instant boost already fully built. Unlike stationary anti-lag used in rally racing, RAL is a driving feature that eliminates turbo lag between shifts and delivers instant response on demand.",
                 },
                 {
-                  title: "Launch Control",
-                  text: "Launch control allows a standing start at a preset engine RPM. The system holds the engine at a target RPM (typically 3,000–5,500 RPM depending on the platform) by modulating ignition timing and fuelling, while building maximum boost. When the clutch is released, the car launches at maximum acceleration from a pre-charged state. Adjustable launch RPM lets you optimise for traction conditions.",
+                  title: "Adjustable Launch Control",
+                  text: "Adjustable launch control allows you to preset the RPM limiter you want to launch at. The system holds the engine at that target RPM while building maximum boost. When you release the clutch, the car launches at full acceleration from a pre-charged, fully-spooled state. The adjustable RPM lets you optimise for traction conditions on the day.",
                 },
                 {
                   title: "Boost By Gear",
-                  text: "Boost by gear reduces torque output in lower gears to prevent wheelspin and drivetrain stress. On an AWD platform, first gear may be limited to 400 Nm while fifth gear runs the full 600+ Nm. This dramatically improves real-world driveability and protects the gearbox and driveshafts under hard launches.",
+                  text: "Boost by gear limits the boost you make in 1st and 2nd gear so each gear shift doesn't require the turbo to rebuild from zero. Instead of boost dropping and climbing again after every shift, it's already at peak as soon as you change gear — you're constantly at maximum boost through the entire run. This protects the drivetrain in lower gears where forces are highest, and delivers faster acceleration at every gear change.",
                 },
                 {
                   title: "Multi-Map Switching",
                   text: "Multiple calibration maps stored in the ECU allow the driver to switch between different tune modes — for example, a full-power race map on 98 RON, a conservative street map, an E85 map, and a valet/economy map. Switching is typically done via a specific button sequence, cruise control stalk, or optional multi-map switch.",
-                },
-                {
-                  title: "True Flat-Foot Shifting (No Lift Shift)",
-                  text: "No lift shift allows the driver to change gears without lifting off the throttle. The ECU temporarily cuts ignition or adjusts fuelling during the gear change, preventing drivetrain shock while allowing boost to remain fully built. Particularly effective on sequential and dual-clutch gearboxes.",
                 },
               ].map(({ title, text }) => (
                 <div key={title}>
@@ -737,62 +724,6 @@ export default function TuningGuidePage() {
             </div>
           </section>
 
-          {/* Section 6 */}
-          <section id="power-gains" className="mb-16 scroll-mt-24" aria-labelledby="s6-heading" data-animate="fade-up">
-            <div className="w-10 h-0.5 bg-[#e63946] mb-4" aria-hidden="true" />
-            <h2
-              id="s6-heading"
-              className="text-3xl sm:text-4xl font-black uppercase text-white mb-6"
-             
-            >
-              Expected Power Gains by Platform
-            </h2>
-            <div className="space-y-4 text-sm text-[#9CA3AF] leading-relaxed">
-              <p>
-                Power gains from tuning vary significantly by engine platform, modification level,
-                and fuel. The following are typical ranges for common platforms on 98 RON petrol.
-                E85 or blended ethanol typically adds a further 15–25% on top of these figures.
-              </p>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm border-collapse">
-                  <caption className="sr-only">Expected power gains from ECU tuning by platform</caption>
-                  <thead>
-                    <tr className="border-b border-[#2A2A2A]">
-                      {["Platform", "Engine", "Stage", "Stock kW", "Tuned kW", "Gain"].map((h) => (
-                        <th key={h} scope="col" className="text-left py-3 px-3 text-xs font-bold uppercase tracking-wider text-[#6B7280]">
-                          {h}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-[#1A1A1A]">
-                    {[
-                      ["Audi S3 / VW Golf R 8", "EA888 Gen4", "Stage 1", "228", "300+", "+72 kW"],
-                      ["Audi RS3 DAZA", "2.5 TFSI", "Stage 2", "250", "318", "+68 kW"],
-                      ["BMW M4 F82", "S55", "Stage 1", "260", "334", "+74 kW"],
-                      ["BMW M240i/340i G-series", "B58", "Stage 2", "250", "370+", "+120 kW"],
-                      ["VW Golf GTI Mk7/8", "EA888", "Stage 1", "162", "210+", "+48 kW"],
-                      ["Audi TT 2.0 TFSI", "EA888", "Stage 2+", "169", "300+", "+131 kW"],
-                    ].map((row) => (
-                      <tr key={row[0]} className="hover:bg-[#111111] transition-colors">
-                        {row.map((cell, ci) => (
-                          <td key={ci} className={`py-3 px-3 text-xs ${ci === 5 ? "text-[#e63946] font-bold" : ci === 0 ? "text-white" : "text-[#9CA3AF]"}`}>
-                            {cell}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="text-xs text-[#4B5563]">
-                * Figures are indicative. Actual results depend on ambient conditions, fuel quality,
-                hardware condition, and tune specifics. All PTEB results are dyno-logged on Dyno
-                Innovations equipment.
-              </p>
-            </div>
-          </section>
-
           {/* Section 7 */}
           <section id="safety" className="mb-16 scroll-mt-24" aria-labelledby="s7-heading" data-animate="fade-up">
             <div className="w-10 h-0.5 bg-[#e63946] mb-4" aria-hidden="true" />
@@ -805,11 +736,13 @@ export default function TuningGuidePage() {
             </h2>
             <div className="space-y-4 text-sm text-[#9CA3AF] leading-relaxed">
               <p>
-                Tuning increases the power and torque your engine produces — this increases
-                mechanical load on every component in the drivetrain. A professionally executed
-                tune manages this within the mechanical limits of the platform. The risks come from
-                poor calibration, insufficient hardware, pre-existing mechanical issues, and
-                unsuitable fuelling.
+                A tune on your vehicle can and will increase cylinder pressure, and it may expose
+                weaknesses that were not visible before. A tune demands every component and every
+                sensor to be working at its optimal peak performance to deliver the result it is
+                calibrated for. Components with existing wear or tear that you don&apos;t see beforehand
+                can and may fail after a tune — that doesn&apos;t mean the tune is bad. It means the car
+                could not keep up with what the tune requires. A professionally built calibration
+                manages this within the mechanical limits of the platform.
               </p>
               <h3
                 className="text-xl font-bold uppercase text-white mt-6 mb-4"
@@ -822,7 +755,7 @@ export default function TuningGuidePage() {
                   { title: "Knock protection", desc: "Knock (engine ping) is the primary cause of piston and bearing damage. A proper tune uses real-time knock sensor feedback and conservative ignition timing margins to prevent this — especially at high loads." },
                   { title: "Lambda (AFR) safety", desc: "Running lean (too little fuel relative to air) causes catastrophic overheating and engine damage. Every PTEB tune verifies stable, safe lambda values across the full load map — richer on boost for safety margin." },
                   { title: "Boost pressure limits", desc: "Overboosting beyond the turbocharger's safe operating map or the intercooler's capacity causes heat soak, compressor surge, and bearing wear. Boost targets are set within turbo efficiency maps." },
-                  { title: "Thermal management", desc: "IAT and coolant temperature limits are monitored. Maps automatically pull timing or boost if temperatures exceed safe thresholds, protecting the engine in demanding Australian conditions." },
+                  { title: "Thermal management", desc: "IAT limits are monitored. Maps automatically pull timing or boost if intake temperatures exceed safe thresholds, protecting the engine under demanding conditions." },
                   { title: "Torque limiters by gear", desc: "Boost-by-gear and torque management protect the gearbox, driveshafts, and differentials by limiting torque output in lower gears where multiplication forces are highest." },
                 ].map(({ title, desc }) => (
                   <li key={title} className="flex items-start gap-3">
@@ -861,10 +794,10 @@ export default function TuningGuidePage() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  "Do you have a rolling road dyno? (Not just an engine dyno — a vehicle rolling road that can run pulls under real conditions.)",
+                  "What type of dyno do you use?",
                   "Can I see previous dyno results on my specific platform? (BMW S55, Audi DAZA, etc.)",
                   "Do you provide full data logs? (Lambda, timing, boost, IATs — not just a power curve.)",
-                  "Is there a road validation phase after the dyno session?",
+                  "Is there a road validation phase after the dyno session? (Depends on the car, platform, and what you're after.)",
                   "What happens if I'm not satisfied or need revisions?",
                   "Do you perform a pre-health check before tuning?",
                 ].map((q) => (
