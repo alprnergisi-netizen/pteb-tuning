@@ -56,10 +56,10 @@ const homepageSchema = {
         },
         {
           "@type": "Question",
-          "name": "How much does a custom dyno tune cost in Melbourne?",
+          "name": "How do I book a custom dyno tune in Melbourne?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A quality custom dyno tune at PTEB Tuning in Melbourne typically ranges from $800 to $2,500+ AUD depending on the platform and complexity. Remote tuning via PTEB Warport starts from $499 AUD for the device and includes a full custom calibration."
+            "text": "Contact PTEB Tuning via phone, WhatsApp, or the enquiry form. Tell us your vehicle, modifications, fuel type, and goals. We'll pre-approve your vehicle and confirm exactly what your tune will deliver before you commit to anything."
           }
         },
         {
@@ -229,7 +229,7 @@ export default function HomePage() {
             <div data-reveal-child>
               <p className="eyebrow mb-5">
                 <span className="block w-5 h-px bg-[#FC222D] shrink-0" aria-hidden="true" />
-                Warport — $499 AUD
+                PTEB Warport
               </p>
               <h2
                 id="warport-product-heading"
@@ -259,11 +259,11 @@ export default function HomePage() {
                 ))}
               </ul>
 
-              {/* Price anchor */}
+              {/* Warport nudge */}
               <div className="p-5 border-l-4 border-[#FC222D] bg-[#FFF5F5] mb-8">
                 <p className="text-xs font-bold text-[#6B7280] uppercase tracking-widest mb-1">Consider the alternative</p>
                 <p className="text-sm text-[#374151]">
-                  A workshop dyno tune requires you to physically bring your car in. With the <strong className="text-[#FC222D]">PTEB Warport ($499)</strong>, PTEB calibrates your ECU remotely — no matter where you are in Australia. No travel, no waiting for a dyno slot, and all tuning is handled exclusively by PTEB.
+                  A workshop dyno tune requires you to physically bring your car in. With the <strong className="text-[#FC222D]">PTEB Warport</strong>, PTEB calibrates your ECU remotely — no matter where you are. No travel, no waiting for a dyno slot, and all tuning is handled exclusively by PTEB.
                 </p>
               </div>
 

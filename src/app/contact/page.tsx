@@ -55,8 +55,8 @@ const contactSchema = {
         },
         {
           "@type": "Question",
-          name: "How much does an ECU tune cost in Melbourne?",
-          acceptedAnswer: { "@type": "Answer", text: "A custom dyno tune at PTEB Tuning costs between $800 and $2,500+ AUD depending on the platform, complexity, and features required. Remote tuning via the PTEB Warport device starts at $499 AUD. A free pre-approval check is available before any payment." },
+          name: "How do I book an ECU tune at PTEB?",
+          acceptedAnswer: { "@type": "Answer", text: "Contact PTEB Tuning by phone (0422 300 859), WhatsApp, or the online enquiry form. Tell us your vehicle, current modifications, fuel type, and goals. We'll pre-approve your vehicle and confirm exactly what your tune will deliver before you commit to anything." },
         },
         {
           "@type": "Question",

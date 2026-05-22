@@ -93,14 +93,6 @@ const warportSchema = {
         },
         {
           "@type": "Question",
-          name: "How much does the PTEB Warport cost?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The PTEB Warport device costs $499 AUD. This includes the OBD2 hardware, app access, and your first custom calibration file. Ongoing revision pulls are available as the device stays in your car.",
-          },
-        },
-        {
-          "@type": "Question",
           name: "Is remote ECU tuning as good as a dyno tune?",
           acceptedAnswer: {
             "@type": "Answer",

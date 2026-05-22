@@ -59,13 +59,13 @@ const schema = {
         },
         {
           "@type": "Question",
-          name: "How much does ECU tuning cost in Melbourne?",
-          acceptedAnswer: { "@type": "Answer", text: "Custom dyno tuning at PTEB Melbourne typically ranges from $800 to $2,500+ AUD depending on the platform, complexity, and features required. A free pre-approval check is available before any commitment. Remote tuning via the PTEB Warport starts at $499 AUD for customers outside Melbourne." },
+          name: "How do I book ECU tuning in Melbourne?",
+          acceptedAnswer: { "@type": "Answer", text: "Contact PTEB Tuning via phone (0422 300 859), WhatsApp, or the enquiry form. Tell us your vehicle, modifications, fuel type, and goals. We'll pre-approve your vehicle and confirm exactly what your tune will deliver before any commitment." },
         },
         {
           "@type": "Question",
           name: "Which European cars does PTEB tune in Melbourne?",
-          acceptedAnswer: { "@type": "Answer", text: "PTEB Tuning Melbourne specialises in Audi (EA888, DAZA, EA825, EA839), BMW (B48, B58, N55, S55, S58), Volkswagen (EA888 Golf GTI, Golf R), Mercedes-AMG (M133, M177, M157), and Porsche (9A1, 9A2). Proven dyno results: BMW M4 334kW, Audi RS3 318kW, VW Golf R 280kW." },
+          acceptedAnswer: { "@type": "Answer", text: "PTEB Tuning Melbourne specialises in Audi (EA888, DAZA, EA825, EA839), BMW (B48, B58, N55, S55, S58), Volkswagen (EA888 Golf GTI, Golf R), Mercedes-AMG (M133, M177, M157), and Porsche (9A1, 9A2). Contact us to confirm your specific platform." },
         },
         {
           "@type": "Question",
@@ -112,7 +112,7 @@ export default function MelbourneTuningPage() {
             PTEB Tuning is Melbourne&apos;s specialist for custom ECU and TCU remapping on European performance vehicles. Every tune is built on our in-house Dyno Innovations rolling road, calibrated with live data, and road-verified before the car leaves the workshop.
           </p>
           <p className="text-sm leading-relaxed mb-10 max-w-2xl" style={{ color: '#6B7280' }}>
-            We specialise in Audi, BMW, Volkswagen, Mercedes-AMG and Porsche. Proven results: BMW M4 334kW, Audi RS3 318kW, VW Golf R 280kW — all documented with dyno graphs and full data logs.
+            We specialise in Audi, BMW, Volkswagen, Mercedes-AMG and Porsche. Every result is dyno-logged and road-verified — documented with full data logs.
           </p>
 
           {/* Stars */}
@@ -148,16 +148,13 @@ export default function MelbourneTuningPage() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-5">
             {[
-              { title: "Custom Dyno Tuning", desc: "Full ECU calibration on our Dyno Innovations rolling road. Includes pre-health check, baseline pull, iterative mapping, repeatability verification, and road validation. Full logs provided.", price: "$800–$2,500+" },
-              { title: "TCU / DSG Remapping", desc: "Gearbox calibration for DSG, DCT, and automatic transmissions. Faster shifts, improved launch feel, and torque limit lifting to match your ECU tune.", price: "Enquire" },
-              { title: "Flex Fuel (E85) Tuning", desc: "True flex fuel calibration supporting E85 ethanol or any blend ratio. Requires ethanol sensor and supporting hardware. Typical gains: 15–25% over 98 RON equivalent.", price: "Enquire" },
-              { title: "Engine Rebuilding", desc: "Performance engine builds for European vehicles. Stage 3+ builds including turbo upgrades, high-flow injectors, fuel pump upgrades, and supporting hardware.", price: "Enquire" },
-            ].map(({ title, desc, price }) => (
+              { title: "Custom Dyno Tuning", desc: "Full ECU calibration on our Dyno Innovations rolling road. Includes pre-health check, baseline pull, iterative mapping, repeatability verification, and road validation. Full logs provided." },
+              { title: "TCU / DSG Remapping", desc: "Gearbox calibration for DSG, DCT, and automatic transmissions. Faster shifts, improved launch feel, and torque limit lifting to match your ECU tune." },
+              { title: "Flex Fuel (E85) Tuning", desc: "True flex fuel calibration supporting E85 ethanol or any blend ratio. Requires ethanol sensor and supporting hardware." },
+              { title: "Engine Rebuilding", desc: "Performance engine builds for European vehicles. Stage 3+ builds including turbo upgrades, high-flow injectors, fuel pump upgrades, and supporting hardware." },
+            ].map(({ title, desc }) => (
               <div key={title} className="p-6 border border-[#1E1E1E]" style={{ backgroundColor: '#0a0a0a' }}>
-                <div className="flex items-start justify-between gap-4 mb-3">
-                  <h3 className="text-white font-bold">{title}</h3>
-                  <span className="text-[#FC222D] text-xs font-bold shrink-0">{price}</span>
-                </div>
+                <h3 className="text-white font-bold mb-3">{title}</h3>
                 <p className="text-xs leading-relaxed" style={{ color: '#6B7280' }}>{desc}</p>
               </div>
             ))}
@@ -203,8 +200,8 @@ export default function MelbourneTuningPage() {
           <div className="space-y-6">
             {[
               { q: "Where is PTEB Tuning located in Melbourne?", a: "PTEB Tuning is based in Melbourne, Victoria. Contact us on 0422 300 859 or via WhatsApp to arrange a booking and receive workshop directions." },
-              { q: "How much does an ECU tune cost in Melbourne?", a: "Custom dyno tuning at PTEB Melbourne ranges from $800 to $2,500+ AUD depending on the platform and features. Remote tuning via PTEB Warport starts at $499 AUD for those outside Melbourne. A free pre-approval check is available before any commitment." },
-              { q: "What cars does PTEB tune in Melbourne?", a: "PTEB specialises in European turbocharged vehicles: Audi (EA888, DAZA, EA825), BMW (B48, B58, S55, S58), Volkswagen (Golf GTI, Golf R), Mercedes-AMG (A45, CLA45), and Porsche (911, Macan, Cayenne). Proven results include BMW M4 334kW and Audi RS3 318kW." },
+              { q: "How do I book a tune at PTEB?", a: "Contact PTEB via phone (0422 300 859), WhatsApp, or the enquiry form. Tell us your vehicle, modifications, fuel type, and goals — we'll pre-approve your car and confirm exactly what your tune will deliver before you commit." },
+              { q: "What cars does PTEB tune in Melbourne?", a: "PTEB specialises in European turbocharged vehicles: Audi (EA888, DAZA, EA825), BMW (B48, B58, S55, S58), Volkswagen (Golf GTI, Golf R), Mercedes-AMG (A45, CLA45), and Porsche (911, Macan, Cayenne). Contact us to confirm your specific platform." },
               { q: "How long does a dyno tune take?", a: "A full custom dyno tune at PTEB takes 4–8 hours. This covers pre-health inspection, baseline pull, calibration, repeatability verification, and road validation. You receive a dyno graph and full data logs." },
               { q: "Does PTEB offer Stage 1 and Stage 2 tunes?", a: "Yes — Stage 1 (software only), Stage 2 (downpipe, intercooler, intake required), and Stage 2+ (turbo/fuelling upgrades). Every tune is built for your specific vehicle, not an off-the-shelf map." },
             ].map(({ q, a }) => (

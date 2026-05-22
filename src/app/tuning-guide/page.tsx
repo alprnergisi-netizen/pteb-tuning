@@ -5,11 +5,11 @@ import { ChevronRight, BookOpen, AlertTriangle, CheckCircle } from "lucide-react
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "ECU Tuning Guide: How Dyno Tuning Works, Stage 1 vs Stage 2, Costs | PTEB",
-  description: "What is ECU tuning and how does it work? This guide explains dyno tuning step-by-step, Stage 1 vs Stage 2 vs Stage 3, flex fuel (E85) tuning, anti-lag, launch control, and how much a custom tune costs in Australia — written by PTEB's professional tuners.",
+  title: "ECU Tuning Guide: How Dyno Tuning Works, Stage 1 vs Stage 2 vs Stage 3 | PTEB",
+  description: "What is ECU tuning and how does it work? This guide explains dyno tuning step-by-step, Stage 1 vs Stage 2 vs Stage 3, flex fuel (E85) tuning, anti-lag, launch control, and performance calibration — written by PTEB's professional tuner.",
   alternates: { canonical: "/tuning-guide" },
   openGraph: {
-    title: "ECU Tuning Guide: Stage 1 vs Stage 2, Costs & How It Works | PTEB",
+    title: "ECU Tuning Guide: Stage 1 vs Stage 2 vs Stage 3 & How It Works | PTEB",
     description: "Step-by-step guide to ECU remapping, dyno tuning, flex fuel, and performance calibration — with real dyno results from PTEB. Written by professional tuners.",
     url: "/tuning-guide",
   },

@@ -267,7 +267,6 @@ const siteSchema = {
               description: "Full custom ECU calibration on a rolling road dynamometer. Includes pre-health checks, baseline pull, iterative calibration, repeatability verification, and road validation. All results logged and provided to the customer.",
               provider: { "@id": `${BASE_URL}/#business` },
               areaServed: { "@type": "City", name: "Melbourne" },
-              offers: { "@type": "Offer", priceCurrency: "AUD", priceRange: "$800-$2500" },
             },
           },
           {
