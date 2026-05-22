@@ -73,7 +73,7 @@ export function WarportHero() {
 
             {/* Trust signals */}
             <div className="flex flex-wrap gap-6 mt-10 pt-10 border-t border-[#E5E7EB]">
-              {["Australia-Wide", "7-Day Delivery", "Direct Support", "Custom Tune"].map((t) => (
+              {["Worldwide", "7-Day Delivery", "Direct Support", "Custom Tune"].map((t) => (
                 <div key={t} className="flex items-center gap-2 text-xs font-bold text-[#6B7280] uppercase tracking-widest">
                   <div className="w-1.5 h-1.5 bg-[#FC222D] rounded-full" aria-hidden="true" />
                   {t}

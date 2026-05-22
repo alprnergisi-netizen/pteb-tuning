@@ -6,12 +6,12 @@ import { WarportFeatures } from "@/components/warport/WarportFeatures";
 import { WarportLeadForm } from "@/components/warport/WarportLeadForm";
 
 export const metadata: Metadata = {
-  title: "Remote ECU Tuning Australia — PTEB Warport OBD2 Tuning Device | $499",
-  description: "Get a custom ECU tune without visiting a workshop. The PTEB Warport plugs into your OBD port, connects to our app, and our tuners calibrate your engine remotely — anywhere in Australia. Full custom calibration, live data logging. $499 AUD.",
+  title: "Remote ECU Tuning Worldwide — PTEB Warport OBD2 Tuning Device | $499",
+  description: "Get a custom ECU tune without visiting a workshop. The PTEB Warport plugs into your OBD port, connects to our software, and our tuner calibrates your engine remotely — anywhere in the world. Full custom calibration, live data logging. $499 AUD.",
   alternates: { canonical: "/warport" },
   openGraph: {
-    title: "Remote ECU Tuning Australia — PTEB Warport | $499 AUD",
-    description: "Custom ECU tuning delivered remotely anywhere in Australia. Plug into OBD, connect via app, get a full dyno-quality tune without leaving home. $499 device + custom calibration.",
+    title: "Remote ECU Tuning Worldwide — PTEB Warport | $499 AUD",
+    description: "Custom ECU tuning delivered remotely anywhere in the world. Plug into OBD, connect via our software, get a full dyno-quality tune without leaving home. $499 device + custom calibration.",
     url: "/warport",
   },
 };
@@ -29,7 +29,7 @@ const warportSchema = {
     {
       "@type": "Product",
       name: "PTEB Warport",
-      description: "OBD2 remote ECU tuning device. Plug into your car's OBD port, connect via the PTEB app, and our tuners calibrate your engine remotely — anywhere in Australia. Includes full custom calibration, live data logging, and ongoing revisions.",
+      description: "OBD2 remote ECU tuning device. Plug into your car's OBD port, connect via our software, and our tuner calibrates your engine remotely — anywhere in the world. Includes full custom calibration, live data logging, and ongoing revisions.",
       brand: { "@type": "Brand", name: "PTEB Tuning" },
       sku: "WARPORT-001",
       offers: {
@@ -38,7 +38,7 @@ const warportSchema = {
         priceCurrency: "AUD",
         availability: "https://schema.org/InStock",
         seller: { "@type": "Organization", name: "PTEB Tuning" },
-        areaServed: { "@type": "Country", name: "Australia" },
+        areaServed: { "@type": "Place", name: "Worldwide" },
       },
     },
     {
@@ -52,7 +52,7 @@ const warportSchema = {
           "@type": "HowToStep",
           position: 1,
           name: "Order and receive the Warport device",
-          text: "Order the PTEB Warport online. It ships Australia-wide within 7 business days. The device plugs directly into your car's OBD2 port.",
+          text: "Order the PTEB Warport online. It ships worldwide. The device plugs directly into your car's OBD2 port.",
         },
         {
           "@type": "HowToStep",
