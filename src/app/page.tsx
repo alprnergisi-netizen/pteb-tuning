@@ -239,13 +239,12 @@ export default function HomePage() {
                 <span className="text-[#FC222D]">Power on the Table.</span>
               </h2>
               <p className="text-[#374151] text-lg leading-relaxed mb-8 max-w-lg">
-                Factory ECU calibrations are conservative by design. The PTEB Warport plugs into your OBD port, pairs with our app, and our tuners recalibrate your engine remotely — no workshop visit, no waiting weeks for a booking.
+                Factory ECU calibrations are conservative by design. The PTEB Warport plugs into your OBD port, pairs with our software, and our tuner recalibrates your engine remotely — no workshop visit, no waiting weeks for a booking.
               </p>
 
               {/* Benefit stack — rapid fire */}
               <ul className="space-y-3 mb-10">
                 {[
-                  { stat: "20–50%", label: "more power on most European platforms" },
                   { stat: "7 days", label: "average delivery to your door, Australia-wide" },
                   { stat: "100%", label: "custom calibration — never an off-the-shelf map" },
                   { stat: "Free", label: "pre-approval check before you spend a cent" },

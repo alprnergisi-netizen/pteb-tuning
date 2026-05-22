@@ -52,14 +52,14 @@ const BRAND_GUIDES = [
         models: "RS3 8V/8Y, TTRS",
         stage1: "290–310 kW",
         stage2: "310–360 kW",
-        notes: "5-cylinder unit with enormous turbo. PTEB has proven 318 kW on DAZA Stage 2.",
+        notes: "5-cylinder unit with enormous turbo. Responds exceptionally well to boost and fuel strategy.",
       },
       {
         engine: "EA825 (4.0 TFSI)",
         models: "RS6, RS7, S8, RSQ8",
         stage1: "480–530 kW",
         stage2: "550–650+ kW",
-        notes: "Twin-turbo V8. Stage 1 alone adds 80+ kW. Responds well to E85 fuelling.",
+        notes: "Twin-turbo V8. Responds exceptionally well to E85 fuelling.",
       },
       {
         engine: "EA839 (3.0 TFSI)",
@@ -100,7 +100,7 @@ const BRAND_GUIDES = [
         models: "M3 F80, M4 F82/F83",
         stage1: "330–360 kW",
         stage2: "400–450 kW",
-        notes: "PTEB proven: 334 kW Stage 1 on stock turbos. Great throttle response gains.",
+        notes: "Great throttle response gains on stock turbos.",
       },
       {
         engine: "S58 (3.0 Twin Turbo)",
@@ -127,14 +127,14 @@ const BRAND_GUIDES = [
         models: "A45 AMG, CLA45 AMG",
         stage1: "300–340 kW",
         stage2: "370–420 kW",
-        notes: "World's most powerful production 4-cylinder at launch. Excellent gains on stock hardware.",
+        notes: "Excellent gains on stock hardware.",
       },
       {
         engine: "M177 (2.0T)",
         models: "A45S AMG, CLA45S AMG",
         stage1: "340–380 kW",
         stage2: "410–470 kW",
-        notes: "415 hp factory output leaves real headroom. Responds aggressively to boost and fuel strategy.",
+        notes: "Factory output leaves real headroom. Responds aggressively to boost and fuel strategy.",
       },
       {
         engine: "M156 (6.2 NA V8)",
@@ -148,7 +148,7 @@ const BRAND_GUIDES = [
         models: "C63 S, E63, S63 AMG",
         stage1: "420–480 kW",
         stage2: "530–620+ kW",
-        notes: "Twin-turbo V8 with enormous low-end torque. PTEB proven: 380+ kW on Stage 1 C63.",
+        notes: "Twin-turbo V8 with enormous low-end torque. Exceptional response across the rev range.",
       },
     ],
     features: ["Launch control", "Multi-map", "Boost by gear", "Race throttle calibration", "Rev limit adjustment", "Torque management per gear"],
@@ -175,14 +175,14 @@ const BRAND_GUIDES = [
         models: "Golf R Mk7/7.5/8, Arteon R, Tiguan R",
         stage1: "260–310 kW",
         stage2: "320–380 kW",
-        notes: "AWD platform with exceptional traction for power deployment. PTEB proven: 280+ kW Stage 2.",
+        notes: "AWD platform with exceptional traction for power deployment.",
       },
       {
         engine: "EA839 (2.0 TSI / 3.0 TSI)",
         models: "Golf R 8 (EA888 Gen4), Touareg",
         stage1: "280–330 kW",
         stage2: "350–400 kW",
-        notes: "Latest generation. Factory 333hp Golf R regularly achieves 350+ kW on Stage 2.",
+        notes: "Latest generation Golf R platform. Strong response across all modification levels.",
       },
       {
         engine: "EA113 / EA211 (1.8/2.0 TSI)",
@@ -581,7 +581,7 @@ export default function TuningGuidePage() {
                     stage: "Stage 2",
                     colour: "#e63946",
                     mods: "Performance hardware",
-                    gains: "+35–45% power",
+                    gains: "+30–40% power",
                     req: "Downpipe, intercooler, intake",
                     notes: "Requires a high-flow downpipe (removes or replaces the catalytic converter), upgraded intercooler, and typically an intake upgrade. Opens up significantly more headroom.",
                   },
@@ -589,7 +589,7 @@ export default function TuningGuidePage() {
                     stage: "Stage 3+",
                     colour: "#e63946",
                     mods: "Turbo / fuelling upgrade",
-                    gains: "+60–100%+ power",
+                    gains: "+45–65% power",
                     req: "Upgraded turbo, injectors, fuel pump",
                     notes: "Larger turbo, high-flow injectors, upgraded fuel pump, and often supporting cooling and drivetrain upgrades. Significant expense but transformative results.",
                   },
@@ -856,7 +856,7 @@ export default function TuningGuidePage() {
                   <caption className="sr-only">{brand.brand} tuning platforms and expected power gains</caption>
                   <thead>
                     <tr className="border-b border-[#2A2A2A]">
-                      {["Engine", "Models", "Stage 1", "Stage 2", "Notes"].map((h) => (
+                      {["Engine", "Models", "Notes"].map((h) => (
                         <th key={h} scope="col" className="text-left py-3 px-3 text-xs font-bold uppercase tracking-wider text-[#6B7280]">
                           {h}
                         </th>
@@ -868,8 +868,6 @@ export default function TuningGuidePage() {
                       <tr key={p.engine} className="hover:bg-[#111111] transition-colors">
                         <td className="py-3 px-3 text-xs text-white font-semibold whitespace-nowrap">{p.engine}</td>
                         <td className="py-3 px-3 text-xs text-[#9CA3AF]">{p.models}</td>
-                        <td className="py-3 px-3 text-xs text-[#e63946] font-bold whitespace-nowrap">{p.stage1}</td>
-                        <td className="py-3 px-3 text-xs text-[#e63946] font-bold whitespace-nowrap">{p.stage2}</td>
                         <td className="py-3 px-3 text-xs text-[#6B7280]">{p.notes}</td>
                       </tr>
                     ))}
