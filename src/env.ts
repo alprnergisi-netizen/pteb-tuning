@@ -13,6 +13,8 @@ const serverSchema = z.object({
 
 const clientSchema = z.object({
   NEXT_PUBLIC_APP_URL: z.string().url().default("https://ptebtuning.com"),
+  NEXT_PUBLIC_CALCOM_TUNING_LINK: z.string().default("ptebtuning/dyno-tune"),
+  NEXT_PUBLIC_CALCOM_MECHANIC_LINK: z.string().default("ptebtuning/mechanic"),
 });
 
 const serverEnv = serverSchema.safeParse(process.env);
