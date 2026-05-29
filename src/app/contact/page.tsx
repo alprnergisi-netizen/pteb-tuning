@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Waves } from "@/components/ui/Waves";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { Phone, MessageCircle, Instagram, ChevronRight, MapPin, Clock, Star, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -132,127 +133,7 @@ export default function ContactPage() {
           >
             Enquiry Form
           </h2>
-          <form
-            name="tune-enquiry"
-            className="space-y-4"
-            aria-label="Tune enquiry form"
-          >
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="name" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
-                  Full Name <span className="text-[#FC222D]" aria-label="required">*</span>
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  autoComplete="name"
-                  className="w-full bg-[#111111] border border-[#2A2A2A] text-white text-sm px-4 py-3 focus:border-[#FC222D] focus:outline-none focus:ring-1 focus:ring-[#FC222D] transition-colors placeholder:text-[#4B5563]"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
-                  Phone
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  autoComplete="tel"
-                  className="w-full bg-[#111111] border border-[#2A2A2A] text-white text-sm px-4 py-3 focus:border-[#FC222D] focus:outline-none focus:ring-1 focus:ring-[#FC222D] transition-colors placeholder:text-[#4B5563]"
-                  placeholder="04XX XXX XXX"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
-                Email <span className="text-[#FC222D]" aria-label="required">*</span>
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                autoComplete="email"
-                className="w-full bg-[#111111] border border-[#2A2A2A] text-white text-sm px-4 py-3 focus:border-[#FC222D] focus:outline-none focus:ring-1 focus:ring-[#FC222D] transition-colors placeholder:text-[#4B5563]"
-                placeholder="you@email.com"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="car" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
-                Vehicle (Year, Make, Model, Engine) <span className="text-[#FC222D]" aria-label="required">*</span>
-              </label>
-              <input
-                id="car"
-                name="car"
-                type="text"
-                required
-                className="w-full bg-[#111111] border border-[#2A2A2A] text-white text-sm px-4 py-3 focus:border-[#FC222D] focus:outline-none focus:ring-1 focus:ring-[#FC222D] transition-colors placeholder:text-[#4B5563]"
-                placeholder="e.g. 2018 Audi S3 8V 2.0 TFSI"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="mods" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
-                Current Modifications
-              </label>
-              <input
-                id="mods"
-                name="mods"
-                type="text"
-                className="w-full bg-[#111111] border border-[#2A2A2A] text-white text-sm px-4 py-3 focus:border-[#FC222D] focus:outline-none focus:ring-1 focus:ring-[#FC222D] transition-colors placeholder:text-[#4B5563]"
-                placeholder="e.g. Intake, downpipe, intercooler"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="fuel" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
-                Fuel Type
-              </label>
-              <select
-                id="fuel"
-                name="fuel"
-                className="w-full bg-[#111111] border border-[#2A2A2A] text-white text-sm px-4 py-3 focus:border-[#FC222D] focus:outline-none focus:ring-1 focus:ring-[#FC222D] transition-colors"
-              >
-                <option value="">Select fuel type</option>
-                <option value="98ron">98 RON Premium</option>
-                <option value="95ron">95 RON</option>
-                <option value="e85">E85 Ethanol</option>
-                <option value="flex">Flex Fuel (blend)</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="goals" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
-                Goals & Notes <span className="text-[#FC222D]" aria-label="required">*</span>
-              </label>
-              <textarea
-                id="goals"
-                name="goals"
-                required
-                rows={4}
-                className="w-full bg-[#111111] border border-[#2A2A2A] text-white text-sm px-4 py-3 focus:border-[#FC222D] focus:outline-none focus:ring-1 focus:ring-[#FC222D] transition-colors placeholder:text-[#4B5563] resize-none"
-                placeholder="Tell us what you're after — power goals, daily driver vs track, features needed (launch control, flex fuel, anti-lag), etc."
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full py-4 bg-[#FC222D] text-white text-sm font-bold tracking-widest uppercase hover:bg-[#CC1B25] transition-colors focus-visible:ring-2 focus-visible:ring-[#FC222D] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-            >
-              Send Enquiry
-            </button>
-
-            <p className="text-xs text-[#4B5563] text-center">
-              We aim to respond within 24 hours. Remote tuning requires vehicle pre-approval.
-            </p>
-          </form>
+          <ContactForm />
         </section>
 
         {/* ── Contact info ────────────────────────────────────────────── */}

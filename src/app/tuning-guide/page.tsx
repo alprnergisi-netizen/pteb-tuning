@@ -130,7 +130,7 @@ const BRAND_GUIDES = [
         notes: "Excellent gains on stock hardware.",
       },
       {
-        engine: "M177 (2.0T)",
+        engine: "M139 (2.0T)",
         models: "A45S AMG, CLA45S AMG",
         stage1: "340–380 kW",
         stage2: "410–470 kW",
@@ -178,18 +178,11 @@ const BRAND_GUIDES = [
         notes: "AWD platform with exceptional traction for power deployment.",
       },
       {
-        engine: "EA839 (2.0 TSI / 3.0 TSI)",
-        models: "Golf R 8 (EA888 Gen4), Touareg",
-        stage1: "280–330 kW",
-        stage2: "350–400 kW",
-        notes: "Latest generation Golf R platform. Strong response across all modification levels.",
-      },
-      {
-        engine: "EA113 / EA211 (1.8/2.0 TSI)",
-        models: "Polo GTI, Golf 6 GTI, Scirocco R",
+        engine: "EA113 (2.0 TSI)",
+        models: "Golf 5 GTI, Golf 6 GTI",
         stage1: "175–210 kW",
         stage2: "230–270 kW",
-        notes: "Older but proven platform. Cost-effective tuning with strong aftermarket support.",
+        notes: "Older iron-block 2.0T. Proven platform with strong aftermarket support and cost-effective gains.",
       },
     ],
     features: ["Launch control", "Boost by gear", "Rolling anti-lag (R/GTI platforms)", "Multi-map", "DSG tune available", "True flex fuel"],
@@ -202,10 +195,10 @@ const BRAND_GUIDES = [
     logo: "/porschelogo.png",
     tagline: "Precision engineering, precision tuning",
     intro:
-      "Porsche builds some of the world's most capable performance cars from the factory — and still leaves room for the calibrator. The 9A1 and 9A2 turbocharged flat-six family is a masterpiece of engineering, and with PDK transmission tuning available alongside engine calibration, the results are exceptional.",
+      "Porsche builds some of the world's most capable performance cars from the factory — and still leaves room for the calibrator. From the MA1.21 flat-four in the 718 to the 9A2 twin-turbo flat-six in the 992, every modern Porsche turbo platform responds to precision calibration — and with PDK transmission tuning available alongside engine work, the results are exceptional.",
     platforms: [
       {
-        engine: "9A1 (2.5T flat-four)",
+        engine: "MA1.21 (2.5T flat-four)",
         models: "718 Cayman S/GTS, 718 Boxster S/GTS",
         stage1: "260–295 kW",
         stage2: "310–360 kW",
@@ -320,6 +313,33 @@ const articleSchema = {
     { "@type": "Thing", name: "Flex fuel tuning" },
     { "@type": "Thing", name: "Turbo performance" },
   ],
+};
+
+const vehiclePlatformsSchema = {
+  "@type": "ItemList",
+  "name": "Supported ECU Tuning Platforms — PTEB Melbourne",
+  "description": "Vehicle makes, models, and engine platforms supported for custom ECU tuning, dyno remapping, and performance calibration at PTEB (Prestige Team Euro Boost), Melbourne, Australia.",
+  "numberOfItems": BRAND_GUIDES.reduce((n, b) => n + b.platforms.length, 0),
+  "itemListElement": BRAND_GUIDES.flatMap((brand, bi) =>
+    brand.platforms.map((p, pi) => ({
+      "@type": "ListItem",
+      "position": BRAND_GUIDES.slice(0, bi).reduce((n, b) => n + b.platforms.length, 0) + pi + 1,
+      "name": `${brand.brand} ${p.engine} ECU Tune — Stage 1: ${p.stage1} / Stage 2: ${p.stage2}`,
+      "item": {
+        "@type": "Service",
+        "name": `${brand.brand} ${p.engine} Custom ECU Tune Melbourne`,
+        "serviceType": "ECU Tuning",
+        "description": `Custom dyno ECU tuning for ${brand.brand} ${p.engine}. Compatible vehicles: ${p.models}. Stage 1 output: ${p.stage1}. Stage 2 output: ${p.stage2}. ${p.notes}`,
+        "provider": {
+          "@type": "AutoRepair",
+          "name": "Prestige Team Euro Boost",
+          "url": "https://ptebtuning.com",
+        },
+        "areaServed": { "@type": "City", "name": "Melbourne", "addressRegion": "VIC", "addressCountry": "AU" },
+        "url": `https://ptebtuning.com/tuning-guide#${brand.id}`,
+      },
+    }))
+  ),
 };
 
 const unifiedSchema = {

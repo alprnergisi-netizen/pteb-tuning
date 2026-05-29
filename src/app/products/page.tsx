@@ -4,20 +4,24 @@ import { ChevronRight, Check, AlertTriangle, Shield, Zap, Clock, Users } from "l
 import { HoodieGallery } from "@/components/ui/HoodieGallery";
 import { HoodieCheckout, HoodieCheckoutFallback } from "@/components/ui/HoodieCheckout";
 import { WarportProductImage } from "@/components/warport/WarportProductImage";
+import { WarportCheckout, WarportCheckoutFallback } from "@/components/warport/WarportCheckout";
 
-const HOODIE_HANDLE = process.env.SHOPIFY_HOODIE_HANDLE ?? "tuned-by-pteb-hoodie";
+const shopifyReady = !!(
+  process.env.SHOPIFY_STORE_DOMAIN && process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN
+);
 
-async function getHoodieVariants() {
-  if (!process.env.SHOPIFY_STORE_DOMAIN || !process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN) {
-    return null;
-  }
+async function getVariants(handle: string) {
+  if (!shopifyReady) return null;
   try {
     const { getProductVariants } = await import("@/lib/shopify");
-    return await getProductVariants(HOODIE_HANDLE);
+    return await getProductVariants(handle);
   } catch {
     return null;
   }
 }
+
+const HOODIE_HANDLE  = process.env.SHOPIFY_HOODIE_HANDLE  ?? "tuned-by-pteb-hoodie";
+const WARPORT_HANDLE = process.env.SHOPIFY_WARPORT_HANDLE ?? "pteb-warport";
 
 export const metadata: Metadata = {
   title: "PTEB Warport — Remote ECU Tuning Device $499 | Shop PTEB",
@@ -93,7 +97,11 @@ const productSchema = {
 };
 
 export default async function ProductsPage() {
-  const variants = await getHoodieVariants();
+  const [hoodieVariants, warportVariants] = await Promise.all([
+    getVariants(HOODIE_HANDLE),
+    getVariants(WARPORT_HANDLE),
+  ]);
+  const variants = hoodieVariants;
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -185,16 +193,11 @@ export default async function ProductsPage() {
                 </p>
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/warport" className="flex-1 text-center py-4 bg-[#FC222D] text-white text-sm font-black tracking-widest uppercase hover:bg-[#CC1B25] transition-colors">
-                  Learn More
-                </Link>
-                <Link href="/contact" className="flex-1 text-center py-4 border border-[#2A2A2A] text-white text-sm font-black tracking-widest uppercase hover:border-[#FC222D] hover:bg-[#FC222D]/5 transition-all">
-                  Get Pre-Approval
-                </Link>
-              </div>
-              <p className="text-[11px] text-[#4B5563] text-center mt-3">Pre-approval is free · No obligation</p>
+              {/* Checkout */}
+              {warportVariants
+                ? <WarportCheckout variants={warportVariants} />
+                : <WarportCheckoutFallback />
+              }
             </div>
           </div>
         </div>

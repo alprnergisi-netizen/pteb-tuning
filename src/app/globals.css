@@ -219,12 +219,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* ── Gradient text ─────────────────────────────────────────────────── */
+/* ── Red accent text ───────────────────────────────────────────────── */
 .text-gradient-red {
-  background: linear-gradient(135deg, #FC222D 0%, #FF4444 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #FC222D;
 }
 
 /* ── Card hover ────────────────────────────────────────────────────── */

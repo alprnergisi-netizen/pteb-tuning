@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
     await Promise.all([
       // Admin notification
       resend.emails.send({
-        from: 'PTEB Warport <noreply@ptebtuning.com>',
+        from: 'PTEB Warport <onboarding@resend.dev>',
         to: env.ADMIN_EMAIL ?? 'prestigeteamhelp@gmail.com',
         subject: `New Warport Lead — ${safeName} · ${safeVehicle}`,
         html: `
@@ -104,7 +104,7 @@ export async function POST(req: NextRequest) {
 
       // Customer confirmation
       resend.emails.send({
-        from: 'PTEB Tuning <noreply@ptebtuning.com>',
+        from: 'PTEB Tuning <onboarding@resend.dev>',
         to: safeEmail,
         subject: 'Warport Pre-Approval Request Received — PTEB',
         html: `

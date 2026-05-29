@@ -5,8 +5,8 @@ const isDev = process.env.NODE_ENV === "development";
 // unsafe-eval is needed by React in development for call-stack reconstruction.
 // It is intentionally excluded from production.
 const scriptSrc = isDev
-  ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
-  : "script-src 'self' 'unsafe-inline'";
+  ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://app.cal.com"
+  : "script-src 'self' 'unsafe-inline' https://app.cal.com";
 
 const CSP = [
   "default-src 'self'",

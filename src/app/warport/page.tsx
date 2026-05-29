@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AlertTriangle, Phone, CheckCircle } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 import { WarportHero } from "@/components/warport/WarportHero";
 import { WarportFeatures } from "@/components/warport/WarportFeatures";
-import { WarportLeadForm } from "@/components/warport/WarportLeadForm";
 
 export const metadata: Metadata = {
   title: "Remote ECU Tuning Worldwide — PTEB Warport OBD2 Tuning Device | $499",
@@ -219,56 +218,6 @@ export default function WarportPage() {
         </div>
       </section>
 
-      {/* ── Lead Form ────────────────────────────────────────────────── */}
-      <section id="apply" className="py-20 md:py-28 bg-[#0a0a0a] border-t border-[#1E1E1E]" style={{ backgroundColor: '#0a0a0a' }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-[1fr_480px] gap-16 items-start">
-
-            {/* Left — context */}
-            <div className="lg:sticky lg:top-28">
-              <p className="eyebrow mb-5">Free pre-approval</p>
-              <h2 className="text-4xl md:text-5xl font-black uppercase text-white leading-tight mb-6">
-                Check your<br />
-                <span className="text-[#FC222D]">compatibility.</span>
-              </h2>
-              <p className="text-[#9CA3AF] leading-relaxed mb-8">
-                Not every vehicle is supported. Fill in your details and we&apos;ll check Warport compatibility for your specific platform before you spend anything.
-              </p>
-
-              <ul className="space-y-4 mb-10">
-                {[
-                  { title: "Free check",    desc: "No payment until you're confirmed" },
-                  { title: "24h response",  desc: "We reply fast — usually same day" },
-                  { title: "No obligation", desc: "Walk away at any point, no pressure" },
-                  { title: "Expert eyes",   desc: "Besim personally reviews every lead" },
-                ].map(({ title, desc }) => (
-                  <li key={title} className="flex items-start gap-3">
-                    <CheckCircle size={16} className="text-[#FC222D] shrink-0 mt-0.5" aria-hidden="true" />
-                    <div>
-                      <p className="text-white text-sm font-semibold">{title}</p>
-                      <p className="text-[#6B7280] text-xs">{desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="p-5 border border-[#1E1E1E] bg-[#111]">
-                <p className="text-xs text-[#6B7280] mb-2 uppercase tracking-wide">Or reach us directly</p>
-                <a href="https://wa.me/61422300859" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white text-sm font-semibold hover:text-[#FC222D] transition-colors">
-                  <Phone size={14} aria-hidden="true" />
-                  WhatsApp 0422 300 859
-                </a>
-              </div>
-            </div>
-
-            {/* Right — form */}
-            <div className="border border-[#1E1E1E] bg-[#111] p-8">
-              <WarportLeadForm />
-            </div>
-
-          </div>
-        </div>
-      </section>
     </>
   );
 }

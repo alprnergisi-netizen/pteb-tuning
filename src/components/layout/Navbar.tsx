@@ -182,7 +182,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-4 shrink-0">
           <a
             href="tel:+61422300859"
-            className="flex items-center gap-2 text-sm text-[#9CA3AF] hover:text-white transition-colors"
+            className="flex items-center gap-2 text-sm text-white hover:text-white transition-colors"
             aria-label="Call PTEB Tuning"
           >
             <Phone size={14} aria-hidden="true" />
@@ -224,14 +224,14 @@ export function Navbar() {
               ? children.map((child) => ({ href: child.href, label: child.label, parent: label }))
               : [{ href, label, parent: null as string | null }]
           ).map(({ href, label, parent }) => (
-            <li key={href + label}>
+            <li key={(parent ?? '') + href + label}>
               <Link
                 href={href}
                 className={cn(
-                  "flex items-center justify-between px-3 py-3 text-sm font-medium tracking-wider uppercase border-l-2 transition-all",
+                  "flex items-center justify-between px-3 py-3 text-sm font-medium tracking-wider uppercase rounded-sm transition-all",
                   pathname === href
-                    ? "border-[#FC222D] text-white pl-5"
-                    : "border-transparent text-[#9CA3AF] hover:text-white hover:border-[#FC222D] hover:pl-5"
+                    ? "bg-[#FC222D]/10 text-white"
+                    : "text-[#9CA3AF] hover:text-white hover:bg-white/5"
                 )}
               >
                 <span>{label}</span>

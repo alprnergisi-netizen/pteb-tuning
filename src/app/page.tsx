@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { ChevronRight, Gauge, Cpu, Box, Phone, Search, BarChart2, ShieldCheck, FileText } from "lucide-react";
+import { ChevronRight, Phone, Search, BarChart2, ShieldCheck, FileText } from "lucide-react";
 import { WarportTilt } from "@/components/home/WarportTilt";
 import { ReviewsCarousel } from "@/components/home/ReviewsCarousel";
 
@@ -10,6 +10,8 @@ const SocialFeed = dynamic(
   () => import("@/components/home/SocialFeed").then((m) => m.SocialFeed),
   { loading: () => <div className="h-64 bg-[#0D0D0D] animate-pulse rounded" /> }
 );
+
+import { Warport3DViewerClient } from "@/components/warport/Warport3DViewerClient";
 
 export const metadata: Metadata = {
   title: "ECU Tuning Melbourne — Custom Dyno Tune for BMW, Audi, VW | PTEB",
@@ -33,7 +35,7 @@ const homepageSchema = {
       "alternateName": "PTEB Tuning",
       "url": "https://ptebtuning.com",
       "logo": "https://ptebtuning.com/logo.png",
-      "description": "Melbourne's specialist ECU and TCU tuning workshop. PTEB delivers fully custom dyno-mapped calibrations for European performance vehicles — Audi, BMW, Volkswagen, Mercedes-AMG, and Porsche. 500+ cars tuned. 5.0 Google rating. Australia-wide remote tuning via the PTEB Warport.",
+      "description": "Melbourne's specialist ECU and TCU tuning workshop. PTEB delivers fully custom dyno-mapped calibrations for European performance vehicles — Audi, BMW, Volkswagen, Mercedes-AMG, and Porsche. 4.9 Google rating. Australia-wide remote tuning via the PTEB Warport.",
       "areaServed": { "@type": "Country", "name": "Australia" },
       "address": { "@type": "PostalAddress", "addressLocality": "Melbourne", "addressRegion": "VIC", "addressCountry": "AU" },
       "contactPoint": { "@type": "ContactPoint", "telephone": "+61422300859", "contactType": "customer service", "availableLanguage": "English" },
@@ -41,7 +43,7 @@ const homepageSchema = {
         "https://instagram.com/ptebtuning",
         "https://www.tiktok.com/@prestigeteameuroboost"
       ],
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47", "bestRating": "5" }
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "48", "bestRating": "5" }
     },
     {
       "@type": "FAQPage",
@@ -119,12 +121,12 @@ export default function HomePage() {
 
             <p className="text-base text-[#9CA3AF] mb-10 max-w-lg leading-relaxed" style={{ letterSpacing: '0.01em' }}>
               Melbourne&apos;s specialist for custom ECU & TCU remapping on European performance cars.
-              500+ vehicles tuned. BMW, Audi, VW, Mercedes, Porsche — every result dyno-logged and road-verified.
+              BMW, Audi, VW, Mercedes, Porsche — every result dyno-logged and road-verified.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[#FC222D] text-white text-sm font-bold tracking-widest uppercase hover:bg-[#CC1B25] transition-colors"
               >
                 Book Your Tune
@@ -150,9 +152,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap items-center justify-center md:justify-between gap-x-8 gap-y-2 py-3">
             {[
-              { icon: "★", text: "5.0 Google Rating · 47 Reviews" },
-              { icon: "✓", text: "500+ Cars Dyno Verified" },
-              { icon: "◎", text: "100% Custom Maps — Never Off-the-Shelf" },
+              { icon: "★", text: "Rated Top ECU Tuner in Melbourne" },
+              { icon: "✓", text: "Every Car Dyno-Logged & Road-Verified" },
+              { icon: "◎", text: "Fully Custom Maps — Never Off-the-Shelf" },
               { icon: "⟳", text: "Reply Within 24 Hours" },
             ].map(({ icon, text }) => (
               <div key={text} className="flex items-center gap-2 shrink-0">
@@ -245,8 +247,8 @@ export default function HomePage() {
               {/* Benefit stack — rapid fire */}
               <ul className="space-y-3 mb-10">
                 {[
-                  { stat: "7 days", label: "average delivery to your door, Australia-wide" },
-                  { stat: "100%", label: "custom calibration — never an off-the-shelf map" },
+                  { stat: "Fast", label: "delivery to your door, anywhere in Australia" },
+                  { stat: "Fully", label: "custom calibration — never an off-the-shelf map" },
                   { stat: "Free", label: "pre-approval check before you spend a cent" },
                 ].map(({ stat, label }) => (
                   <li key={stat} className="flex items-center gap-4">
@@ -260,7 +262,7 @@ export default function HomePage() {
               </ul>
 
               {/* Warport nudge */}
-              <div className="p-5 border-l-4 border-[#FC222D] bg-[#FFF5F5] mb-8">
+              <div className="p-5 border border-[#FC222D]/30 bg-[#FC222D]/5 mb-8">
                 <p className="text-xs font-bold text-[#6B7280] uppercase tracking-widest mb-1">Consider the alternative</p>
                 <p className="text-sm text-[#374151]">
                   A workshop dyno tune requires you to physically bring your car in. With the <strong className="text-[#FC222D]">PTEB Warport</strong>, PTEB calibrates your ECU remotely — no matter where you are. No travel, no waiting for a dyno slot, and all tuning is handled exclusively by PTEB.
@@ -275,7 +277,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="text-sm text-[#6B7280]">
-                  <span className="text-black font-bold">500+ vehicles</span> tuned across Australia
+                  <span className="text-black font-bold">Trusted</span> by drivers across Australia
                 </p>
               </div>
 
@@ -299,26 +301,22 @@ export default function HomePage() {
 
             {/* Right — product visual */}
             <div className="flex flex-col items-center gap-8" data-reveal-child>
-              <WarportTilt />
+              <div className="w-full rounded overflow-hidden">
+                <Warport3DViewerClient variant="light" height={480} />
+              </div>
 
-              {/* Power result cards */}
-              <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
-                {[
-                  { car: "BMW M4 F82", gain: "+74 kW", result: "334 kW" },
-                  { car: "Audi RS3 DAZA", gain: "+68 kW", result: "318 kW" },
-                  { car: "VW Golf R MK7", gain: "+80 kW", result: "280 kW" },
-                  { car: "Audi TT 2.0T", gain: "+131 kW", result: "300 kW" },
-                ].map(({ car, gain, result }) => (
-                  <div key={car} className="p-4 border border-[#E5E7EB] bg-[#F9FAFB]">
-                    <p className="text-[10px] text-[#9CA3AF] uppercase tracking-widest mb-1">{car}</p>
-                    <p className="text-xl font-black text-black font-heading">{result}</p>
-                    <p className="text-xs font-bold text-[#FC222D]">{gain} gain</p>
+              <div className="w-full max-w-sm space-y-3">
+                {["BMW M4 F82", "Audi RS3 DAZA", "VW Golf R MK7", "Audi TT 2.0T"].map((car) => (
+                  <div key={car} className="flex items-center gap-3 p-4 border border-[#E5E7EB] bg-[#F9FAFB]">
+                    <span className="w-2 h-2 rounded-full bg-[#FC222D] shrink-0" aria-hidden="true" />
+                    <p className="text-sm font-bold text-black">{car}</p>
+                    <span className="ml-auto text-[10px] font-bold uppercase tracking-widest text-[#FC222D]">Tuned</span>
                   </div>
                 ))}
               </div>
 
               <Link href="/our-work" className="text-xs font-bold uppercase tracking-widest text-[#6B7280] hover:text-black transition-colors flex items-center gap-1">
-                See all dyno results <ChevronRight size={12} />
+                See our work <ChevronRight size={12} />
               </Link>
             </div>
 
@@ -326,58 +324,89 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Zero failures statement */}
+      <section className="py-24 bg-black border-y border-[#1a1a1a]" data-scroll-reveal aria-label="Safety record">
+        <div className="container mx-auto px-6 text-center" data-reveal-child>
+          <p
+            className="font-black text-white font-heading leading-none mb-4"
+            style={{
+              fontSize: "clamp(6rem, 22vw, 18rem)",
+              WebkitTextStroke: "0.22em #FC222D",
+              paintOrder: "stroke fill",
+            }}
+            aria-hidden="true"
+          >
+            0
+          </p>
+          <h2 className="text-white font-black uppercase text-2xl sm:text-3xl mb-3 font-heading">
+            Engines blown up — across every car we&apos;ve ever tuned.
+          </h2>
+          <p className="text-white text-base max-w-md mx-auto leading-relaxed">
+            Every calibration is built conservatively from scratch — safety margins are non-negotiable. Not one customer has left with a worse engine than they arrived with.
+          </p>
+        </div>
+      </section>
+
       {/* Services Overview */}
       <section className="py-24 bg-[#111111]" data-scroll-reveal aria-labelledby="services-heading">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16" data-reveal-child>
+          <div className="mb-12" data-reveal-child>
             <h2
               id="services-heading"
               className="text-white text-3xl sm:text-4xl font-black uppercase"
-             
             >
               ECU Tuning Services &amp; Performance Calibration
             </h2>
-            <p className="text-[#888888] mt-4">Custom dyno tuning, engine rebuilding, and advanced performance parts for European vehicles.</p>
+            <p className="text-[#888888] mt-3 max-w-xl">Custom dyno tuning, engine rebuilding, and advanced performance parts for European vehicles.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="divide-y divide-[#1a1a1a]" data-reveal-child>
             {[
               {
-                icon: Gauge,
-                title: "Custom Tuning",
-                desc: "Precision ECU & TCU remapping on our in-house dyno to unlock maximum safe power and drivability.",
+                num: "01",
+                title: "Custom ECU & TCU Tuning",
+                desc: "Precision remapping on our in-house dyno — boost, fuelling, ignition, launch control, anti-lag, flex fuel. Every result logged and road-verified.",
                 href: "/tuning-guide",
-                cta: "Learn More",
+                cta: "View Services",
               },
               {
-                icon: Cpu,
+                num: "02",
+                title: "DSG & Transmission Service",
+                desc: "Specialist repair and calibration of VW Group dual-clutch transmissions — DQ200, DQ250, DQ381 and beyond. Mechatronic replacement, software flash, and full drivetrain diagnostics.",
+                href: "/contact",
+                cta: "Enquire",
+              },
+              {
+                num: "03",
+                title: "Mechatronic Repair",
+                desc: "DSG mechatronic unit rebuild and replacement. We stock and service units for the full VW Group range. Genuine diagnosis before any part is replaced.",
+                href: "/contact",
+                cta: "Enquire",
+              },
+              {
+                num: "04",
                 title: "Engine Rebuilding",
-                desc: "From routine maintenance to full performance builds, we treat every engine with the highest level of care.",
-                href: "/warport",
-                cta: "Learn More",
+                desc: "From routine maintenance to full Stage 3+ performance builds, every engine is treated with the same obsessive attention to detail.",
+                href: "/contact",
+                cta: "Enquire",
               },
               {
-                icon: Box,
+                num: "05",
                 title: "Performance Parts",
-                desc: "Shop our curated collection of PTEB branded hardware including blow off valves, intakes, and stage kits.",
+                desc: "Curated PTEB-branded hardware — blow-off valves, intakes, and stage kits engineered to complement a proper custom tune.",
                 href: "/products",
                 cta: "Shop Now",
               },
-            ].map(({ icon: Icon, title, desc, href, cta }) => (
-              <div key={title} className="group p-8 bg-[#0a0a0a] border border-[#1a1a1a] hover:border-[#FC222D]/50 transition-all duration-300">
-                <Icon className="text-[#FC222D] mb-6" size={48} aria-hidden="true" />
-                <h3
-                  className="text-white uppercase font-black mb-4 text-xl"
-                 
-                >
-                  {title}
-                </h3>
-                <p className="text-[#888888] text-sm leading-relaxed mb-6">
-                  {desc}
-                </p>
+            ].map(({ num, title, desc, href, cta }) => (
+              <div key={title} className="group grid grid-cols-[3rem_1fr] md:grid-cols-[4rem_1fr_auto] gap-x-6 gap-y-2 py-8 items-start hover:bg-[#0a0a0a] -mx-6 px-6 transition-colors duration-300">
+                <span className="text-2xl font-black text-[#FC222D] font-heading tabular-nums pt-0.5" aria-hidden="true">{num}</span>
+                <div>
+                  <h3 className="text-white uppercase font-black text-xl mb-2">{title}</h3>
+                  <p className="text-[#888888] text-sm leading-relaxed max-w-lg">{desc}</p>
+                </div>
                 <Link
                   href={href}
-                  className="text-[#FC222D] uppercase text-xs font-bold tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all"
+                  className="col-start-2 md:col-start-auto text-[#FC222D] uppercase text-xs font-bold tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all mt-3 md:mt-1 self-center shrink-0"
                 >
                   {cta} <ChevronRight size={14} aria-hidden="true" />
                 </Link>
@@ -391,11 +420,6 @@ export default function HomePage() {
       <section className="py-32" style={{ background: 'linear-gradient(to bottom, #0a0a0a, #111111)' }} data-scroll-reveal aria-labelledby="features-heading">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-20" data-reveal-child>
-            <p className="eyebrow justify-center mb-4">
-              <span className="block w-5 h-px bg-[#FC222D] shrink-0" aria-hidden="true" />
-              What's included
-              <span className="block w-5 h-px bg-[#FC222D] shrink-0" aria-hidden="true" />
-            </p>
             <h2
               id="features-heading"
               className="text-white mb-6 leading-tight font-black font-heading"
@@ -422,8 +446,7 @@ export default function HomePage() {
               <div key={feature.num} className="group relative overflow-hidden">
                 <div className="relative p-6 bg-[#111111] border border-[#1a1a1a] hover:border-[#FC222D]/50 transition-all duration-300 h-full">
                   <div
-                    className="text-3xl font-black text-[#FC222D]/20 mb-3"
-                    style={{ fontFamily: "monospace" }}
+                    className="text-3xl font-black text-[#FC222D] mb-3 font-heading tabular-nums"
                     aria-hidden="true"
                   >
                     {feature.num}
@@ -492,12 +515,12 @@ export default function HomePage() {
               </h2>
 
               {/* SEO/AEO paragraph — answers "who is PTEB?" for AI engines */}
-              <div className="space-y-5 text-white text-base leading-[1.85]">
+              <div className="space-y-5 text-white text-base leading-[1.85] max-w-[65ch]">
                 <p>
                   <strong className="text-[#FC222D]">Prestige Team Euro Boost (PTEB)</strong> is Melbourne&apos;s dedicated European performance tuning workshop, staffed by specialists with over 15 years of hands-on ECU calibration experience. Based in Melbourne, Victoria, PTEB delivers fully custom ECU and TCU remapping for Audi, BMW, Volkswagen, Mercedes-AMG, and Porsche — every result dyno-logged and road-verified before delivery.
                 </p>
                 <p>
-                  Unlike generic tuning shops that flash off-the-shelf maps, PTEB builds each calibration from scratch: custom boost curves, bespoke fuelling tables, and precision ignition timing tailored to your specific vehicle, modifications, and fuel grade. With 500+ cars tuned and a 5.0 Google rating backed by 47 verified reviews, the results speak for themselves.
+                  Unlike generic tuning shops that flash off-the-shelf maps, PTEB builds each calibration from scratch: custom boost curves, bespoke fuelling tables, and precision ignition timing tailored to your specific vehicle, modifications, and fuel grade. The reputation speaks for itself — built entirely on results, not promises.
                 </p>
                 <p>
                   PTEB also operates <strong className="text-[#FC222D]">Australia-wide via the PTEB Warport</strong> — a proprietary OBD2 remote tuning device that lets the PTEB team calibrate your ECU from anywhere in the country. No workshop visit. No waiting weeks for a dyno slot. The same full custom tune, delivered remotely through the PTEB app.
@@ -590,8 +613,8 @@ export default function HomePage() {
                     </svg>
                   ))}
                 </div>
-                <span className="text-white font-bold text-sm">5.0</span>
-                <span className="text-[#6B7280] text-xs">· 47 reviews · Google</span>
+                <span className="text-white font-bold text-sm">4.9</span>
+                <span className="text-[#6B7280] text-xs">· 48 reviews · Google</span>
               </div>
             </div>
             <a
@@ -614,14 +637,9 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12" data-reveal-child>
             <div>
-              <p className="eyebrow mb-2">
-                <span className="block w-5 h-px bg-[#FC222D] shrink-0" aria-hidden="true" />
-                Follow along
-              </p>
               <h2
                 id="social-heading"
-                className="text-3xl sm:text-4xl font-black uppercase text-white mt-2"
-               
+                className="text-3xl sm:text-4xl font-black uppercase text-white"
               >
                 Latest From PTEB
               </h2>
@@ -641,30 +659,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-[#111111] border-y border-[#2a2a2a]" data-scroll-reveal>
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "500+", label: "Cars Tuned" },
-              { value: "15+", label: "Years Experience" },
-              { value: "1000+", label: "Happy Clients" },
-              { value: "100%", label: "Dyno Verified" },
-            ].map(({ value, label }) => (
-              <div key={label} data-reveal-child>
-                <div
-                  className="text-4xl sm:text-5xl font-black text-white mb-2 font-heading"
-                 
-                >
-                  {value}
-                </div>
-                <div className="text-[#FC222D] text-xs uppercase tracking-widest font-bold">{label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Trust + Contact Section */}
       <section className="bg-[#0a0a0a] border-y border-[#1a1a1a] py-20" data-scroll-reveal>
         <div className="max-w-7xl mx-auto px-6">
@@ -672,10 +666,10 @@ export default function HomePage() {
           {/* Trust grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#1a1a1a] mb-16" data-reveal-child>
             {[
-              { value: "5.0 ★", sub: "Google Rating", detail: "47+ verified reviews" },
-              { value: "500+",  sub: "Cars Tuned",    detail: "Dyno-logged & road-verified" },
-              { value: "100%",  sub: "Custom Maps",   detail: "Never an off-the-shelf file" },
-              { value: "< 24h", sub: "Response Time", detail: "We reply fast, always" },
+              { value: "Top Rated", sub: "On Google",      detail: "Melbourne's most trusted ECU tuner" },
+              { value: "Every Car", sub: "Dyno Verified",  detail: "Logged and road-confirmed before delivery" },
+              { value: "Always",    sub: "Custom Maps",    detail: "Never an off-the-shelf file" },
+              { value: "Fast",      sub: "Response Time",  detail: "We reply same day, always" },
             ].map(({ value, sub, detail }) => (
               <div key={sub} className="bg-[#0a0a0a] p-8 text-center">
                 <p className="text-3xl font-black text-white font-heading mb-1">{value}</p>

@@ -1,98 +1,97 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import env from '@/env';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 const DEPARTMENTS = [
   {
-    id: 'tuning',
+    id: 'tuning' as const,
+    namespace: 'dyno-tune',
     label: 'Dyno Tuning',
     desc: 'Custom ECU / TCU calibration, flex fuel, anti-lag, launch control',
-    calLink: env.NEXT_PUBLIC_CALCOM_TUNING_LINK,
+    calLink: 'prestige-team-euroboost-stxpvl/dyno-tune',
+    cssVars: { 'cal-brand': '#ca1313' },
   },
   {
-    id: 'mechanic',
+    id: 'mechanic' as const,
+    namespace: 'mechanic',
     label: 'Mechanic Services',
-    desc: 'Engine builds, servicing, diagnostics, supporting hardware',
-    calLink: env.NEXT_PUBLIC_CALCOM_MECHANIC_LINK,
+    desc: 'Engine builds, servicing, diagnostics, DSG / mechatronic repair',
+    calLink: 'prestige-team-euroboost-stxpvl/mechanic',
+    cssVars: {},
   },
 ] as const;
 
+type DeptId = (typeof DEPARTMENTS)[number]['id'];
+
 declare global {
-  interface Window {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    Cal?: any;
-  }
+  interface Window { Cal?: any; }
+}
+
+function setupCal() {
+  if (window.Cal) return;
+  (function (C: any, A: string, L: string) {
+    const p = (a: any, ar: any) => { a.q.push(ar); };
+    const d = document;
+    C.Cal = C.Cal || function (...args: any[]) {
+      const cal = C.Cal;
+      if (!cal.loaded) {
+        cal.ns = {};
+        cal.q = cal.q || [];
+        d.head.appendChild(d.createElement('script')).src = A;
+        cal.loaded = true;
+      }
+      if (args[0] === L) {
+        const api = (...a: any[]) => p(api, a);
+        const ns = args[1];
+        (api as any).q = [];
+        if (typeof ns === 'string') {
+          cal.ns[ns] = cal.ns[ns] || api;
+          p(cal.ns[ns], args);
+          p(cal, ['initNamespace', ns]);
+        } else {
+          p(cal, args);
+        }
+        return;
+      }
+      p(cal, args);
+    };
+  })(window, 'https://app.cal.com/embed/embed.js', 'init');
 }
 
 export function BookingWidget() {
-  const [selected, setSelected] = useState<'tuning' | 'mechanic' | null>(null);
-  const scriptLoaded = useRef(false);
+  const [selected, setSelected] = useState<DeptId>('tuning');
+  const initialised = useRef(new Set<DeptId>());
 
-  // Load Cal.com embed script once
+  useEffect(() => { setupCal(); }, []);
+
   useEffect(() => {
-    if (scriptLoaded.current) return;
-    scriptLoaded.current = true;
+    if (initialised.current.has(selected)) return;
+    initialised.current.add(selected);
 
-    (function (C: Window, A: string, L: string) {
-      const p = (a: { q: unknown[] }, ar: unknown) => { a.q.push(ar); };
-      const d = document;
-      C.Cal = C.Cal || function (...args: unknown[]) {
-        const cal = C.Cal!;
-        if (!cal.loaded) {
-          cal.ns = {};
-          cal.q = cal.q || [];
-          const s = d.createElement('script') as HTMLScriptElement;
-          s.src = A;
-          d.head.appendChild(s);
-          cal.loaded = true;
-        }
-        if (args[0] === L) {
-          const api = (...a: unknown[]) => p(api as unknown as { q: unknown[] }, a);
-          (api as unknown as { q: unknown[] }).q = [];
-          const ns = args[1] as string;
-          if (typeof ns === 'string') {
-            cal.ns[ns] = api;
-            p(api as unknown as { q: unknown[] }, args);
-          } else {
-            p(cal, args);
-          }
-          return;
-        }
-        p(cal, args);
-      };
-    })(window, 'https://app.cal.com/embed/embed.js', 'init');
-
-    window.Cal?.('init', { origin: 'https://app.cal.com' });
-  }, []);
-
-  // Init the inline embed whenever a department is selected
-  useEffect(() => {
-    if (!selected) return;
     const dept = DEPARTMENTS.find((d) => d.id === selected)!;
     const elId = `cal-embed-${selected}`;
 
+    // Cal queues all calls if embed.js hasn't loaded yet — no polling needed.
+    // But we need window.Cal to exist (setupCal runs on mount, so it will be).
     const tryInit = () => {
-      if (!window.Cal) { setTimeout(tryInit, 100); return; }
-      window.Cal('inline', {
+      if (!window.Cal) { setTimeout(tryInit, 50); return; }
+
+      // Calling Cal('init', namespace) both loads embed.js (first call) and
+      // sets up window.Cal.ns[namespace] synchronously as a queue.
+      window.Cal('init', dept.namespace, { origin: 'https://app.cal.com' });
+
+      window.Cal.ns[dept.namespace]('inline', {
         elementOrSelector: `#${elId}`,
+        config: { layout: 'month_view', useSlotsViewOnSmallScreen: 'true' },
         calLink: dept.calLink,
-        layout: 'month_view',
       });
-      window.Cal('ui', {
-        theme: 'dark',
-        hideEventTypeDetails: false,
+
+      window.Cal.ns[dept.namespace]('ui', {
+        cssVarsPerTheme: { dark: dept.cssVars },
+        hideEventTypeDetails: true,
         layout: 'month_view',
-        cssVarsPerTheme: {
-          dark: {
-            'cal-brand': '#FC222D',
-            'cal-bg': '#0D0D0D',
-            'cal-bg-subtle': '#111111',
-            'cal-border': '#1E1E1E',
-            'cal-text': '#ffffff',
-            'cal-text-subtle': '#9CA3AF',
-          },
-        },
       });
     };
 
@@ -101,11 +100,8 @@ export function BookingWidget() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      {/* Department selector */}
       <div className="mb-8">
-        <p className="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-4">
-          Select department
-        </p>
+        <p className="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-4">Select department</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {DEPARTMENTS.map((dept) => (
             <button
@@ -129,19 +125,13 @@ export function BookingWidget() {
         </div>
       </div>
 
-      {/* Cal.com inline embed */}
+      {/* Always in DOM so Cal can find the element by ID */}
       {DEPARTMENTS.map((dept) => (
         <div
           key={dept.id}
-          className={`border border-[#1E1E1E] overflow-hidden transition-all ${
-            selected === dept.id ? 'block' : 'hidden'
-          }`}
-          style={{ minHeight: 700 }}
+          className={selected === dept.id ? 'block border border-[#1E1E1E]' : 'hidden'}
         >
-          <div
-            id={`cal-embed-${dept.id}`}
-            style={{ width: '100%', height: '700px', overflow: 'scroll' }}
-          />
+          <div id={`cal-embed-${dept.id}`} style={{ width: '100%', height: '700px', overflow: 'scroll' }} />
         </div>
       ))}
 

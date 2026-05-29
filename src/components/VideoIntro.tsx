@@ -24,7 +24,12 @@ export function VideoIntro() {
     const rows = [nav, ...sections].filter(Boolean) as HTMLElement[];
 
     rows.forEach((el, i) => {
-      el.style.transition = `opacity 0.65s ease ${i * 0.1}s, transform 0.65s ease ${i * 0.1}s`;
+      // Nav: quick at 0.1s delay. Hero (i=1): 0.35s delay with long duration.
+      // Each subsequent section adds 0.18s more.
+      const delay = i === 0 ? 0.1 : 0.35 + (i - 1) * 0.18;
+      const duration = i === 0 ? 0.7 : 1.2;
+      const easing = 'cubic-bezier(0.16, 1, 0.3, 1)';
+      el.style.transition = `opacity ${duration}s ${easing} ${delay}s, transform ${duration}s ${easing} ${delay}s`;
       el.classList.add('intro-revealed');
     });
   }, []);
