@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Remote ECU Tuning Worldwide — PTEB Warport | $499 AUD",
     description: "Custom ECU tuning delivered remotely anywhere in the world. Plug into OBD, connect via our software, get a full dyno-quality tune without leaving home. $499 device + custom calibration.",
     url: "/warport",
+    images: [{ url: "/ptebtunedby.jpg", width: 1200, height: 630, alt: "PTEB Warport — Remote OBD2 ECU Tuning Device" }],
   },
 };
 

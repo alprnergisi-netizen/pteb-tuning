@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Dyno Tuning Results — BMW M4 334kW, Audi RS3 318kW | PTEB",
     description: "Documented dyno results: BMW M4 Competition 334kW, Audi RS3 318kW, VW Golf R 280kW. All results logged on Dyno Innovations equipment and road-verified.",
     url: "/our-work",
+    images: [{ url: "/builds/bmw-m4-dyno.png", width: 1200, height: 630, alt: "BMW M4 Competition dyno graph — 334kW tuned by PTEB" }],
   },
 };
 

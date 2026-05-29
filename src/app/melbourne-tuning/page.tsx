@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "ECU Tuning Melbourne — Custom Dyno Tune | PTEB Specialist",
     description: "Melbourne's specialist ECU tuning workshop. Custom dyno maps for BMW, Audi, VW, Mercedes, Porsche — all results dyno-logged on Dyno Innovations equipment and road-verified. 500+ cars tuned.",
     url: "/melbourne-tuning",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/dynoimage.jpg", width: 1200, height: 630, alt: "PTEB Tuning Melbourne — Custom Dyno ECU Remapping" }],
   },
 };
 

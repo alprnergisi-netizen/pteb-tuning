@@ -85,10 +85,28 @@ const homepageSchema = {
   ]
 };
 
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "PTEB Tuning — Melbourne's ECU Remapping Specialist",
+  description: "PTEB Tuning showcase: custom ECU and TCU remapping for European performance vehicles in Melbourne. Audi, BMW, Volkswagen, Mercedes-AMG, Porsche — all results dyno-logged and road-verified.",
+  thumbnailUrl: "https://ptebtuning.com/poster.jpg",
+  contentUrl: "https://ptebtuning.com/hero.mp4",
+  uploadDate: "2025-01-01",
+  duration: "PT0M30S",
+  publisher: {
+    "@type": "Organization",
+    "@id": "https://ptebtuning.com/#business",
+    name: "PTEB Tuning",
+    logo: { "@type": "ImageObject", url: "https://ptebtuning.com/logo.png" },
+  },
+};
+
 export default function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
 
       {/* Hero Section */}
       <section className="hero h-[100dvh] relative flex items-center overflow-hidden bg-[#0a0a0a]">

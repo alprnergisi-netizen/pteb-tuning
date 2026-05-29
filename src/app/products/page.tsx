@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "PTEB Warport $499 — Remote ECU Tuning Device | Shop",
     description: "PTEB Warport: remote OBD2 ECU tuning device, $499 AUD. Full custom calibration delivered anywhere in Australia. Plus official PTEB merchandise.",
     url: "/products",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/ptebtunedby.jpg", width: 1200, height: 630, alt: "PTEB Warport — Remote ECU Tuning Device" }],
   },
 };
 

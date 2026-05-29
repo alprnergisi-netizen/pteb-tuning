@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Remote ECU Tuning Worldwide | PTEB Warport $499",
     description: "Custom ECU tuning delivered anywhere in the world. No workshop visit — plug the Warport into your OBD port and our tuner calibrates remotely. BMW, Audi, VW, Mercedes, Porsche.",
     url: "/remote-tuning",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/ptebtunedby.jpg", width: 1200, height: 630, alt: "PTEB Warport — Remote ECU Tuning Worldwide" }],
   },
 };
 

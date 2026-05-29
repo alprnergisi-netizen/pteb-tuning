@@ -12,7 +12,42 @@ export const metadata: Metadata = {
     title: "ECU Tuning Guide: Stage 1 vs Stage 2 vs Stage 3 & How It Works | PTEB",
     description: "Step-by-step guide to ECU remapping, dyno tuning, flex fuel, and performance calibration — with real dyno results from PTEB. Written by professional tuners.",
     url: "/tuning-guide",
+    type: "article",
+    images: [{ url: "/dynoimage.jpg", width: 1200, height: 630, alt: "PTEB Dyno Tuning — ECU Remapping Guide" }],
   },
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://ptebtuning.com/tuning-guide#article",
+  headline: "ECU Tuning Guide: How Dyno Tuning Works, Stage 1 vs Stage 2 vs Stage 3",
+  description: "A comprehensive guide to ECU tuning — how dyno mapping works, Stage 1 vs Stage 2 vs Stage 3 differences, flex fuel and E85 calibration, anti-lag, launch control, and per-brand tuning guides for Audi, BMW, VW, Mercedes, and Porsche.",
+  image: "https://ptebtuning.com/dynoimage.jpg",
+  datePublished: "2025-01-01",
+  dateModified: "2026-05-29",
+  author: {
+    "@type": "Person",
+    "@id": "https://ptebtuning.com/#besim",
+    name: "Besim",
+    jobTitle: "Lead Tuner & Founder",
+    worksFor: { "@id": "https://ptebtuning.com/#business" },
+  },
+  publisher: {
+    "@type": "Organization",
+    "@id": "https://ptebtuning.com/#business",
+    name: "PTEB Tuning",
+    logo: { "@type": "ImageObject", url: "https://ptebtuning.com/logo.png" },
+  },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://ptebtuning.com/tuning-guide" },
+  about: [
+    { "@type": "Thing", name: "ECU tuning" },
+    { "@type": "Thing", name: "Dyno tuning" },
+    { "@type": "Thing", name: "Engine remapping" },
+    { "@type": "Thing", name: "Flex fuel tuning" },
+    { "@type": "Thing", name: "Anti-lag systems" },
+  ],
+  keywords: "ECU tuning, dyno tuning, Stage 1, Stage 2, Stage 3, flex fuel, E85 tuning, anti-lag, launch control, Audi tuning, BMW tuning, Volkswagen tuning",
 };
 
 const TOC = [
@@ -292,29 +327,6 @@ const faqSchema = {
   })),
 };
 
-const articleSchema = {
-  "headline": "Complete Car Tuning Guide — ECU Remapping, Dyno Tuning & More",
-  "description":
-    "Comprehensive guide to ECU tuning, dyno remapping, flex fuel, and performance calibration for turbocharged vehicles.",
-  "author": {
-    "@type": "Organization",
-    name: "PTEB Tuning",
-    url: "https://ptebtuning.com",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "PTEB Tuning",
-    url: "https://ptebtuning.com",
-  },
-  about: [
-    { "@type": "Thing", name: "ECU tuning" },
-    { "@type": "Thing", name: "Engine remapping" },
-    { "@type": "Thing", name: "Dyno tuning" },
-    { "@type": "Thing", name: "Flex fuel tuning" },
-    { "@type": "Thing", name: "Turbo performance" },
-  ],
-};
-
 const vehiclePlatformsSchema = {
   "@type": "ItemList",
   "name": "Supported ECU Tuning Platforms — PTEB Melbourne",
@@ -389,6 +401,7 @@ export default function TuningGuidePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(unifiedSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
       <section className="border-b border-[#2a2a2a] overflow-hidden" style={{ backgroundColor: '#0a0a0a' }} aria-labelledby="guide-hero-heading">
