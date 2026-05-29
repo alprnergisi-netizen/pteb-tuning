@@ -153,7 +153,7 @@ export default function RemoteTuningPage() {
               { n: "04", title: "Flash & refine", body: "The tune is flashed via your phone. Live logs let us refine boost, timing, and fuelling until it's perfect." },
             ].map(({ n, title, body }) => (
               <div key={n} className="p-6 border border-[#1E1E1E]" style={{ backgroundColor: '#0a0a0a' }}>
-                <p className="text-4xl font-black font-heading text-[#FC222D]/20 mb-4">{n}</p>
+                <p className="text-4xl font-black font-heading text-[#FC222D] mb-4">{n}</p>
                 <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-2">{title}</h3>
                 <p className="text-xs leading-relaxed" style={{ color: '#6B7280' }}>{body}</p>
               </div>

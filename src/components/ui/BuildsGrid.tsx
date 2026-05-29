@@ -244,7 +244,7 @@ function SwipeOverlay({ builds, onClose }: { builds: Build[]; onClose: () => voi
                 <ChevronRight size={36} strokeWidth={2.5} />
               </button>
             </div>
-            <p className="text-[11px] text-white/30 mt-2 mb-2 tracking-wide shrink-0">
+            <p className="text-[11px] text-[#6B7280] mt-2 mb-2 tracking-wide shrink-0">
               ← drag or tap arrows to browse →
             </p>
           </>

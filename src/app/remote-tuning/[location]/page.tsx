@@ -173,7 +173,7 @@ export default async function LocationPage({ params }: { params: Promise<{ locat
               "The tune is flashed to your car via the app. Live data logs let us refine until it's perfect.",
             ].map((step, i) => (
               <li key={i} className="flex gap-4 items-start">
-                <span className="text-2xl font-black font-heading text-[#FC222D]/30 shrink-0 leading-tight">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-2xl font-black font-heading text-[#FC222D] shrink-0 leading-tight">{String(i + 1).padStart(2, "0")}</span>
                 <p className="text-sm leading-relaxed pt-1" style={{ color: '#9CA3AF' }}>{step}</p>
               </li>
             ))}

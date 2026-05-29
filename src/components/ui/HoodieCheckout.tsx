@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import type { ShopifyVariant } from "@/lib/shopify";
 
 interface Props {
@@ -116,12 +115,14 @@ export function HoodieCheckoutFallback() {
           ))}
         </div>
       </div>
-      <Link
-        href="/contact"
-        className="w-full block text-center py-4 bg-[#111] text-white text-sm font-bold tracking-widest uppercase hover:bg-[#FC222D] transition-colors mb-3"
+      <a
+        href={`https://wa.me/61422300859?text=${encodeURIComponent(`Hi PTEB, I'd like to order the Tuned By PTEB Hoodie${selected ? ` in size ${selected}` : ""}. $89.99 AUD. Please let me know how to proceed.`)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full block text-center py-4 bg-[#FC222D] text-white text-sm font-bold tracking-widest uppercase hover:bg-[#CC1B25] transition-colors mb-3"
       >
-        Enquire to Order
-      </Link>
+        {selected ? `Buy Now — $89.99 AUD` : "Buy Now"}
+      </a>
       <a
         href="https://wa.me/61422300859"
         target="_blank"

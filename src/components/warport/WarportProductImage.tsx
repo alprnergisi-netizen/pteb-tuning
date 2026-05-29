@@ -2,15 +2,20 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Warport3DViewerClient } from "./Warport3DViewerClient";
 
 export function WarportProductImage() {
   const [hovered, setHovered] = useState(false);
+  const router = useRouter();
 
   return (
-    <Link
-      href="/warport"
+    <div
+      role="link"
+      tabIndex={0}
+      aria-label="View PTEB Warport product page"
+      onClick={() => router.push("/warport")}
+      onKeyDown={(e) => e.key === "Enter" && router.push("/warport")}
       className="relative min-h-[420px] lg:min-h-[640px] bg-[#111111] overflow-hidden cursor-pointer block"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -47,6 +52,6 @@ export function WarportProductImage() {
       >
         <Warport3DViewerClient variant="dark" height="100%" />
       </div>
-    </Link>
+    </div>
   );
 }

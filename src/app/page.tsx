@@ -709,7 +709,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="text-white font-bold text-base mb-0.5">Call 0422 300 859</p>
-                <p className="text-[#6B7280] text-sm">Talk to the team directly — Mon–Sat, 8am–5pm</p>
+                <p className="text-[#6B7280] text-sm">Talk to the team directly — Mon–Fri 8am–5pm, Sat 9am–2pm</p>
               </div>
             </a>
           </div>

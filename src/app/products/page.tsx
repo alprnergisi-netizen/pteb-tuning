@@ -220,7 +220,7 @@ export default async function ProductsPage() {
               { step: "04", title: "Tune Delivered", desc: "We calibrate your ECU remotely and push your custom file. You feel the difference immediately." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="relative pl-6 border-l border-[#1E1E1E]">
-                <div className="text-5xl font-black text-[#FC222D]/15 leading-none mb-4" aria-hidden="true">{step}</div>
+                <div className="text-5xl font-black text-[#FC222D] leading-none mb-4" aria-hidden="true">{step}</div>
                 <div className="w-6 h-0.5 bg-[#FC222D] mb-4" aria-hidden="true" />
                 <h3 className="text-base font-black uppercase text-white mb-3">{title}</h3>
                 <p className="text-sm text-[#9CA3AF] leading-relaxed">{desc}</p>
