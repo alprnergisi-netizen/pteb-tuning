@@ -101,7 +101,7 @@ export function WarportHero() {
               }}
             >
               <Image
-                src="/products/warport-hero.png"
+                src="/products/warport-hero.jpg"
                 alt="PTEB Warport OBD2 remote tuning device"
                 width={480}
                 height={480}

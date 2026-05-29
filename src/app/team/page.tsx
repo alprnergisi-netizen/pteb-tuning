@@ -144,7 +144,7 @@ export default function TeamPage() {
                 alt="PTEB Tuning workshop — Besim, lead ECU tuner Melbourne"
                 fill
                 priority
-                quality={90}
+                quality={80}
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />

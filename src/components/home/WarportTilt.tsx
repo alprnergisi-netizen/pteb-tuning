@@ -40,7 +40,7 @@ export function WarportTilt() {
         }}
       >
         <Image
-          src="/products/warport-hero.png"
+          src="/products/warport-hero.jpg"
           alt="PTEB Warport OBD2 remote tuning device"
           width={520}
           height={520}

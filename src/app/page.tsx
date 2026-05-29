@@ -563,7 +563,7 @@ export default function HomePage() {
               data-reveal-child
             >
               <Image
-                src="/audi-tt.png"
+                src="/audi-tt.jpg"
                 alt="Audi TT on the PTEB dyno — Melbourne professional ECU tuning"
                 width={1200}
                 height={800}

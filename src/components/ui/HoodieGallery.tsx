@@ -28,7 +28,7 @@ export function HoodieGallery() {
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover object-top"
               priority={i === 0}
-              quality={90}
+              quality={80}
             />
           </div>
         ))}

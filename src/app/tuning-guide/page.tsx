@@ -440,7 +440,7 @@ export default function TuningGuidePage() {
                 alt="ECU tuning interface — PTEB performance calibration"
                 fill
                 priority
-                quality={90}
+                quality={80}
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 0vw, 640px"
               />

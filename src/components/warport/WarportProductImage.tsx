@@ -33,7 +33,7 @@ export function WarportProductImage() {
       >
         <div className="relative w-[58%] aspect-square">
           <Image
-            src="/products/warport-hero.png"
+            src="/products/warport-hero.jpg"
             alt="PTEB Warport OBD2 remote tuning device"
             fill
             sizes="(max-width: 1024px) 50vw, 30vw"

@@ -12,7 +12,7 @@ export function ScrollRevealManager() {
     function revealElement(el: Element) {
       el.classList.add("reveal");
       el.querySelectorAll("[data-reveal-child]").forEach((child, i) => {
-        setTimeout(() => child.classList.add("reveal"), i * 100);
+        setTimeout(() => child.classList.add("reveal"), i * 60);
       });
     }
 
@@ -36,7 +36,7 @@ export function ScrollRevealManager() {
             }
           });
         },
-        { threshold: 0.08, rootMargin: "0px 0px -60px 0px" }
+        { threshold: 0.05, rootMargin: "0px 0px 0px 0px" }
       );
 
       freshElements.forEach((el) => observer.observe(el));
@@ -48,7 +48,7 @@ export function ScrollRevealManager() {
         observer.disconnect();
         window.removeEventListener("scroll", onScroll);
       };
-    }, 80);
+    }, 30);
 
     return () => clearTimeout(timer);
   }, [pathname]);
