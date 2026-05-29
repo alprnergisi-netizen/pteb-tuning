@@ -37,7 +37,7 @@ const homepageSchema = {
       "logo": "https://ptebtuning.com/logo.png",
       "description": "Melbourne's specialist ECU and TCU tuning workshop. PTEB delivers fully custom dyno-mapped calibrations for European performance vehicles — Audi, BMW, Volkswagen, Mercedes-AMG, and Porsche. 4.9 Google rating. Australia-wide remote tuning via the PTEB Warport.",
       "areaServed": { "@type": "Country", "name": "Australia" },
-      "address": { "@type": "PostalAddress", "addressLocality": "Melbourne", "addressRegion": "VIC", "addressCountry": "AU" },
+      "address": { "@type": "PostalAddress", "streetAddress": "168 McIntyre Rd", "addressLocality": "Sunshine North", "addressRegion": "VIC", "postalCode": "3020", "addressCountry": "AU" },
       "contactPoint": { "@type": "ContactPoint", "telephone": "+61422300859", "contactType": "customer service", "availableLanguage": "English" },
       "sameAs": [
         "https://instagram.com/ptebtuning",

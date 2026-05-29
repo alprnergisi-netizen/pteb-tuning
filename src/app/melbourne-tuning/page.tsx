@@ -33,8 +33,10 @@ const schema = {
       telephone: "+61422300859",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Melbourne",
+        streetAddress: "168 McIntyre Rd",
+        addressLocality: "Sunshine North",
         addressRegion: "VIC",
+        postalCode: "3020",
         addressCountry: "AU",
       },
       geo: { "@type": "GeoCoordinates", latitude: -37.7591, longitude: 144.8299 },
