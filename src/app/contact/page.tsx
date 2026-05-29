@@ -54,22 +54,22 @@ const contactSchema = {
         {
           "@type": "Question",
           name: "How do I book an ECU tune with PTEB?",
-          acceptedAnswer: { "@type": "Answer", text: "Contact PTEB Tuning by phone (0422 300 859), WhatsApp, or the online enquiry form. Tell us your vehicle, current modifications, fuel type, and power goals. We'll confirm compatibility and provide a quote before you commit to anything." },
-        },
-        {
-          "@type": "Question",
-          name: "How do I book an ECU tune at PTEB?",
-          acceptedAnswer: { "@type": "Answer", text: "Contact PTEB Tuning by phone (0422 300 859), WhatsApp, or the online enquiry form. Tell us your vehicle, current modifications, fuel type, and goals. We'll pre-approve your vehicle and confirm exactly what your tune will deliver before you commit to anything." },
+          acceptedAnswer: { "@type": "Answer", text: "Contact PTEB Tuning by phone (0422 300 859), WhatsApp, or the online enquiry form. Tell us your vehicle, current modifications, fuel type, and power goals. We'll pre-approve your vehicle and confirm exactly what your tune will deliver before you commit to anything." },
         },
         {
           "@type": "Question",
           name: "Where is PTEB Tuning located?",
-          acceptedAnswer: { "@type": "Answer", text: "PTEB Tuning is based in Melbourne, Victoria, Australia. Contact us via phone or WhatsApp at 0422 300 859 to arrange a booking or get directions to the workshop." },
+          acceptedAnswer: { "@type": "Answer", text: "PTEB Tuning is located at 168 McIntyre Rd, Sunshine North VIC 3020, Melbourne, Australia. Open Monday to Friday 8am–5pm and Saturday 9am–2pm. Contact us via phone or WhatsApp at 0422 300 859 to arrange a booking." },
         },
         {
           "@type": "Question",
           name: "How long does a dyno tune take?",
           acceptedAnswer: { "@type": "Answer", text: "A full custom dyno tune typically takes 4–8 hours depending on the platform. This includes a pre-health inspection, baseline pull, iterative calibration, repeatability verification, and road validation. You receive full data logs and a dyno graph." },
+        },
+        {
+          "@type": "Question",
+          name: "Does PTEB offer remote ECU tuning?",
+          acceptedAnswer: { "@type": "Answer", text: "Yes. PTEB offers remote ECU tuning Australia-wide via the PTEB Warport — an OBD2 device that ships to you and allows our tuners to calibrate your engine remotely through the PTEB app. No workshop visit required. Available for BMW, Audi, VW, Mercedes, and Porsche platforms." },
         },
       ],
     },
@@ -239,8 +239,18 @@ export default function ContactPage() {
             <div className="flex items-start gap-3 text-sm text-[#9CA3AF]">
               <MapPin size={15} className="text-[#FC222D] mt-0.5 shrink-0" aria-hidden="true" />
               <div>
-                <p className="text-white font-medium mb-0.5">Service Area</p>
-                <p>Metro dyno appointments available. Remote tuning via PTEB Warport — Australia-wide, 7 business day delivery.</p>
+                <p className="text-white font-medium mb-0.5">Workshop Address</p>
+                <address className="not-italic">
+                  <a
+                    href="https://maps.google.com/?q=168+McIntyre+Rd+Sunshine+North+VIC+3020"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors underline underline-offset-2"
+                  >
+                    168 McIntyre Rd, Sunshine North VIC 3020
+                  </a>
+                </address>
+                <p className="mt-1 text-xs text-[#6B7280]">Remote tuning via PTEB Warport — Australia-wide.</p>
               </div>
             </div>
           </div>

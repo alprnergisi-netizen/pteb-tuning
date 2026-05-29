@@ -48,6 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${BASE_URL}/team`,
+      lastModified: new Date("2026-05-29"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
     // Melbourne local
     {
       url: `${BASE_URL}/melbourne-tuning`,

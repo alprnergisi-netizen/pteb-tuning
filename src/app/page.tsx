@@ -544,6 +544,14 @@ export default function HomePage() {
                   PTEB also operates <strong className="text-[#FC222D]">Australia-wide via the PTEB Warport</strong> — a proprietary OBD2 remote tuning device that lets the PTEB team calibrate your ECU from anywhere in the country. No workshop visit. No waiting weeks for a dyno slot. The same full custom tune, delivered remotely through the PTEB app.
                 </p>
               </div>
+              <div className="flex flex-wrap gap-3 mt-8">
+                <Link href="/team" className="inline-flex items-center gap-2 text-sm font-bold text-[#FC222D] uppercase tracking-widest hover:underline underline-offset-4 transition-colors">
+                  Meet the tuner <ChevronRight size={13} aria-hidden="true" />
+                </Link>
+                <Link href="/our-work" className="inline-flex items-center gap-2 text-sm font-bold text-white/60 uppercase tracking-widest hover:text-white transition-colors">
+                  See our work <ChevronRight size={13} aria-hidden="true" />
+                </Link>
+              </div>
             </div>
 
             <a
