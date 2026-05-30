@@ -342,22 +342,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Safety statement */}
-      <section className="py-24 bg-black border-y border-[#1a1a1a]" data-scroll-reveal aria-label="Safety record">
-        <div className="container mx-auto px-6 text-center" data-reveal-child>
-          <ShieldCheck
-            className="mx-auto mb-8 text-[#FC222D]"
-            style={{ width: 'clamp(4rem, 12vw, 8rem)', height: 'clamp(4rem, 12vw, 8rem)' }}
-            aria-hidden="true"
-          />
-          <h2 className="text-white font-black uppercase text-2xl sm:text-3xl lg:text-4xl mb-4 font-heading">
-            We have seen too many engine failures.
-          </h2>
-          <p className="text-[#9CA3AF] text-base max-w-md mx-auto leading-relaxed">
-            Not a single one has been ours. Every PTEB calibration is built to safe margins — conservative boost targets, verified fuelling, and real knock protection. Your engine leaves the workshop in better shape than it arrived.
-          </p>
-        </div>
-      </section>
 
       {/* Services Overview */}
       <section className="py-24 bg-[#111111]" data-scroll-reveal aria-labelledby="services-heading">
