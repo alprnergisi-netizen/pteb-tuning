@@ -4,14 +4,14 @@ import Image from "next/image";
 import { ChevronRight, Award, Wrench, MapPin, Car } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Besim — Lead Tuner & Founder | PTEB Tuning Melbourne",
-  description: "Besim is the founder and lead ECU tuner at PTEB Tuning Melbourne. 15+ years of hands-on calibration experience across BMW, Audi, Volkswagen, Mercedes-AMG, and Porsche. Specialist in Bosch MED17, MG1CS, Continental Simos platforms.",
+  title: "Besim Dani — Founder & Tuner | PTEB Tuning Melbourne",
+  description: "Besim Dani is the founder and tuner at PTEB Tuning Melbourne. An expert in V.A.G diagnostics specialising in VW/Audi software. Your go-to for racing builds and remote tuning support across Australia.",
   alternates: { canonical: "/team" },
   openGraph: {
-    title: "Besim — Lead Tuner & Founder | PTEB Tuning Melbourne",
-    description: "Meet Besim, the founder and lead tuner behind PTEB Tuning. 15+ years calibrating European performance cars on the dyno. 500+ custom ECU tunes delivered.",
+    title: "Besim Dani — Founder & Tuner | PTEB Tuning Melbourne",
+    description: "Meet Besim Dani, founder of PTEB Tuning. Expert in V.A.G diagnostics and VW/Audi software. Specialising in MQB platforms, flex fuel, and remote ECU tuning worldwide.",
     url: "/team",
-    images: [{ url: "/dynoimage.jpg", width: 1200, height: 630, alt: "Besim — PTEB Tuning Lead Tuner Melbourne" }],
+    images: [{ url: "/pteb-illyrian.jpg", width: 1200, height: 630, alt: "PTEB Illyrian Racing — Besim Dani, Founder & Tuner Melbourne" }],
   },
 };
 
@@ -19,11 +19,11 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://ptebtuning.com/#besim",
-  name: "Besim",
-  jobTitle: "Lead Tuner & Founder",
-  description: "Besim is the founder and lead ECU calibration specialist at PTEB Tuning, Melbourne. With over 15 years of hands-on experience on European performance vehicles, Besim has calibrated 500+ custom ECU maps across BMW, Audi, Volkswagen, Mercedes-AMG, and Porsche platforms. He specialises in Bosch MED17, MG1CS, and Continental Simos ECU platforms, and leads the development of the PTEB Warport remote tuning device.",
+  name: "Besim Dani",
+  jobTitle: "Founder & Tuner",
+  description: "Founder & Tuner of PTEB, Besim Dani is an expert in V.A.G diagnostics and has been specialising in VW/Audi software for years. Besim is your go-to for all your racing needs, with remote support available worldwide through the PTEB Warport device.",
   url: "https://ptebtuning.com/team",
-  image: "https://ptebtuning.com/dynoimage.jpg",
+  image: "https://ptebtuning.com/pteb-illyrian.jpg",
   worksFor: {
     "@type": "AutomotiveBusiness",
     "@id": "https://ptebtuning.com/#business",
@@ -78,20 +78,17 @@ const PLATFORMS = [
 ];
 
 const CREDENTIALS = [
-  { icon: Award, label: "15+ years", sub: "hands-on ECU calibration experience" },
+  { icon: Award, label: "Years of Experience", sub: "specialising in VW/Audi software" },
   { icon: Car, label: "500+ vehicles", sub: "custom-mapped and road-verified" },
-  { icon: Wrench, label: "5 platforms", sub: "BMW, Audi, VW, Mercedes, Porsche" },
+  { icon: Wrench, label: "MQB Specialist", sub: "VW, Audi, Golf R, Tiguan R, RS3, TT" },
   { icon: MapPin, label: "Melbourne-based", sub: "Dyno Innovations certified equipment" },
 ];
 
 const ECU_PLATFORMS = [
   "Bosch MED17",
   "Bosch MG1CS",
-  "Bosch ME17.9",
   "Continental Simos 18",
   "Continental Simos 19",
-  "Continental EMS3155",
-  "Delphi MT86",
   "Siemens/VDO SDI",
 ];
 
@@ -112,12 +109,12 @@ export default function TeamPage() {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="eyebrow mb-4">Lead Tuner & Founder</p>
+              <p className="eyebrow mb-4">Founder & Tuner</p>
               <h1 className="font-black uppercase leading-none mb-6 text-white" style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)" }}>
-                Besim
+                Besim Dani
               </h1>
               <p className="text-lg leading-relaxed mb-8 text-[#9CA3AF] max-w-xl">
-                Founder of PTEB Tuning and the lead calibration specialist behind every custom ECU map that leaves the workshop. 15+ years building power on European platforms — all results dyno-logged and road-verified before delivery.
+                Founder & Tuner of PTEB, Besim is an expert in V.A.G diagnostics & has been specialising in VW/Audi software for years. Besim is your go to for all your racing needs with remote support available too.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
@@ -137,11 +134,10 @@ export default function TeamPage() {
               </div>
             </div>
 
-            {/* Photo placeholder — replace src with real photo */}
             <div className="relative aspect-[4/5] bg-[#111] border border-[#1E1E1E] overflow-hidden">
               <Image
-                src="/dynoimage.jpg"
-                alt="PTEB Tuning workshop — Besim, lead ECU tuner Melbourne"
+                src="/pteb-illyrian.jpg"
+                alt="PTEB Illyrian Racing — Besim Dani, Founder & Tuner"
                 fill
                 priority
                 quality={80}
@@ -154,8 +150,8 @@ export default function TeamPage() {
                 aria-hidden="true"
               />
               <div className="absolute bottom-0 left-0 p-6">
-                <p className="text-white font-black text-xl uppercase">Besim</p>
-                <p className="text-[#FC222D] text-xs font-semibold tracking-widest uppercase mt-0.5">Lead Tuner & Founder · PTEB</p>
+                <p className="text-white font-black text-xl uppercase">Besim Dani</p>
+                <p className="text-[#FC222D] text-xs font-semibold tracking-widest uppercase mt-0.5">Founder & Tuner · PTEB</p>
               </div>
             </div>
           </div>
@@ -188,13 +184,13 @@ export default function TeamPage() {
               <h2 className="text-3xl font-black uppercase text-white mb-8">Built on the dyno, not in theory</h2>
               <div className="space-y-5 text-[#9CA3AF] text-sm leading-relaxed">
                 <p>
-                  Besim founded PTEB Tuning after more than a decade of calibrating European performance vehicles across Melbourne. Every system, process, and result standard at PTEB reflects what he learned working hands-on with Bosch and Continental ECU platforms before the tools to do it safely were widely available.
+                  Besim founded PTEB Tuning as Melbourne's home for serious VW/Audi group performance work. His background is in V.A.G diagnostics — the software, the platforms, and the hardware inside every MQB build. From Golf R mechatronic conversions to full Stage 3 flex fuel builds on the Tiguan and Audi TT, every job gets the same level of hands-on attention.
                 </p>
                 <p>
-                  The approach at PTEB is data-first. Every tune starts with a baseline dyno pull, full data log review, and a pre-health inspection. No calibration leaves the dyno until repeatability is confirmed across at least three consecutive runs — then it is road-validated before the customer takes delivery.
+                  The approach at PTEB is data-first. Every tune starts with a baseline dyno pull, full data log review, and a pre-health inspection. No calibration leaves the dyno until repeatability is confirmed across multiple consecutive runs — then it is road-validated before the customer takes delivery.
                 </p>
                 <p>
-                  Besim also designed the <strong className="text-white">PTEB Warport</strong> — a remote OBD2 tuning device that brings the same full custom calibration process to customers anywhere in Australia and New Zealand, without requiring a workshop visit.
+                  Besim also designed the <strong className="text-white">PTEB Warport</strong> — a remote OBD2 tuning device that brings the same full custom calibration process to customers anywhere in the world, without requiring a workshop visit.
                 </p>
               </div>
             </div>
@@ -247,11 +243,11 @@ export default function TeamPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { title: "Full custom ECU maps", desc: "Boost, fuelling, ignition — all tables built from scratch for your specific vehicle, mods, and fuel." },
-              { title: "Flex fuel & E85", desc: "True dual-fuel calibrations with ethanol content detection. Consistent power on any blend from 98 RON to E85." },
+              { title: "Flex fuel", desc: "True dual-fuel calibrations with ethanol content detection. Consistent power on any ethanol blend." },
               { title: "Rolling anti-lag", desc: "Closed-throttle boost retention between shifts. Calibrated to stay within safe exhaust temperature limits." },
-              { title: "Launch control", desc: "Tunable launch RPM with wheelspin and torque management. Road-tested for consistency across runs." },
-              { title: "Boost by gear", desc: "Independent torque limits per gear to match tyre traction capability at each stage of a run." },
-              { title: "Remote tuning via Warport", desc: "Full custom calibration delivered anywhere in Australia or New Zealand through the PTEB Warport OBD2 device." },
+              { title: "Adjustable launch control", desc: "Allows you to launch at any RPM you desire from the click of a button, mapped to your steering wheel." },
+              { title: "Boost by gear", desc: "Smoother boost delivery per gear. Full boost by 3rd." },
+              { title: "Remote tuning via Warport", desc: "Full custom calibration delivered anywhere in the world through the PTEB Warport OBD2 device." },
             ].map(({ title, desc }) => (
               <div key={title} className="p-6 border border-[#1E1E1E]" style={{ backgroundColor: "#111" }}>
                 <h3 className="text-white font-bold text-sm uppercase tracking-wide mb-2">{title}</h3>
@@ -265,7 +261,7 @@ export default function TeamPage() {
       {/* CTA */}
       <section className="py-20 text-center" style={{ backgroundColor: "#FC222D" }}>
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <h2 className="text-5xl font-black uppercase mb-4 text-white">Book with Besim</h2>
+          <h2 className="text-5xl font-black uppercase mb-4 text-white">Book with Besim Dani</h2>
           <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.8)" }}>
             Tell us your platform, modifications, and goals — we will pre-approve your vehicle and confirm exactly what your tune will deliver.
           </p>

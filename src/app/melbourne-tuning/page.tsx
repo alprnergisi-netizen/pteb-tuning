@@ -52,7 +52,7 @@ const schema = {
         {
           "@type": "Question",
           name: "Where is PTEB Tuning located in Melbourne?",
-          acceptedAnswer: { "@type": "Answer", text: "PTEB Tuning is based in Melbourne, Victoria. Contact us on 0422 300 859 or via WhatsApp to arrange a booking and receive workshop directions." },
+          acceptedAnswer: { "@type": "Answer", text: "PTEB Tuning is located at 168 McIntyre Road, Sunshine North VIC 3020. Contact us on 0422 300 859 or via WhatsApp to arrange a booking." },
         },
         {
           "@type": "Question",
@@ -72,12 +72,12 @@ const schema = {
         {
           "@type": "Question",
           name: "How long does a dyno tune take in Melbourne?",
-          acceptedAnswer: { "@type": "Answer", text: "A full custom dyno tune at PTEB Melbourne takes 4–8 hours. This includes a pre-health inspection, baseline dyno pull, iterative ECU calibration, repeatability verification, and road validation. You receive full data logs and a dyno graph showing your before and after power figures." },
+          acceptedAnswer: { "@type": "Answer", text: "Usually a same day turnaround. This includes a pre-health inspection, baseline dyno pull, iterative ECU calibration, repeatability verification, and road validation. You receive full data logs and a dyno graph showing your before and after power figures." },
         },
         {
           "@type": "Question",
-          name: "Does PTEB offer Stage 1 and Stage 2 tunes in Melbourne?",
-          acceptedAnswer: { "@type": "Answer", text: "Yes. PTEB Melbourne offers Stage 1 (software only), Stage 2 (downpipe, intercooler, intake), and Stage 2+ (turbo/fuelling upgrades) calibrations. Every tune is built specifically for your vehicle's modification level, fuel type, and power goals — never an off-the-shelf map." },
+          name: "Does PTEB offer Stage 1, Stage 2 and Stage 3 tunes in Melbourne?",
+          acceptedAnswer: { "@type": "Answer", text: "Yes. PTEB Melbourne offers Stage 1 (software only), Stage 2 (downpipe, intercooler, intake), and Stage 3 (turbo/fuelling upgrades) calibrations. Every tune is built specifically for your vehicle's modification level, fuel type, and power goals — never an off-the-shelf map." },
         },
       ],
     },
@@ -87,7 +87,7 @@ const schema = {
 const RESULTS = [
   { car: "BMW M4 F82", stage: "Stage 1", power: "334 kW", gain: "+74 kW" },
   { car: "Audi RS3 DAZA", stage: "Stage 2", power: "318 kW", gain: "+68 kW" },
-  { car: "VW Golf R MK7", stage: "Stage 2", power: "280 kW", gain: "+80 kW" },
+  { car: "Audi TT 2023", stage: "Stage 3 Flex", power: "348 kW", gain: "Garret PMAX 2" },
   { car: "BMW M4 S55", stage: "Stage 1", power: "360+ kW", gain: "Custom map" },
 ];
 
@@ -201,11 +201,11 @@ export default function MelbourneTuningPage() {
           </h2>
           <div className="space-y-6">
             {[
-              { q: "Where is PTEB Tuning located in Melbourne?", a: "PTEB Tuning is based in Melbourne, Victoria. Contact us on 0422 300 859 or via WhatsApp to arrange a booking and receive workshop directions." },
+              { q: "Where is PTEB Tuning located in Melbourne?", a: "PTEB Tuning is located at 168 McIntyre Road, Sunshine North VIC 3020. Contact us on 0422 300 859 or via WhatsApp to arrange a booking." },
               { q: "How do I book a tune at PTEB?", a: "Contact PTEB via phone (0422 300 859), WhatsApp, or the enquiry form. Tell us your vehicle, modifications, fuel type, and goals — we'll pre-approve your car and confirm exactly what your tune will deliver before you commit." },
               { q: "What cars does PTEB tune in Melbourne?", a: "PTEB specialises in European turbocharged vehicles: Audi (EA888, DAZA, EA825), BMW (B48, B58, S55, S58), Volkswagen (Golf GTI, Golf R), Mercedes-AMG (A45, CLA45), and Porsche (911, Macan, Cayenne). Contact us to confirm your specific platform." },
-              { q: "How long does a dyno tune take?", a: "A full custom dyno tune at PTEB takes 4–8 hours. This covers pre-health inspection, baseline pull, calibration, repeatability verification, and road validation. You receive a dyno graph and full data logs." },
-              { q: "Does PTEB offer Stage 1 and Stage 2 tunes?", a: "Yes — Stage 1 (software only), Stage 2 (downpipe, intercooler, intake required), and Stage 2+ (turbo/fuelling upgrades). Every tune is built for your specific vehicle, not an off-the-shelf map." },
+              { q: "How long does a dyno tune take?", a: "Usually a same day turnaround. This covers pre-health inspection, baseline pull, calibration, repeatability verification, and road validation. You receive a dyno graph and full data logs." },
+              { q: "Does PTEB offer Stage 1, Stage 2 and Stage 3 tunes?", a: "Yes — Stage 1 (software only), Stage 2 (downpipe, intercooler, intake required), and Stage 3 (turbo/fuelling upgrades). Every tune is built for your specific vehicle, not an off-the-shelf map." },
             ].map(({ q, a }) => (
               <div key={q} className="border-b border-[#1E1E1E] pb-6">
                 <h3 className="text-white font-bold mb-2">{q}</h3>

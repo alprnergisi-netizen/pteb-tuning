@@ -111,7 +111,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="hero h-[100dvh] relative flex items-center overflow-hidden bg-[#0a0a0a]">
         <Image
-          src="/dynoimage.jpg"
+          src="/golfr-hero.jpg"
           alt=""
           fill
           priority
@@ -238,7 +238,7 @@ export default function HomePage() {
           <p className="text-2xl sm:text-3xl font-black uppercase font-heading leading-tight">
             <span className="text-[#111]">New — </span>
             <span className="text-[#FC222D]">Remote ECU Tuning</span>
-            <span className="text-[#111]"> from anywhere in Australia</span>
+            <span className="text-[#111]"> from Around the World</span>
           </p>
         </div>
 
@@ -247,7 +247,7 @@ export default function HomePage() {
 
             {/* Left — copy */}
             <div data-reveal-child>
-              <p className="eyebrow mb-5">
+              <p className="eyebrow mb-5" style={{ fontSize: '0.85rem' }}>
                 <span className="block w-5 h-px bg-[#FC222D] shrink-0" aria-hidden="true" />
                 PTEB Warport
               </p>
@@ -265,7 +265,7 @@ export default function HomePage() {
               {/* Benefit stack — rapid fire */}
               <ul className="space-y-3 mb-10">
                 {[
-                  { stat: "Fast", label: "delivery to your door, anywhere in Australia" },
+                  { stat: "Fast", label: "delivery to your door, worldwide" },
                   { stat: "Fully", label: "custom calibration — never an off-the-shelf map" },
                   { stat: "Free", label: "pre-approval check before you spend a cent" },
                 ].map(({ stat, label }) => (
@@ -319,8 +319,8 @@ export default function HomePage() {
 
             {/* Right — product visual */}
             <div className="flex flex-col items-center gap-8" data-reveal-child>
-              <div className="w-full rounded overflow-hidden">
-                <Warport3DViewerClient variant="light" height={480} />
+              <div className="w-full rounded overflow-hidden" style={{ filter: 'contrast(1.12) saturate(0.88) brightness(0.97)' }}>
+                <Warport3DViewerClient variant="light" height={560} />
               </div>
 
               <div className="w-full max-w-sm space-y-3">
@@ -342,25 +342,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Zero failures statement */}
+      {/* Safety statement */}
       <section className="py-24 bg-black border-y border-[#1a1a1a]" data-scroll-reveal aria-label="Safety record">
         <div className="container mx-auto px-6 text-center" data-reveal-child>
-          <p
-            className="font-black text-white font-heading leading-none mb-4"
-            style={{
-              fontSize: "clamp(6rem, 22vw, 18rem)",
-              WebkitTextStroke: "0.22em #FC222D",
-              paintOrder: "stroke fill",
-            }}
+          <ShieldCheck
+            className="mx-auto mb-8 text-[#FC222D]"
+            style={{ width: 'clamp(4rem, 12vw, 8rem)', height: 'clamp(4rem, 12vw, 8rem)' }}
             aria-hidden="true"
-          >
-            0
-          </p>
-          <h2 className="text-white font-black uppercase text-2xl sm:text-3xl mb-3 font-heading">
-            Engines blown up — across every car we&apos;ve ever tuned.
+          />
+          <h2 className="text-white font-black uppercase text-2xl sm:text-3xl lg:text-4xl mb-4 font-heading">
+            We have seen too many engine failures.
           </h2>
-          <p className="text-white text-base max-w-md mx-auto leading-relaxed">
-            Every calibration is built conservatively from scratch — safety margins are non-negotiable. Not one customer has left with a worse engine than they arrived with.
+          <p className="text-[#9CA3AF] text-base max-w-md mx-auto leading-relaxed">
+            Not a single one has been ours. Every PTEB calibration is built to safe margins — conservative boost targets, verified fuelling, and real knock protection. Your engine leaves the workshop in better shape than it arrived.
           </p>
         </div>
       </section>
@@ -408,13 +402,6 @@ export default function HomePage() {
                 href: "/contact",
                 cta: "Enquire",
               },
-              {
-                num: "05",
-                title: "Performance Parts",
-                desc: "Curated PTEB-branded hardware — blow-off valves, intakes, and stage kits engineered to complement a proper custom tune.",
-                href: "/products",
-                cta: "Shop Now",
-              },
             ].map(({ num, title, desc, href, cta }) => (
               <div key={title} className="group grid grid-cols-[3rem_1fr] md:grid-cols-[4rem_1fr_auto] gap-x-6 gap-y-2 py-8 items-start hover:bg-[#0a0a0a] -mx-6 px-6 transition-colors duration-300">
                 <span className="text-2xl font-black text-[#FC222D] font-heading tabular-nums pt-0.5" aria-hidden="true">{num}</span>
@@ -443,7 +430,7 @@ export default function HomePage() {
               className="text-white mb-6 leading-tight font-black font-heading"
               style={{ fontSize: "clamp(2rem, 5vw, 3rem)" }}
             >
-              Professional-grade ECU calibration
+              MQB Race Features
             </h2>
             <p className="text-[#9CA3AF] text-lg leading-relaxed">
               Every PTEB tune includes access to our full suite of advanced ECU mapping capabilities, engineered for performance, reliability, and precision.
@@ -458,7 +445,7 @@ export default function HomePage() {
               { num: "04", name: "Boost By Gear", desc: "Gear-specific boost mapping & response" },
               { num: "05", name: "Advanced Traction", desc: "Traction control optimization & tuning" },
               { num: "06", name: "Immobilizer Map", desc: "Security system integration & coding" },
-              { num: "07", name: "True Flex Fuel", desc: "E85 ethanol & blended fuel calibration" },
+              { num: "07", name: "True Flex Fuel", desc: "Ethanol & blended fuel calibration" },
               { num: "08", name: "Motorsport Driveability", desc: "Track-focused calibration & feedback" },
             ].map((feature) => (
               <div key={feature.num} className="group relative overflow-hidden">
@@ -535,7 +522,7 @@ export default function HomePage() {
               {/* SEO/AEO paragraph — answers "who is PTEB?" for AI engines */}
               <div className="space-y-5 text-white text-base leading-[1.85] max-w-[65ch]">
                 <p>
-                  <strong className="text-[#FC222D]">Prestige Team Euro Boost (PTEB)</strong> is Melbourne&apos;s dedicated European performance tuning workshop, staffed by specialists with over 15 years of hands-on ECU calibration experience. Based in Melbourne, Victoria, PTEB delivers fully custom ECU and TCU remapping for Audi, BMW, Volkswagen, Mercedes-AMG, and Porsche — every result dyno-logged and road-verified before delivery.
+                  <strong className="text-[#FC222D]">Prestige Team Euro Boost (PTEB)</strong> is Melbourne&apos;s dedicated European performance tuning workshop, staffed by specialists with years of hands-on ECU calibration experience. Based in Melbourne, Victoria, PTEB delivers fully custom ECU and TCU remapping for Audi, BMW, Volkswagen, Mercedes-AMG, and Porsche — every result dyno-logged and road-verified before delivery.
                 </p>
                 <p>
                   Unlike generic tuning shops that flash off-the-shelf maps, PTEB builds each calibration from scratch: custom boost curves, bespoke fuelling tables, and precision ignition timing tailored to your specific vehicle, modifications, and fuel grade. The reputation speaks for itself — built entirely on results, not promises.
@@ -598,8 +585,8 @@ export default function HomePage() {
                 detail: "Every tune is validated on our in-house dyno and confirmed on road before it leaves the workshop.",
               },
               {
-                label: "Australia-Wide",
-                detail: "Can't reach Melbourne? The PTEB Warport delivers a full custom remote tune anywhere in Australia.",
+                label: "Worldwide",
+                detail: "Can't reach Melbourne? The PTEB Warport delivers a full custom remote tune anywhere in the world.",
               },
             ].map(({ label, detail }) => (
               <div key={label} className="bg-[#0a0a0a] p-8">

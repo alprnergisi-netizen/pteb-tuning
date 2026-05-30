@@ -194,6 +194,7 @@ const BRAND_GUIDES = [
     id: "brand-volkswagen",
     brand: "Volkswagen",
     logo: "/volkswagenlogo.png",
+    logoInvert: true,
     tagline: "The EA888 platform — built for gains",
     intro:
       "Volkswagen's EA888 engine architecture underpins some of the most popular tuning platforms in the world — Golf GTI, Golf R, Tiguan R, Arteon R. The shared hardware across a wide power range means every EA888 variant has been engineered to handle more than it's given.",
@@ -436,8 +437,8 @@ export default function TuningGuidePage() {
           <div className="hidden lg:flex items-center justify-end py-16">
             <div className="relative w-full max-w-[580px] xl:max-w-[640px] aspect-[3/2] overflow-hidden">
               <Image
-                src="/teslaui.jpg"
-                alt="ECU tuning interface — PTEB performance calibration"
+                src="/pteb-illyrian.jpg"
+                alt="PTEB Illyrian Racing — ECU performance calibration"
                 fill
                 priority
                 quality={80}
@@ -708,7 +709,7 @@ export default function TuningGuidePage() {
                 <p>
                   On a Stage 2 platform with flex fuel, gains of 20–30% over the equivalent
                   98 RON tune are common. On the right platform (e.g. 2.0 TFSI, S55, B58), an
-                  E85 tune can add 80–120 kW over factory power on a stock or mildly modified
+                  E85 tune can add 40–100 kW over factory power on a stock or mildly modified
                   turbocharger.
                 </p>
               </div>
@@ -868,6 +869,7 @@ export default function TuningGuidePage() {
                   width={64}
                   height={64}
                   className="h-12 w-auto object-contain opacity-90"
+                  style={"logoInvert" in brand && brand.logoInvert ? { filter: 'brightness(0) invert(1)' } : undefined}
                 />
                 <h2
                   id={`${brand.id}-heading`}
