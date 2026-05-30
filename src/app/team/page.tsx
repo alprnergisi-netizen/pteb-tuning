@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Besim Dani — Founder & Tuner | PTEB Tuning Melbourne",
     description: "Meet Besim Dani, founder of PTEB Tuning. Expert in V.A.G diagnostics and VW/Audi software. Specialising in MQB platforms, flex fuel, and remote ECU tuning worldwide.",
     url: "/team",
-    images: [{ url: "/pteb-illyrian.jpg", width: 1200, height: 630, alt: "PTEB Illyrian Racing — Besim Dani, Founder & Tuner Melbourne" }],
+    images: [{ url: "/ourteam.jpg", width: 1200, height: 630, alt: "PTEB Illyrian Racing — Besim Dani, Founder & Tuner Melbourne" }],
   },
 };
 
@@ -23,7 +23,7 @@ const personSchema = {
   jobTitle: "Founder & Tuner",
   description: "Founder & Tuner of PTEB, Besim Dani is an expert in V.A.G diagnostics and has been specialising in VW/Audi software for years. Besim is your go-to for all your racing needs, with remote support available worldwide through the PTEB Warport device.",
   url: "https://ptebtuning.com/team",
-  image: "https://ptebtuning.com/pteb-illyrian.jpg",
+  image: "https://ptebtuning.com/ourteam.jpg",
   worksFor: {
     "@type": "AutomotiveBusiness",
     "@id": "https://ptebtuning.com/#business",
@@ -136,7 +136,7 @@ export default function TeamPage() {
 
             <div className="relative aspect-[4/5] bg-[#111] border border-[#1E1E1E] overflow-hidden">
               <Image
-                src="/pteb-illyrian.jpg"
+                src="/ourteam.jpg"
                 alt="PTEB Illyrian Racing — Besim Dani, Founder & Tuner"
                 fill
                 priority
