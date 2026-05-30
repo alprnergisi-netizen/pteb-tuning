@@ -10,10 +10,10 @@ export function FloatingCTA() {
   return (
     <>
       {/* Mobile — full-width bottom bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden flex border-t border-white/10 shadow-2xl">
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden flex border-t border-white/10 shadow-2xl" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
         <a
           href="tel:+61422300859"
-          className="flex-1 flex items-center justify-center gap-2.5 py-4 bg-[#111] text-white text-sm font-bold tracking-wider uppercase active:bg-[#222] transition-colors"
+          className="flex-1 flex items-center justify-center gap-2.5 py-4 bg-[#111] text-white text-sm font-bold tracking-wider uppercase active:bg-[#222] transition-colors min-h-[56px]"
           aria-label="Call PTEB Tuning"
         >
           <Phone size={17} aria-hidden="true" />
@@ -23,7 +23,7 @@ export function FloatingCTA() {
           href="https://wa.me/61422300859?text=Hi%20PTEB%2C%20I%27d%20like%20to%20enquire%20about%20a%20tune%20for%20my%20car."
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2.5 py-4 bg-[#25D366] text-white text-sm font-bold tracking-wider uppercase active:bg-[#1ebe5d] transition-colors"
+          className="flex-1 flex items-center justify-center gap-2.5 py-4 bg-[#25D366] text-white text-sm font-bold tracking-wider uppercase active:bg-[#1ebe5d] transition-colors min-h-[56px]"
           aria-label="WhatsApp PTEB Tuning"
         >
           <MessageCircle size={17} aria-hidden="true" />

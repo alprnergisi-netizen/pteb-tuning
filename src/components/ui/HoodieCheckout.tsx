@@ -50,7 +50,7 @@ export function HoodieCheckout({ variants }: Props) {
               key={v.id}
               onClick={() => { setSelectedId(v.id); setError(null); }}
               disabled={!v.availableForSale}
-              className={`w-14 py-2 border text-xs font-medium transition-colors
+              className={`w-14 min-h-[44px] py-2 border text-xs font-medium transition-colors
                 ${!v.availableForSale
                   ? "border-[#E5E7EB] text-[#D1D5DB] cursor-not-allowed line-through"
                   : selectedId === v.id
@@ -104,7 +104,7 @@ export function HoodieCheckoutFallback() {
             <button
               key={sz}
               onClick={() => setSelected(sz)}
-              className={`w-14 py-2 border text-xs font-medium transition-colors
+              className={`w-14 min-h-[44px] py-2 border text-xs font-medium transition-colors
                 ${selected === sz
                   ? "border-[#111] bg-[#111] text-white"
                   : "border-[#E5E7EB] text-[#111] hover:border-[#111]"

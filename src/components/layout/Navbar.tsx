@@ -98,7 +98,7 @@ export function Navbar() {
             alt="PTEB Tuning — Prestige Team Euro Boost"
             width={200}
             height={80}
-            className="w-40 md:w-56 h-auto"
+            className="w-28 sm:w-40 md:w-56 h-auto"
             priority
           />
         </Link>

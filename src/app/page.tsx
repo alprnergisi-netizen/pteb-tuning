@@ -131,7 +131,7 @@ export default function HomePage() {
 
             <h1
               className="text-white mb-6 font-black leading-none"
-              style={{ fontSize: 'clamp(2.8rem, 8vw, 6.5rem)' }}
+              style={{ fontSize: 'clamp(2.2rem, 8vw, 6.5rem)' }}
             >
               Prestige Team<br />
               <span className="text-[#FC222D]">Euro Boost</span>
@@ -661,7 +661,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Trust grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#1a1a1a] mb-16" data-reveal-child>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-[#1a1a1a] mb-16" data-reveal-child>
             {[
               { value: "Top Rated", sub: "On Google",      detail: "Melbourne's most trusted ECU tuner" },
               { value: "Every Car", sub: "Dyno Verified",  detail: "Logged and road-confirmed before delivery" },

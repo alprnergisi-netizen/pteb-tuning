@@ -76,7 +76,7 @@ function ReviewCard({ review }: { review: typeof REVIEWS[0] }) {
       href={review.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex flex-col flex-shrink-0 w-80 p-6 bg-white border border-[#E5E7EB] hover:border-[#FC222D]/40 hover:shadow-lg transition-all duration-300 cursor-pointer"
+      className="flex flex-col flex-shrink-0 w-72 sm:w-80 p-5 sm:p-6 bg-white border border-[#E5E7EB] hover:border-[#FC222D]/40 hover:shadow-lg transition-all duration-300 cursor-pointer"
       style={{ minHeight: '200px' }}
     >
       <div className="flex items-center justify-between mb-4">
@@ -113,7 +113,7 @@ export function ReviewsCarousel() {
         style={{ background: 'linear-gradient(to left, #0a0a0a, transparent)' }} aria-hidden="true" />
 
       <div
-        className="flex gap-5 w-max"
+        className="flex gap-3 sm:gap-5 w-max"
         style={{
           animation: 'reviewsScroll 40s linear infinite',
         }}

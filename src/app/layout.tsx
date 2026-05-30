@@ -308,7 +308,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }}
         />
       </head>
-      <body className="pb-[60px] md:pb-0">
+      <body className="pb-[72px] md:pb-0">
         {/* Always dark mode */}
         <script
           dangerouslySetInnerHTML={{
