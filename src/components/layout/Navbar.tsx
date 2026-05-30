@@ -26,7 +26,7 @@ const NAV_LINKS: NavItem[] = [
     children: [
       { href: "/tuning-guide",       label: "Tuning Guide",        desc: "Platform guide, services & ECU overview" },
       { href: "/melbourne-tuning",   label: "Melbourne Tuning",    desc: "Book an in-person dyno session" },
-      { href: "/remote-tuning",      label: "Remote Tuning",       desc: "Full custom tune anywhere in Australia" },
+      { href: "/remote-tuning",      label: "Remote Tuning",       desc: "Full custom tune anywhere in the world" },
     ],
   },
   {

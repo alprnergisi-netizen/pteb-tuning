@@ -35,8 +35,8 @@ const homepageSchema = {
       "alternateName": "PTEB Tuning",
       "url": "https://ptebtuning.com",
       "logo": "https://ptebtuning.com/logo.png",
-      "description": "Melbourne's specialist ECU and TCU tuning workshop. PTEB delivers fully custom dyno-mapped calibrations for European performance vehicles — Audi, BMW, Volkswagen, Mercedes-AMG, and Porsche. 4.9 Google rating. Australia-wide remote tuning via the PTEB Warport.",
-      "areaServed": { "@type": "Country", "name": "Australia" },
+      "description": "Melbourne's specialist ECU and TCU tuning workshop. PTEB delivers fully custom dyno-mapped calibrations for European performance vehicles — Audi, BMW, Volkswagen, Mercedes-AMG, and Porsche. 4.9 Google rating. Worldwide remote tuning via the PTEB Warport.",
+      "areaServed": { "@type": "Place", "name": "Worldwide" },
       "address": { "@type": "PostalAddress", "streetAddress": "168 McIntyre Rd", "addressLocality": "Sunshine North", "addressRegion": "VIC", "postalCode": "3020", "addressCountry": "AU" },
       "contactPoint": { "@type": "ContactPoint", "telephone": "+61422300859", "contactType": "customer service", "availableLanguage": "English" },
       "sameAs": [
@@ -77,7 +77,7 @@ const homepageSchema = {
           "name": "What is the PTEB Warport remote tuning device?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The PTEB Warport is a remote ECU tuning device that plugs into your OBD2 port. It connects to the PTEB app and allows our tuners to recalibrate your engine remotely from anywhere in Australia — no workshop visit required. It costs $499 AUD and delivers a full custom tune file."
+            "text": "The PTEB Warport is a remote ECU tuning device that plugs into your OBD2 port. It connects to the PTEB app and allows our tuners to recalibrate your engine remotely from anywhere in the world — no workshop visit required. It costs $499 AUD and delivers a full custom tune file."
           }
         }
       ]
@@ -126,7 +126,7 @@ export default function HomePage() {
           <div className="max-w-4xl">
             <p className="eyebrow mb-6" style={{ color: '#ffffff', opacity: 0.5 }}>
               <span className="block w-5 h-px bg-white shrink-0" aria-hidden="true" />
-              Melbourne, Australia
+              Melbourne, Victoria
             </p>
 
             <h1
@@ -295,7 +295,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="text-sm text-[#6B7280]">
-                  <span className="text-black font-bold">Trusted</span> by drivers across Australia
+                  <span className="text-black font-bold">Trusted</span> by drivers worldwide
                 </p>
               </div>
 
@@ -528,7 +528,7 @@ export default function HomePage() {
                   Unlike generic tuning shops that flash off-the-shelf maps, PTEB builds each calibration from scratch: custom boost curves, bespoke fuelling tables, and precision ignition timing tailored to your specific vehicle, modifications, and fuel grade. The reputation speaks for itself — built entirely on results, not promises.
                 </p>
                 <p>
-                  PTEB also operates <strong className="text-[#FC222D]">Australia-wide via the PTEB Warport</strong> — a proprietary OBD2 remote tuning device that lets the PTEB team calibrate your ECU from anywhere in the country. No workshop visit. No waiting weeks for a dyno slot. The same full custom tune, delivered remotely through the PTEB app.
+                  PTEB also operates <strong className="text-[#FC222D]">worldwide via the PTEB Warport</strong> — a proprietary OBD2 remote tuning device that lets the PTEB team calibrate your ECU from anywhere in the world. No workshop visit. No waiting weeks for a dyno slot. The same full custom tune, delivered remotely through the PTEB app.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 mt-8">

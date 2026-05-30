@@ -5,7 +5,7 @@ import { ChevronRight, Award, Wrench, MapPin, Car } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Besim Dani — Founder & Tuner | PTEB Tuning Melbourne",
-  description: "Besim Dani is the founder and tuner at PTEB Tuning Melbourne. An expert in V.A.G diagnostics specialising in VW/Audi software. Your go-to for racing builds and remote tuning support across Australia.",
+  description: "Besim Dani is the founder and tuner at PTEB Tuning Melbourne. An expert in V.A.G diagnostics specialising in VW/Audi software. Your go-to for racing builds and remote tuning support worldwide.",
   alternates: { canonical: "/team" },
   openGraph: {
     title: "Besim Dani — Founder & Tuner | PTEB Tuning Melbourne",
@@ -198,7 +198,7 @@ export default function TeamPage() {
               <p className="eyebrow mb-4">ECU Platforms</p>
               <h2 className="text-3xl font-black uppercase text-white mb-8">Hardware expertise</h2>
               <p className="text-sm text-[#9CA3AF] leading-relaxed mb-6">
-                Hands-on experience across the ECU platforms that power the most common European performance vehicles on Australian roads.
+                Hands-on experience across the ECU platforms that power the most common European performance vehicles on the road.
               </p>
               <div className="flex flex-wrap gap-2">
                 {ECU_PLATFORMS.map((p) => (

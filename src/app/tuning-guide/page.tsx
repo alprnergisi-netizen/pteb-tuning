@@ -331,7 +331,7 @@ const faqSchema = {
 const vehiclePlatformsSchema = {
   "@type": "ItemList",
   "name": "Supported ECU Tuning Platforms — PTEB Melbourne",
-  "description": "Vehicle makes, models, and engine platforms supported for custom ECU tuning, dyno remapping, and performance calibration at PTEB (Prestige Team Euro Boost), Melbourne, Australia.",
+  "description": "Vehicle makes, models, and engine platforms supported for custom ECU tuning, dyno remapping, and performance calibration at PTEB (Prestige Team Euro Boost), Melbourne.",
   "numberOfItems": BRAND_GUIDES.reduce((n, b) => n + b.platforms.length, 0),
   "itemListElement": BRAND_GUIDES.flatMap((brand, bi) =>
     brand.platforms.map((p, pi) => ({
@@ -675,7 +675,7 @@ export default function TuningGuidePage() {
                 Ethanol also acts as a charge cooler. When injected, it absorbs heat from the
                 intake charge (due to its high latent heat of vaporisation — approximately 5× that
                 of petrol), lowering intake temperatures and reducing knock susceptibility. This is
-                a major advantage on track and in hot Australian conditions.
+                a major advantage on track and in hot conditions.
               </p>
               <h3
                 className="text-xl font-bold uppercase text-white mt-6 mb-3"

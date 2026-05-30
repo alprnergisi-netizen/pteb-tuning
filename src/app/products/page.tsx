@@ -25,11 +25,11 @@ const WARPORT_HANDLE = process.env.SHOPIFY_WARPORT_HANDLE ?? "pteb-warport";
 
 export const metadata: Metadata = {
   title: "PTEB Warport — Remote ECU Tuning Device $499 | Shop PTEB",
-  description: "Shop PTEB Tuning products. The PTEB Warport ($499 AUD) is an OBD2 remote tuning device that lets our tuners calibrate your engine from anywhere in Australia — no workshop visit needed. Also: Tuned By PTEB hoodie ($89.99 AUD).",
+  description: "Shop PTEB Tuning products. The PTEB Warport ($499 AUD) is an OBD2 remote tuning device that lets our tuners calibrate your engine from anywhere in the world — no workshop visit needed. Also: Tuned By PTEB hoodie ($89.99 AUD).",
   alternates: { canonical: "/products" },
   openGraph: {
     title: "PTEB Warport $499 — Remote ECU Tuning Device | Shop",
-    description: "PTEB Warport: remote OBD2 ECU tuning device, $499 AUD. Full custom calibration delivered anywhere in Australia. Plus official PTEB merchandise.",
+    description: "PTEB Warport: remote OBD2 ECU tuning device, $499 AUD. Full custom calibration delivered anywhere in the world. Plus official PTEB merchandise.",
     url: "/products",
     images: [{ url: "/ptebtunedby.jpg", width: 1200, height: 630, alt: "PTEB Warport — Remote ECU Tuning Device" }],
   },
@@ -51,7 +51,7 @@ const productsFaqSchema = {
     {
       "@type": "Question",
       name: "What is the PTEB Warport and how does it work?",
-      acceptedAnswer: { "@type": "Answer", text: "The PTEB Warport is an OBD2 remote tuning device that costs $499 AUD. You plug it into your car's OBD port, pair it with the PTEB app, and our tuners recalibrate your ECU and TCU remotely — from anywhere in Australia. No workshop visit required. The device stays in your car for ongoing data logging and future revisions." },
+      acceptedAnswer: { "@type": "Answer", text: "The PTEB Warport is an OBD2 remote tuning device that costs $499 AUD. You plug it into your car's OBD port, pair it with the PTEB app, and our tuners recalibrate your ECU and TCU remotely — from anywhere in the world. No workshop visit required. The device stays in your car for ongoing data logging and future revisions." },
     },
     {
       "@type": "Question",
@@ -141,14 +141,14 @@ export default async function ProductsPage() {
 
               {/* Description */}
               <p className="text-[#9CA3AF] leading-relaxed mb-8" itemProp="description">
-                The PTEB Warport is an OBD2 device that pairs with our app to allow full remote ECU tuning — from anywhere in Australia. Plug it into your car, connect to the PTEB app, and our tuners calibrate your ECU remotely. The device stays in your car for ongoing data logging and live revision pulls.
+                The PTEB Warport is an OBD2 device that pairs with our app to allow full remote ECU tuning — from anywhere in the world. Plug it into your car, connect to the PTEB app, and our tuners calibrate your ECU remotely. The device stays in your car for ongoing data logging and live revision pulls.
               </p>
 
               {/* Key benefits */}
               <div className="grid grid-cols-2 gap-3 mb-8">
                 {[
                   { icon: Zap, label: "Instant Data Logging", sub: "Boost, lambda, IATs live" },
-                  { icon: Clock, label: "7-Day Delivery", sub: "Metro Australia tracked" },
+                  { icon: Clock, label: "7-Day Delivery", sub: "Worldwide tracked delivery" },
                   { icon: Shield, label: "Pre-Approved", sub: "Compatibility verified first" },
                   { icon: Users, label: "Direct Support", sub: "Talk to your tuner directly" },
                 ].map(({ icon: Icon, label, sub }) => (
