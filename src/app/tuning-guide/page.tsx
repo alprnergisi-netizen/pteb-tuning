@@ -437,8 +437,8 @@ export default function TuningGuidePage() {
           <div className="hidden lg:flex items-center justify-end py-16">
             <div className="relative w-full max-w-[580px] xl:max-w-[640px] aspect-[3/2] overflow-hidden">
               <Image
-                src="/pteb-illyrian.jpg"
-                alt="PTEB Illyrian Racing — ECU performance calibration"
+                src="/ourteam.jpg"
+                alt="PTEB Tuning — ECU performance calibration"
                 fill
                 priority
                 quality={80}
