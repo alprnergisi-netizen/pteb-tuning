@@ -45,7 +45,7 @@ const REVIEWS = [
   },
   {
     name: "Tom Nguyen",
-    text: "Best tuning shop in Melbourne without question. Brought my Golf R in for a Stage 2 tune and walked away with 280kW at the wheels. Besim was thorough, transparent and genuinely cared about getting the result right. Will be back for flex fuel.",
+    text: "Best tuning shop in Melbourne without question. Brought my Golf R in for a Stage 2 tune and walked away with 255kW at the wheels. Besim was thorough, transparent and genuinely cared about getting the result right. Will be back for flex fuel.",
     date: "7 months ago",
     href: "https://www.google.com/maps/search/?api=1&query=PTEB+Tuning+Melbourne",
   },

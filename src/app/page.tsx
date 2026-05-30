@@ -324,7 +324,7 @@ export default function HomePage() {
               </div>
 
               <div className="w-full max-w-sm space-y-3">
-                {["BMW M4 F82", "Audi RS3 DAZA", "VW Golf R MK7", "Audi TT 2.0T"].map((car) => (
+                {["BMW M4 F82", "Audi RS3 DAZA", "Audi TT 2023"].map((car) => (
                   <div key={car} className="flex items-center gap-3 p-4 border border-[#E5E7EB] bg-[#F9FAFB]">
                     <span className="w-2 h-2 rounded-full bg-[#FC222D] shrink-0" aria-hidden="true" />
                     <p className="text-sm font-bold text-black">{car}</p>
@@ -425,8 +425,8 @@ export default function HomePage() {
             {[
               { num: "01", name: "Rolling Anti Lag", desc: "Anti-lag system for drag racing & trackdays" },
               { num: "02", name: "Multi Map", desc: "Multiple tune maps for different conditions" },
-              { num: "03", name: "Adjustable Launch", desc: "Launch control calibration for acceleration" },
-              { num: "04", name: "Boost By Gear", desc: "Gear-specific boost mapping & response" },
+              { num: "03", name: "Adjustable Launch Control", desc: "Allows you to launch at any RPM you desire from the click of a button, mapped to your steering wheel." },
+              { num: "04", name: "Boost By Gear", desc: "Smoother boost delivery per gear. Full boost by 3rd." },
               { num: "05", name: "Advanced Traction", desc: "Traction control optimization & tuning" },
               { num: "06", name: "Immobilizer Map", desc: "Security system integration & coding" },
               { num: "07", name: "True Flex Fuel", desc: "Ethanol & blended fuel calibration" },

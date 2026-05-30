@@ -5,12 +5,12 @@ import { ChevronRight } from "lucide-react";
 import { BuildsGrid } from "@/components/ui/BuildsGrid";
 
 export const metadata: Metadata = {
-  title: "Dyno Tuning Results Melbourne — BMW, Audi, VW Power Gains | PTEB",
-  description: "Real dyno results from PTEB Tuning. BMW M4 Competition: 334kW (+74kW). Audi RS3 DAZA: 318kW (+68kW). VW Golf R MK7: 280kW (+80kW). Every result dyno-logged on Dyno Innovations equipment and road-verified — no fabricated numbers.",
+  title: "Dyno Tuning Results — Audi TT Stage 3 Flex, BMW M4, Audi RS3 | PTEB",
+  description: "Real dyno results from PTEB Tuning. Audi TT 2023 Stage 3 Flex: 348.5kW / 592.4Nm. BMW M4 Competition: 334kW (+74kW). Audi RS3 DAZA: 318kW (+68kW). Every result dyno-logged on Dyno Innovations equipment and road-verified — no fabricated numbers.",
   alternates: { canonical: "/our-work" },
   openGraph: {
-    title: "Dyno Tuning Results — BMW M4 334kW, Audi RS3 318kW | PTEB",
-    description: "Documented dyno results: BMW M4 Competition 334kW, Audi RS3 318kW, VW Golf R 280kW. All results logged on Dyno Innovations equipment and road-verified.",
+    title: "Dyno Tuning Results — Audi TT 348.5kW, BMW M4 334kW, Audi RS3 318kW | PTEB",
+    description: "Documented dyno results: Audi TT 2023 Stage 3 Flex 348.5kW, BMW M4 Competition 334kW, Audi RS3 318kW. All results logged on Dyno Innovations equipment and road-verified.",
     url: "/our-work",
     images: [{ url: "/builds/audi-tt-dyno.jpg", width: 1200, height: 630, alt: "Audi TT Stage 3 Flex dyno graph — 348.5kW tuned by PTEB" }],
   },
@@ -28,11 +28,11 @@ const BUILDS = [
     gain: "Full Stage 3",
     gainTorque: "Flex fuel build",
     mods: [
-      "ECU Conversion Simos 18.10 → 18.1",
-      "Lambda sensor integrated to Golf R engine loom",
+      "ECU Conversion 18.10 → 18.1",
+      "Lambda sensor integrated to new Golf R engine loom",
       "MPI 980cc injectors into new loom",
       "7.5R mechatronic unit conversion",
-      "Garrett PMAX 2 turbo",
+      "Garrett PMAX 2",
       "WMI",
       "Flex fuel",
       "FBO",

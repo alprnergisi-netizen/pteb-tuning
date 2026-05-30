@@ -193,8 +193,7 @@ const BRAND_GUIDES = [
   {
     id: "brand-volkswagen",
     brand: "Volkswagen",
-    logo: "/volkswagenlogo.png",
-    logoInvert: true,
+    logo: "/volkswagenlogo.svg",
     tagline: "The EA888 platform — built for gains",
     intro:
       "Volkswagen's EA888 engine architecture underpins some of the most popular tuning platforms in the world — Golf GTI, Golf R, Tiguan R, Arteon R. The shared hardware across a wide power range means every EA888 variant has been engineered to handle more than it's given.",
@@ -437,7 +436,7 @@ export default function TuningGuidePage() {
           <div className="hidden lg:flex items-center justify-end py-16">
             <div className="relative w-full max-w-[580px] xl:max-w-[640px] aspect-[3/2] overflow-hidden">
               <Image
-                src="/ourteam.jpg"
+                src="/teslaui.jpg"
                 alt="PTEB Tuning — ECU performance calibration"
                 fill
                 priority
@@ -868,6 +867,7 @@ export default function TuningGuidePage() {
                   alt={`${brand.brand} logo`}
                   width={64}
                   height={64}
+                  unoptimized={brand.logo.endsWith(".svg")}
                   className="h-12 w-auto object-contain opacity-90"
                   style={"logoInvert" in brand && brand.logoInvert ? { filter: 'brightness(0) invert(1)' } : undefined}
                 />

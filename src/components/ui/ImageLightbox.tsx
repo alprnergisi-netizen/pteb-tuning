@@ -52,8 +52,8 @@ export function ImageLightbox({ src, alt, onClose }: Props) {
 
       {/* Image — stop propagation so clicking the image itself doesn't close */}
       <div
-        className="relative max-w-5xl w-full max-h-[90vh]"
-        style={{ aspectRatio: "auto" }}
+        className="relative max-w-5xl w-full"
+        style={{ height: '90vh' }}
         onClick={(e) => e.stopPropagation()}
       >
         <Image
