@@ -187,7 +187,7 @@ export default function HomePage() {
       {/* Car Brand Expertise Section */}
       <section className="py-20 bg-black border-y border-[#2a2a2a]" data-scroll-reveal aria-labelledby="brands-heading">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16" data-reveal-child>
+          <div className="text-center mb-8 sm:mb-16" data-reveal-child>
             <h2
               id="brands-heading"
               className="text-white mb-4 text-3xl sm:text-4xl font-black uppercase"
@@ -198,31 +198,32 @@ export default function HomePage() {
             <p className="text-[#888888]">Trusted by Europe&apos;s finest. Specializing in precision tuning for the world&apos;s best automotive brands.</p>
           </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-5 gap-3 sm:gap-6 items-center max-w-5xl mx-auto">
+          <div className="grid grid-cols-5 gap-2 sm:gap-6 items-center max-w-5xl mx-auto">
             {[
               { name: "Audi", logo: "/audilogo.jpg", href: "/tuning-guide#brand-audi" },
               { name: "BMW", logo: "/bmwlogo.png", href: "/tuning-guide#brand-bmw" },
               { name: "Mercedes", logo: "/mercedeslogo.png", href: "/tuning-guide#brand-mercedes" },
-              { name: "Volkswagen", logo: "/volkswagenlogo.png", href: "/tuning-guide#brand-volkswagen" },
+              { name: "VW", logo: "/volkswagenlogo.svg", href: "/tuning-guide#brand-volkswagen" },
               { name: "Porsche", logo: "/porschelogo.png", href: "/tuning-guide#brand-porsche" },
             ].map((brand) => (
               <Link
                 key={brand.name}
                 href={brand.href}
-                className="group flex flex-col items-center gap-3 p-4 bg-[#0a0a0a] border border-[#2a2a2a] hover:border-[#FC222D] hover:bg-[#111111] transition-all duration-300"
+                className="group flex flex-col items-center gap-2 p-2 sm:p-4 bg-[#0a0a0a] border border-[#2a2a2a] hover:border-[#FC222D] hover:bg-[#111111] transition-all duration-300"
                 title={`${brand.name} ECU Tuning & Performance Services`}
               >
-                <div className="h-16 flex items-center justify-center w-full">
+                <div className="h-10 sm:h-16 flex items-center justify-center w-full">
                   <Image
                     src={brand.logo}
                     alt={`${brand.name} logo`}
-                    width={120}
-                    height={64}
-                    className="h-12 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity"
+                    width={80}
+                    height={48}
+                    className="h-8 sm:h-12 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity"
+                    unoptimized={brand.logo.endsWith(".svg")}
                   />
                 </div>
-                <span className="text-xs font-bold text-[#6B7280] group-hover:text-[#FC222D] transition-colors uppercase tracking-widest whitespace-nowrap">
-                  {brand.name} Tuning
+                <span className="text-[9px] sm:text-xs font-bold text-[#6B7280] group-hover:text-[#FC222D] transition-colors uppercase tracking-wider text-center leading-tight">
+                  {brand.name}
                 </span>
               </Link>
             ))}

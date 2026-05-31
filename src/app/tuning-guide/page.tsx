@@ -420,7 +420,7 @@ export default function TuningGuidePage() {
             </div>
             <h1
               id="guide-hero-heading"
-              className="text-6xl sm:text-7xl md:text-8xl font-black uppercase text-white leading-tight mb-6"
+              className="text-4xl sm:text-6xl md:text-8xl font-black uppercase text-white leading-tight mb-6"
             >
               Car Tuning
               <br />

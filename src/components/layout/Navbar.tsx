@@ -208,46 +208,70 @@ export function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile drawer — flat list of all pages */}
+      {/* Mobile drawer */}
       <div
         id="mobile-menu"
         className={cn(
-          "md:hidden overflow-hidden transition-all duration-300 border-b bg-black/98 border-[#222]",
-          open ? "max-h-screen pb-6" : "max-h-0"
+          "md:hidden overflow-hidden transition-all duration-300 bg-black border-b border-[#1a1a1a]",
+          open ? "max-h-screen" : "max-h-0"
         )}
         role="navigation"
         aria-label="Mobile navigation menu"
       >
-        <ul className="px-4 pt-4 flex flex-col gap-1" role="list">
-          {NAV_LINKS.flatMap(({ href, label, children }) =>
-            children
-              ? children.map((child) => ({ href: child.href, label: child.label, parent: label }))
-              : [{ href, label, parent: null as string | null }]
-          ).map(({ href, label, parent }) => (
-            <li key={(parent ?? '') + href + label}>
-              <Link
-                href={href}
-                className={cn(
-                  "flex items-center justify-between px-3 py-3 text-sm font-medium tracking-wider uppercase rounded-sm transition-all",
-                  pathname === href
-                    ? "bg-[#FC222D]/10 text-white"
-                    : "text-[#9CA3AF] hover:text-white hover:bg-white/5"
-                )}
-              >
-                <span>{label}</span>
-                {parent && <span className="text-[10px] text-[#4B5563] normal-case tracking-normal font-normal">{parent}</span>}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <div className="px-7 pt-4 flex flex-col gap-3">
-          <a href="tel:+61422300859" className="flex items-center gap-2 text-sm text-[#9CA3AF]">
-            <Phone size={14} aria-hidden="true" />
-            <span>0422 300 859</span>
-          </a>
-          <Link href="/book" className="block text-center py-3 bg-[#FC222D] text-white text-sm font-bold tracking-widest uppercase">
-            Book a Tune
+        <div className="px-4 pt-2 pb-6 flex flex-col gap-0">
+
+          {/* Home */}
+          <Link
+            href="/"
+            className={cn(
+              "py-4 text-sm font-black tracking-widest uppercase border-b border-[#1a1a1a] transition-colors",
+              pathname === "/" ? "text-[#FC222D]" : "text-white"
+            )}
+          >
+            Home
           </Link>
+
+          {/* Grouped sections */}
+          {NAV_LINKS.filter(n => n.children).map(({ label, children }) => (
+            <div key={label} className="border-b border-[#1a1a1a] py-3">
+              <p className="text-[10px] font-black tracking-[0.25em] uppercase text-[#FC222D] mb-2">{label}</p>
+              <div className="flex flex-col gap-0">
+                {children!
+                  .filter((child, idx, arr) => arr.findIndex(c => c.href === child.href) === idx)
+                  .map((child) => (
+                    <Link
+                      key={child.href}
+                      href={child.href}
+                      className={cn(
+                        "py-2.5 text-sm font-semibold tracking-wide uppercase transition-colors flex items-center justify-between",
+                        pathname === child.href ? "text-white" : "text-[#6B7280] hover:text-white"
+                      )}
+                    >
+                      {child.label}
+                      {pathname === child.href && <span className="w-1 h-1 rounded-full bg-[#FC222D]" aria-hidden="true" />}
+                    </Link>
+                  ))}
+              </div>
+            </div>
+          ))}
+
+          {/* CTA block */}
+          <div className="pt-4 flex flex-col gap-3">
+            <Link
+              href="/book"
+              className="block text-center py-4 bg-[#FC222D] text-white text-sm font-black tracking-widest uppercase"
+            >
+              Book a Tune
+            </Link>
+            <a
+              href="tel:+61422300859"
+              className="flex items-center justify-center gap-2 py-3 border border-[#2a2a2a] text-[#9CA3AF] text-sm font-semibold tracking-wider"
+            >
+              <Phone size={14} aria-hidden="true" />
+              0422 300 859
+            </a>
+          </div>
+
         </div>
       </div>
     </header>
