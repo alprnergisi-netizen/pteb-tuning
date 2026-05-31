@@ -193,7 +193,7 @@ export default function OurWorkPage() {
           </p>
           <h1
             id="ow-hero-heading"
-            className="text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-none"
+            className="text-3xl sm:text-5xl md:text-7xl font-black uppercase leading-none"
             style={{ color: '#ffffff' }}
           >
             Our Work
