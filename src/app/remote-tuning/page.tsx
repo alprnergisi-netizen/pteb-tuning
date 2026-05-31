@@ -99,7 +99,7 @@ export default function RemoteTuningPage() {
             <span style={{ color: '#9CA3AF' }}>Remote Tuning</span>
           </nav>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
               <p className="eyebrow mb-5">Available Worldwide</p>
               <h1 className="font-black uppercase leading-none mb-6" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', color: '#ffffff' }}>

@@ -160,7 +160,7 @@ export default function OurWorkPage() {
 
       {/* ── Page hero ─────────────────────────────────────────────────── */}
       <section
-        className="relative border-b border-[#1E1E1E] overflow-hidden h-[70vh] min-h-[500px] flex items-end"
+        className="relative border-b border-[#1E1E1E] overflow-hidden h-[70vh] min-h-[380px] sm:min-h-[500px] flex items-end"
         style={{ backgroundColor: '#0a0a0a' }}
         aria-labelledby="ow-hero-heading"
       >

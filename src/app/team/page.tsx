@@ -107,10 +107,10 @@ export default function TeamPage() {
             <span className="text-[#9CA3AF]">Team</span>
           </nav>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
               <p className="eyebrow mb-4">Founder & Tuner</p>
-              <h1 className="font-black uppercase leading-none mb-6 text-white" style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)" }}>
+              <h1 className="font-black uppercase leading-none mb-6 text-white" style={{ fontSize: "clamp(2.2rem, 7vw, 5.5rem)" }}>
                 Besim Dani
               </h1>
               <p className="text-lg leading-relaxed mb-8 text-[#9CA3AF] max-w-xl">

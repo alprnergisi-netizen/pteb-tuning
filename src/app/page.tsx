@@ -122,7 +122,7 @@ export default function HomePage() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 50%, rgba(0,0,0,0.9) 100%)' }} aria-hidden="true" />
 
 
-        <div className="container relative z-10 mx-auto px-6">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6">
           <div className="max-w-4xl">
             <p className="eyebrow mb-6" style={{ color: '#ffffff', opacity: 0.5 }}>
               <span className="block w-5 h-px bg-white shrink-0" aria-hidden="true" />
@@ -186,7 +186,7 @@ export default function HomePage() {
 
       {/* Car Brand Expertise Section */}
       <section className="py-20 bg-black border-y border-[#2a2a2a]" data-scroll-reveal aria-labelledby="brands-heading">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-16" data-reveal-child>
             <h2
               id="brands-heading"
@@ -198,7 +198,7 @@ export default function HomePage() {
             <p className="text-[#888888]">Trusted by Europe&apos;s finest. Specializing in precision tuning for the world&apos;s best automotive brands.</p>
           </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-5 gap-6 items-center max-w-5xl mx-auto">
+          <div className="grid grid-cols-3 sm:grid-cols-5 gap-3 sm:gap-6 items-center max-w-5xl mx-auto">
             {[
               { name: "Audi", logo: "/audilogo.jpg", href: "/tuning-guide#brand-audi" },
               { name: "BMW", logo: "/bmwlogo.png", href: "/tuning-guide#brand-bmw" },
@@ -234,7 +234,7 @@ export default function HomePage() {
       {/* Warport Product Section */}
       <section className="bg-white" data-scroll-reveal aria-labelledby="warport-product-heading">
         {/* Pattern interrupt — announcement bar */}
-        <div className="bg-white border-y border-[#E5E7EB] py-8 px-6 text-center mt-16">
+        <div className="bg-white border-y border-[#E5E7EB] py-8 px-4 sm:px-6 text-center mt-8 sm:mt-16">
           <p className="text-2xl sm:text-3xl font-black uppercase font-heading leading-tight">
             <span className="text-[#111]">New — </span>
             <span className="text-[#FC222D]">Remote ECU Tuning</span>
@@ -243,7 +243,7 @@ export default function HomePage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-28">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
             {/* Left — copy */}
             <div data-reveal-child>
@@ -345,7 +345,7 @@ export default function HomePage() {
 
       {/* Services Overview */}
       <section className="py-24 bg-[#111111]" data-scroll-reveal aria-labelledby="services-heading">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="mb-12" data-reveal-child>
             <h2
               id="services-heading"
@@ -387,7 +387,7 @@ export default function HomePage() {
                 cta: "Enquire",
               },
             ].map(({ num, title, desc, href, cta }) => (
-              <div key={title} className="group grid grid-cols-[3rem_1fr] md:grid-cols-[4rem_1fr_auto] gap-x-6 gap-y-2 py-8 items-start hover:bg-[#0a0a0a] -mx-6 px-6 transition-colors duration-300">
+              <div key={title} className="group grid grid-cols-[3rem_1fr] md:grid-cols-[4rem_1fr_auto] gap-x-6 gap-y-2 py-8 items-start hover:bg-[#0a0a0a] -mx-4 px-4 sm:-mx-6 sm:px-6 transition-colors duration-300">
                 <span className="text-2xl font-black text-[#FC222D] font-heading tabular-nums pt-0.5" aria-hidden="true">{num}</span>
                 <div>
                   <h3 className="text-white uppercase font-black text-xl mb-2">{title}</h3>
@@ -407,7 +407,7 @@ export default function HomePage() {
 
       {/* Advanced Tuning Features */}
       <section className="py-32" style={{ background: 'linear-gradient(to bottom, #0a0a0a, #111111)' }} data-scroll-reveal aria-labelledby="features-heading">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center mb-20" data-reveal-child>
             <h2
               id="features-heading"
@@ -489,10 +489,10 @@ export default function HomePage() {
 
       {/* About Us Section */}
       <section className="py-24 bg-[#0a0a0a]" data-scroll-reveal aria-labelledby="about-heading">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
 
           {/* Top — image + intro */}
-          <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-20">
             <div data-reveal-child>
               <div className="w-12 h-1 bg-[#FC222D] mb-6" aria-hidden="true" />
               <p className="text-[11px] font-black tracking-[0.3em] uppercase text-[#FC222D] mb-3">About Us</p>
@@ -587,7 +587,7 @@ export default function HomePage() {
       {/* Google Reviews — auto-scroll carousel */}
       <section className="py-20 bg-[#0a0a0a] border-y border-[#1a1a1a]" data-scroll-reveal aria-labelledby="reviews-heading">
         {/* Header */}
-        <div className="container mx-auto px-6 mb-12" data-reveal-child>
+        <div className="container mx-auto px-4 sm:px-6 mb-12" data-reveal-child>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
@@ -631,7 +631,7 @@ export default function HomePage() {
 
       {/* Social Feed Section */}
       <section className="py-24 bg-[#111111] border-y border-[#1a1a1a]" data-scroll-reveal aria-labelledby="social-heading">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12" data-reveal-child>
             <div>
               <h2
@@ -658,7 +658,7 @@ export default function HomePage() {
 
       {/* Trust + Contact Section */}
       <section className="bg-[#0a0a0a] border-y border-[#1a1a1a] py-20" data-scroll-reveal>
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
           {/* Trust grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-[#1a1a1a] mb-16" data-reveal-child>
@@ -717,7 +717,7 @@ export default function HomePage() {
 
       {/* CTA Banner */}
       <section className="py-20 bg-gradient-to-r from-[#FC222D] to-[#CC1B25] text-center" data-scroll-reveal aria-label="Book your tune">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <p className="text-white/80 text-sm font-medium tracking-widest uppercase mb-3">Melbourne&apos;s trusted tuning specialists</p>
           <h2 className="text-white mb-8 uppercase text-4xl sm:text-5xl font-black font-heading">
             Ready to Unlock Your Vehicle&apos;s Full Potential?

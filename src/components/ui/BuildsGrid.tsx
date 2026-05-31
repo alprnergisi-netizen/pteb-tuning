@@ -49,7 +49,7 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
                 className="group relative w-full aspect-[4/3] bg-[#111111] overflow-hidden block focus-visible:ring-2 focus-visible:ring-[#FC222D]"
                 aria-label={`View: ${build.imageAlt}`}
               >
-                <Image src={build.image} alt={build.imageAlt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-contain p-2 group-hover:scale-105 transition-transform duration-300" />
+                <Image src={build.image} alt={build.imageAlt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-contain p-2 group-hover:scale-105 transition-transform duration-300" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
                   <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
                     <ZoomIn size={18} />
