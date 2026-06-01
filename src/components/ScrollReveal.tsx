@@ -8,7 +8,7 @@ interface ScrollRevealProps {
   delay?: number;
 }
 
-export function ScrollReveal({ children, duration = 0.8, delay = 0 }: ScrollRevealProps) {
+export function ScrollReveal({ children, duration = 0.25, delay = 0 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const lastScrollY = useRef(0);
 
@@ -18,35 +18,24 @@ export function ScrollReveal({ children, duration = 0.8, delay = 0 }: ScrollReve
 
     // Set initial state
     element.style.opacity = '0';
-    element.style.transform = 'translateY(40px)';
-    element.style.transition = `opacity ${duration}s ease, transform ${duration}s ease`;
+    element.style.transform = 'translateY(8px)';
+    element.style.transition = `opacity ${duration}s ease-out, transform ${duration}s ease-out`;
     element.style.transitionDelay = `${delay}s`;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Check if scrolling down
             const currentScrollY = window.scrollY;
-            const isScrollingDown = currentScrollY > lastScrollY.current;
-
-            if (isScrollingDown) {
-              // Trigger animation only when scrolling down
-              element.style.opacity = '1';
-              element.style.transform = 'translateY(0)';
-            } else {
-              // Reset when scrolling up (but don't animate)
-              element.style.opacity = '1';
-              element.style.transform = 'translateY(0)';
-            }
-
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
             lastScrollY.current = currentScrollY;
           }
         });
       },
       {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px',
+        threshold: 0,
+        rootMargin: '0px 0px 250px 0px',
       }
     );
 
