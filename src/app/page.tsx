@@ -130,7 +130,7 @@ export default function HomePage() {
           fill
           priority
           quality={60}
-          className="object-cover brightness-[0.35]"
+          className="object-cover [@media(orientation:portrait)]:object-contain brightness-[0.35]"
           aria-hidden="true"
           sizes="100vw"
         />
