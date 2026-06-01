@@ -165,16 +165,16 @@ export default function OurWorkPage() {
         style={{ backgroundColor: '#0a0a0a' }}
         aria-labelledby="ow-hero-heading"
       >
-        {/* Image — 80% of width, full height, anchored right */}
-        <div className="absolute top-0 right-0 w-[80%] h-full" aria-hidden="false">
+        {/* Image — full width on mobile, 80% anchored right on desktop */}
+        <div className="absolute top-0 right-0 w-full sm:w-[80%] h-full" aria-hidden="false">
           <Image
             src="/c63drift.jpeg"
             alt="Mercedes C63 AMG — PTEB tuned, road verified"
             fill
             priority
             quality={60}
-            className="object-cover object-[center_45%]"
-            sizes="80vw"
+            className="object-cover object-[center_45%] [@media(orientation:portrait)]:object-contain [@media(orientation:portrait)]:object-center"
+            sizes="(max-width: 640px) 100vw, 80vw"
           />
           {/* Left-edge fade */}
           <div className="absolute inset-y-0 left-0 w-48" style={{ background: 'linear-gradient(to right, #0a0a0a, transparent)' }} aria-hidden="true" />

@@ -9,6 +9,7 @@ import { FloatingCTA } from "@/components/layout/FloatingCTA";
 import { VideoIntro } from "@/components/VideoIntro";
 import { ScrollRevealManager } from "@/components/providers/ScrollRevealManager";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { ScrollToTop } from "@/components/providers/ScrollToTop";
 
 const SmoothScrollProvider = dynamic(
   () => import("@/components/providers/SmoothScrollProvider").then((m) => m.SmoothScrollProvider)
@@ -331,6 +332,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `document.documentElement.setAttribute('data-theme','dark')`,
           }}
         />
+        <ScrollToTop />
         <VideoIntro />
         <ThemeProvider>
         <SmoothScrollProvider>
