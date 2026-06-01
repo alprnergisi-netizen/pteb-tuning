@@ -113,7 +113,7 @@ export default function ContactPage() {
           </p>
           <h1
             id="contact-heading"
-            className="text-5xl sm:text-6xl md:text-7xl font-black uppercase text-white leading-none mb-6"
+            className="text-3xl sm:text-5xl md:text-7xl font-black uppercase text-white leading-none mb-6"
           >
             Book a Tune
           </h1>

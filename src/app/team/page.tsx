@@ -72,7 +72,7 @@ const breadcrumbSchema = {
 const PLATFORMS = [
   { brand: "BMW", engines: "B48, B58, S55, S58, N54, N55", logo: "/bmwlogo.png" },
   { brand: "Audi", engines: "EA888 Gen3/4, DAZA, EA825, EA839", logo: "/audilogo.png" },
-  { brand: "Volkswagen", engines: "EA888 GTI, Golf R, Arteon", logo: "/volkswagenlogo.png" },
+  { brand: "Volkswagen", engines: "EA888 GTI, Golf R, Arteon", logo: "/volkswagenlogo.svg" },
   { brand: "Mercedes", engines: "M133, M177, M157, M256", logo: "/mercedeslogo.png" },
   { brand: "Porsche", engines: "9A1, 9A2 flat-six, EA839 V6", logo: "/porschelogo.png" },
 ];
@@ -116,10 +116,10 @@ export default function TeamPage() {
               <p className="text-lg leading-relaxed mb-8 text-[#9CA3AF] max-w-xl">
                 Founder & Tuner of PTEB, Besim is an expert in V.A.G diagnostics & has been specialising in VW/Audi software for years. Besim is your go to for all your racing needs with remote support available too.
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/book"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#FC222D] text-white text-sm font-bold tracking-widest uppercase hover:bg-[#CC1B25] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#FC222D] text-white text-sm font-bold tracking-widest uppercase hover:bg-[#CC1B25] transition-colors w-full sm:w-auto"
                 >
                   Book a Tune <ChevronRight size={14} aria-hidden="true" />
                 </Link>
@@ -127,7 +127,7 @@ export default function TeamPage() {
                   href="https://wa.me/61422300859"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-white text-sm font-bold tracking-widest uppercase hover:border-white/40 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-white/20 text-white text-sm font-bold tracking-widest uppercase hover:border-white/40 transition-colors w-full sm:w-auto"
                 >
                   WhatsApp
                 </a>
@@ -176,9 +176,9 @@ export default function TeamPage() {
       </section>
 
       {/* About */}
-      <section className="py-20 border-b border-[#1E1E1E]" style={{ backgroundColor: "#0a0a0a" }}>
+      <section className="py-14 sm:py-20 border-b border-[#1E1E1E]" style={{ backgroundColor: "#0a0a0a" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
             <div>
               <p className="eyebrow mb-4">Background</p>
               <h2 className="text-3xl font-black uppercase text-white mb-8">Built on the dyno, not in theory</h2>
@@ -217,15 +217,15 @@ export default function TeamPage() {
       </section>
 
       {/* Platform coverage */}
-      <section className="py-20 border-b border-[#1E1E1E]" style={{ backgroundColor: "#111" }}>
+      <section className="py-14 sm:py-20 border-b border-[#1E1E1E]" style={{ backgroundColor: "#111" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <p className="eyebrow mb-4">Vehicle Platforms</p>
           <h2 className="text-3xl font-black uppercase text-white mb-12">Specialist marques</h2>
-          <div className="grid sm:grid-cols-5 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-5 gap-3 sm:gap-4">
             {PLATFORMS.map(({ brand, engines, logo }) => (
               <div key={brand} className="p-5 border border-[#1E1E1E] text-center" style={{ backgroundColor: "#0a0a0a" }}>
                 <div className="flex justify-center mb-4">
-                  <Image src={logo} alt={`${brand} logo`} width={40} height={40} className="object-contain opacity-80" />
+                  <Image src={logo} alt={`${brand} logo`} width={40} height={40} className="object-contain opacity-80" unoptimized={logo.endsWith(".svg")} />
                 </div>
                 <p className="text-white font-bold text-sm mb-2">{brand}</p>
                 <p className="text-[#6B7280] text-[10px] leading-relaxed">{engines}</p>
@@ -236,7 +236,7 @@ export default function TeamPage() {
       </section>
 
       {/* Specialisations */}
-      <section className="py-20 border-b border-[#1E1E1E]" style={{ backgroundColor: "#0a0a0a" }}>
+      <section className="py-14 sm:py-20 border-b border-[#1E1E1E]" style={{ backgroundColor: "#0a0a0a" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <p className="eyebrow mb-4">Calibration Specialisations</p>
           <h2 className="text-3xl font-black uppercase text-white mb-12">What Besim builds</h2>
@@ -261,20 +261,20 @@ export default function TeamPage() {
       {/* CTA */}
       <section className="py-20 text-center" style={{ backgroundColor: "#FC222D" }}>
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <h2 className="text-5xl font-black uppercase mb-4 text-white">Book with Besim Dani</h2>
+          <h2 className="text-3xl sm:text-5xl font-black uppercase mb-4 text-white">Book with Besim Dani</h2>
           <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.8)" }}>
             Tell us your platform, modifications, and goals — we will pre-approve your vehicle and confirm exactly what your tune will deliver.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <Link
               href="/book"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white text-sm font-bold tracking-widest uppercase hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white text-sm font-bold tracking-widest uppercase hover:opacity-90 transition-opacity w-full sm:w-auto"
             >
               Book a Tune <ChevronRight size={14} aria-hidden="true" />
             </Link>
             <Link
               href="/tuning-guide"
-              className="inline-flex items-center gap-2 px-8 py-4 border border-white/40 text-white text-sm font-bold tracking-widest uppercase hover:border-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/40 text-white text-sm font-bold tracking-widest uppercase hover:border-white transition-colors w-full sm:w-auto"
             >
               Read the Tuning Guide
             </Link>

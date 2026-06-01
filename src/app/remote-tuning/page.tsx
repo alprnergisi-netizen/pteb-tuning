@@ -109,11 +109,11 @@ export default function RemoteTuningPage() {
               <p className="text-lg leading-relaxed mb-8 max-w-lg" style={{ color: '#9CA3AF' }}>
                 The PTEB Warport delivers a fully custom ECU calibration to your door — no workshop visit, no matter where you are. Our Melbourne-based tuner calibrates your engine remotely via OBD2. Available worldwide.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/warport" className="inline-flex items-center gap-2 px-8 py-4 bg-[#FC222D] text-white text-sm font-bold tracking-widest uppercase hover:bg-[#CC1B25] transition-colors">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Link href="/warport" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#FC222D] text-white text-sm font-bold tracking-widest uppercase hover:bg-[#CC1B25] transition-colors w-full sm:w-auto">
                   Learn About Warport <ChevronRight size={14} aria-hidden="true" />
                 </Link>
-                <a href="https://wa.me/61422300859?text=Hi%20PTEB%2C%20I%27d%20like%20to%20check%20compatibility%20for%20remote%20tuning." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white text-sm font-bold tracking-widest uppercase hover:border-white/50 transition-colors">
+                <a href="https://wa.me/61422300859?text=Hi%20PTEB%2C%20I%27d%20like%20to%20check%20compatibility%20for%20remote%20tuning." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 text-white text-sm font-bold tracking-widest uppercase hover:border-white/50 transition-colors w-full sm:w-auto">
                   <Phone size={14} aria-hidden="true" /> Free Compatibility Check
                 </a>
               </div>
@@ -145,7 +145,7 @@ export default function RemoteTuningPage() {
           <h2 className="text-3xl font-black uppercase mb-12" style={{ color: '#ffffff' }}>
             From any location to a custom tune in 4 steps
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               { n: "01", title: "Order & receive", body: "Order the Warport device online. Ships worldwide — Australia-wide (5–10 days) and internationally. Tracking provided." },
               { n: "02", title: "Connect & read", body: "Plug the Warport into your OBD2 port and pair with our software. It reads your ECU and TCU data securely." },
@@ -261,7 +261,7 @@ export default function RemoteTuningPage() {
       {/* CTA */}
       <div className="py-16 text-center border-t border-[#1E1E1E]" style={{ backgroundColor: '#FC222D' }}>
         <div className="max-w-2xl mx-auto px-4">
-          <h2 className="text-4xl font-black uppercase mb-4" style={{ color: '#ffffff' }}>Ready to tune remotely?</h2>
+          <h2 className="text-2xl sm:text-4xl font-black uppercase mb-4" style={{ color: '#ffffff' }}>Ready to tune remotely?</h2>
           <p className="text-sm mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>Free compatibility check. No payment until you're confirmed. Ships worldwide.</p>
           <Link href="/warport#apply" className="inline-flex items-center gap-2 px-10 py-4 text-sm font-bold tracking-widest uppercase transition-opacity hover:opacity-90" style={{ backgroundColor: '#000', color: '#fff' }}>
             Check My Compatibility <ChevronRight size={14} aria-hidden="true" />

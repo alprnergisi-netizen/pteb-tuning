@@ -202,7 +202,7 @@ export default function OurWorkPage() {
       </section>
 
       {/* ── Build cards ───────────────────────────────────────────────── */}
-      <section className="py-20" style={{ backgroundColor: '#0a0a0a' }} aria-labelledby="builds-heading">
+      <section className="py-12 sm:py-20" style={{ backgroundColor: '#0a0a0a' }} aria-labelledby="builds-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2
             id="builds-heading"
@@ -216,7 +216,7 @@ export default function OurWorkPage() {
       </section>
 
       {/* ── Capabilities ──────────────────────────────────────────────── */}
-      <section className="py-20 border-t border-[#1E1E1E]" style={{ backgroundColor: '#000000' }} aria-labelledby="caps-heading">
+      <section className="py-12 sm:py-20 border-t border-[#1E1E1E]" style={{ backgroundColor: '#000000' }} aria-labelledby="caps-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="mb-12">
             <p className="eyebrow mb-4">
@@ -230,7 +230,7 @@ export default function OurWorkPage() {
               What Your Tune Includes
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {CAPABILITIES.map(({ label, desc }) => (
               <div
                 key={label}
@@ -248,7 +248,7 @@ export default function OurWorkPage() {
       {/* ── CTA ───────────────────────────────────────────────────────── */}
       <section className="py-20 text-center" style={{ backgroundColor: '#FC222D' }} aria-label="Book your tune">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <h2 className="text-5xl font-black uppercase mb-4" style={{ color: '#ffffff' }}>
+          <h2 className="text-3xl sm:text-5xl font-black uppercase mb-4" style={{ color: '#ffffff' }}>
             Your Build. Next.
           </h2>
           <p className="text-sm mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>
