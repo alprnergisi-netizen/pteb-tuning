@@ -138,27 +138,24 @@ export function Footer() {
       </div>
 
       <div className="border-t border-[#1E1E1E]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#4B5563]">
-          <p>© {new Date().getFullYear()} PTEB Tuning — Prestige Team Euro Boost. All rights reserved.</p>
-          <div className="flex flex-col sm:flex-row items-center gap-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col items-center gap-3 text-xs text-[#4B5563]">
+          <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2">
+            <p>© {new Date().getFullYear()} PTEB Tuning — Prestige Team Euro Boost. All rights reserved.</p>
             <p>
               Remote tuning involves risk. Pre-approval required.{" "}
               <Link href="/contact" className="hover:text-white transition-colors underline underline-offset-2">
                 Get assessed
               </Link>
             </p>
-            <p className="text-[#4B5563]">
-              by{" "}
-              <a
-                href="https://nexiomarketing.com.au"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-blue-400 transition-colors"
-              >
-                nexio marketing.com.au
-              </a>
-            </p>
           </div>
+          <a
+            href="https://nexiomarketing.com.au"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-300 transition-colors font-medium tracking-wide"
+          >
+            by nexio marketing.com.au
+          </a>
         </div>
       </div>
     </footer>
