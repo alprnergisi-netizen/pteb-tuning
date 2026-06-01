@@ -183,7 +183,7 @@ export default function HomePage() {
       {/* Trust bar */}
       <div className="bg-[#111] border-b border-[#1a1a1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 md:flex md:flex-wrap md:items-center md:justify-between gap-3 md:gap-x-8 md:gap-y-2 py-3">
+          <div className="flex flex-col sm:grid sm:grid-cols-2 md:flex md:flex-row md:flex-wrap md:items-center md:justify-between gap-2 sm:gap-3 md:gap-x-8 md:gap-y-2 py-3">
             {[
               { icon: "★", text: "Rated Top ECU Tuner in Melbourne", href: "https://www.google.com/maps/search/?api=1&query=PTEB+Tuning+Melbourne" },
               { icon: "✓", text: "Every Car Dyno-Logged & Road-Verified", href: undefined },
