@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { TrendingUp, Gauge, Award, ZoomIn } from "lucide-react";
+import Link from "next/link";
+import { TrendingUp, Gauge, Award, ZoomIn, ChevronRight } from "lucide-react";
 import { ImageLightbox } from "./ImageLightbox";
 
 interface Build {
@@ -19,6 +20,7 @@ interface Build {
   highlight: boolean;
   image: string | null;
   imageAlt: string;
+  detailHref?: string;
 }
 
 export function BuildsGrid({ builds }: { builds: Build[] }) {
@@ -86,13 +88,21 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
                   <p className="text-[10px] text-[#4B5563]">{build.torqueRPM}</p>
                 </div>
               </div>
-              <ul className="space-y-1.5">
+              <ul className="space-y-1.5 mb-4">
                 {build.mods.map((mod) => (
                   <li key={mod} className="flex items-start gap-2 text-xs text-[#9CA3AF]">
                     <span className="text-[#FC222D] shrink-0">›</span>{mod}
                   </li>
                 ))}
               </ul>
+              {build.detailHref && (
+                <Link
+                  href={build.detailHref}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#FC222D] hover:gap-2.5 transition-all"
+                >
+                  View Full Build <ChevronRight size={12} aria-hidden="true" />
+                </Link>
+              )}
             </div>
           </article>
         ))}

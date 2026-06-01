@@ -284,6 +284,22 @@ const FAQ_GUIDE = [
     q: "What should I do before getting a tune?",
     a: "Before any tune: service the car (fresh oil, plugs, filters), fix all fault codes, check for boost leaks and exhaust leaks, verify the intercooler and hoses are in good condition, and ensure the car has no mechanical issues. A professional tuner like PTEB will perform a pre-health check — but arriving with a well-maintained vehicle speeds up the process and protects the result.",
   },
+  {
+    q: "How long does a custom dyno tune take?",
+    a: "A full custom dyno tune at PTEB typically takes 4–8 hours. This includes a pre-health inspection, baseline dyno pull, iterative calibration passes, repeatability verification across multiple back-to-back runs, and road validation. More complex builds — Stage 3, flex fuel, or multi-map — may require a full day. You receive a dyno graph and full data logs at the end of the session.",
+  },
+  {
+    q: "Is ECU tuning legal in Australia?",
+    a: "ECU tuning is legal in Australia for off-road and competition use. For road-registered vehicles, the legality depends on your state. In Victoria, engine modifications must not cause a vehicle to fail a roadworthy inspection, and some modifications require engineering certification. Emissions compliance (ADR compliance) may also be relevant on newer vehicles. PTEB recommends consulting a licensed vehicle engineer for road-registered builds above Stage 2.",
+  },
+  {
+    q: "What is the difference between Stage 1 and Stage 2?",
+    a: "Stage 1 is a software-only tune — no hardware modifications required. It targets the factory ECU limits and extracts power from the existing turbo, intercooler, and fuelling system. Most turbocharged European cars gain 20–30% power at Stage 1. Stage 2 requires supporting hardware: a high-flow downpipe (replacing the catalytic converter), upgraded intercooler, and typically an intake. This unlocks additional headroom for 30–40% gains. Stage 3 goes further with a larger turbocharger, upgraded injectors, and fuel pump.",
+  },
+  {
+    q: "Can I tune my car remotely without visiting a workshop?",
+    a: "Yes. PTEB offers remote ECU tuning worldwide via the PTEB Warport — an OBD2 device that ships to you, reads your ECU, and allows PTEB's tuner in Melbourne to build and flash a fully custom calibration remotely through the PTEB app. The result is comparable to an in-person dyno session for supported platforms. The Warport is $499 AUD and supports Audi, BMW, VW, Mercedes-AMG, and Porsche. A free compatibility check is available before purchase.",
+  },
 ];
 
 const guideSchema = {
@@ -320,7 +336,7 @@ const guideSchema = {
 };
 
 const faqSchema = {
-  "mainEntity": FAQ_GUIDE.map(({ q, a }) => ({
+  mainEntity: FAQ_GUIDE.map(({ q, a }) => ({
     "@type": "Question",
     name: q,
     acceptedAnswer: { "@type": "Answer", text: a },

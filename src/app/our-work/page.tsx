@@ -40,6 +40,7 @@ const BUILDS = [
     highlight: true,
     image: "/builds/audi-tt-dyno.jpg",
     imageAlt: "Audi TT Stage 3 Flex dyno graph — 348.5kW / 592.4Nm tuned by PTEB",
+    detailHref: "/our-work/audi-tt-stage-3",
   },
   {
     car: "Volkswagen Tiguan R-Line",

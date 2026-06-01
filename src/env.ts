@@ -18,6 +18,8 @@ const clientSchema = z.object({
   NEXT_PUBLIC_APP_URL: z.string().url().default("https://ptebtuning.com"),
   NEXT_PUBLIC_CALCOM_TUNING_LINK: z.string().default("prestige-team-euroboost-stxpvl/dyno-tune"),
   NEXT_PUBLIC_CALCOM_MECHANIC_LINK: z.string().default("prestige-team-euroboost-stxpvl/mechanic"),
+  NEXT_PUBLIC_GA4_ID: z.string().optional(),
+  NEXT_PUBLIC_CLARITY_ID: z.string().optional(),
 });
 
 const serverEnv = serverSchema.safeParse(process.env);

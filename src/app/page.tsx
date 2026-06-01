@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { ChevronRight, Phone, Search, BarChart2, ShieldCheck, FileText } from "lucide-react";
+import { TrackedLink } from "@/components/ui/TrackedLink";
 import { WarportTilt } from "@/components/home/WarportTilt";
 import { ReviewsCarousel } from "@/components/home/ReviewsCarousel";
 
@@ -171,14 +172,18 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:flex md:flex-wrap md:items-center md:justify-between gap-3 md:gap-x-8 md:gap-y-2 py-3">
             {[
-              { icon: "★", text: "Rated Top ECU Tuner in Melbourne" },
-              { icon: "✓", text: "Every Car Dyno-Logged & Road-Verified" },
-              { icon: "◎", text: "Fully Custom Maps — Never Off-the-Shelf" },
-              { icon: "⟳", text: "Reply Within 24 Hours" },
-            ].map(({ icon, text }) => (
+              { icon: "★", text: "Rated Top ECU Tuner in Melbourne", href: "https://www.google.com/maps/search/?api=1&query=PTEB+Tuning+Melbourne" },
+              { icon: "✓", text: "Every Car Dyno-Logged & Road-Verified", href: undefined },
+              { icon: "◎", text: "Fully Custom Maps — Never Off-the-Shelf", href: undefined },
+              { icon: "⟳", text: "Reply Within 24 Hours", href: undefined },
+            ].map(({ icon, text, href }) => (
               <div key={text} className="flex items-center gap-2 shrink-0">
                 <span className="text-[#FC222D] text-xs" aria-hidden="true">{icon}</span>
-                <span className="text-[10px] font-medium tracking-wide text-[#9CA3AF] whitespace-nowrap">{text}</span>
+                {href ? (
+                  <a href={href} target="_blank" rel="noopener noreferrer" className="text-[10px] font-medium tracking-wide text-[#9CA3AF] whitespace-nowrap hover:text-white transition-colors underline underline-offset-2">{text}</a>
+                ) : (
+                  <span className="text-[10px] font-medium tracking-wide text-[#9CA3AF] whitespace-nowrap">{text}</span>
+                )}
               </div>
             ))}
           </div>
@@ -371,15 +376,15 @@ export default function HomePage() {
                 num: "02",
                 title: "DSG & Transmission Service",
                 desc: "Specialist repair and calibration of VW Group dual-clutch transmissions — DQ200, DQ250, DQ381 and beyond. Mechatronic replacement, software flash, and full drivetrain diagnostics.",
-                href: "/contact",
-                cta: "Enquire",
+                href: "/services/dsg-mechatronic-repair",
+                cta: "View Service",
               },
               {
                 num: "03",
                 title: "Mechatronic Repair",
                 desc: "DSG mechatronic unit rebuild and replacement. We stock and service units for the full VW Group range. Genuine diagnosis before any part is replaced.",
-                href: "/contact",
-                cta: "Enquire",
+                href: "/services/dsg-mechatronic-repair",
+                cta: "View Service",
               },
               {
                 num: "04",
@@ -682,10 +687,12 @@ export default function HomePage() {
           {/* Contact cards */}
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto" data-reveal-child>
             {/* WhatsApp */}
-            <a
+            <TrackedLink
               href="https://wa.me/61422300859?text=Hi%20PTEB%2C%20I%27d%20like%20to%20enquire%20about%20a%20tune%20for%20my%20car."
               target="_blank"
               rel="noopener noreferrer"
+              trackAs="whatsapp"
+              trackLabel="homepage_contact_section"
               className="group flex items-center gap-5 p-6 bg-[#111] border border-[#1a1a1a] hover:border-[#25D366] transition-all"
             >
               <div className="w-12 h-12 rounded-full bg-[#25D366]/10 border border-[#25D366]/30 flex items-center justify-center shrink-0 group-hover:bg-[#25D366]/20 transition-colors">
@@ -697,7 +704,7 @@ export default function HomePage() {
                 <p className="text-white font-bold text-base mb-0.5">Message on WhatsApp</p>
                 <p className="text-[#6B7280] text-sm">Fastest way to reach us — we reply within the hour</p>
               </div>
-            </a>
+            </TrackedLink>
 
             {/* Phone */}
             <a
@@ -726,21 +733,25 @@ export default function HomePage() {
             Ready to Unlock Your Vehicle&apos;s Full Potential?
           </h2>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-            <a
+            <TrackedLink
               href="https://wa.me/61422300859?text=Hi%20PTEB%2C%20I%27d%20like%20to%20enquire%20about%20a%20tune%20for%20my%20car."
               target="_blank"
               rel="noopener noreferrer"
+              trackAs="whatsapp"
+              trackLabel="homepage_cta_banner"
               className="px-10 py-4 bg-[#25D366] text-white uppercase text-sm font-bold tracking-widest hover:bg-[#1ebe5d] transition-colors shadow-xl flex items-center justify-center gap-3 w-full sm:w-auto"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               WhatsApp Us
-            </a>
-            <a
+            </TrackedLink>
+            <TrackedLink
               href="tel:+61422300859"
+              trackAs="phone"
+              trackLabel="homepage_cta_banner"
               className="px-10 py-4 bg-black text-white uppercase text-sm font-bold tracking-widest hover:bg-[#111] transition-colors shadow-xl flex items-center justify-center gap-3 w-full sm:w-auto"
             >
               <Phone size={18} aria-hidden="true" /> Call: 0422 300 859
-            </a>
+            </TrackedLink>
           </div>
         </div>
       </section>

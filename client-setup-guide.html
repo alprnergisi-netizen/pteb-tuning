@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PTEB Website Setup Guide</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #111;
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      @page { margin: 0; size: A4; }
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #111;
+      color: #fff;
+      padding: 22px 32px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-left { display: flex; flex-direction: column; gap: 2px; }
+
+    .logo-text {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+    .logo-text span { color: #FC222D; }
+
+    .header-sub {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #9CA3AF;
+      margin-top: 3px;
+    }
+
+    .header-badge {
+      background: #FC222D;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+    }
+
+    /* ── Intro bar ── */
+    .intro-bar {
+      background: #FC222D;
+      color: #fff;
+      padding: 10px 32px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .intro-bar span { opacity: 0.8; font-weight: 400; margin-left: 8px; }
+
+    /* ── Body ── */
+    .body { padding: 24px 32px; flex: 1; display: flex; flex-direction: column; gap: 20px; }
+
+    /* ── Section ── */
+    .section { display: flex; flex-direction: column; gap: 10px; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #FC222D;
+    }
+
+    .section-number {
+      width: 24px;
+      height: 24px;
+      background: #FC222D;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .section-title { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+    .section-desc { font-size: 10.5px; color: #6B7280; margin-left: 34px; margin-top: -6px; }
+
+    /* ── Steps ── */
+    .steps { display: flex; flex-direction: column; gap: 6px; margin-left: 34px; }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .step-dot {
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid #FC222D;
+      color: #FC222D;
+      font-size: 9px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-text { font-size: 11px; color: #374151; line-height: 1.45; }
+    .step-text strong { color: #111; font-weight: 600; }
+    .step-text code {
+      background: #F3F4F6;
+      border: 1px solid #E5E7EB;
+      padding: 1px 5px;
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      color: #374151;
+    }
+
+    /* ── Env var table ── */
+    .env-table {
+      margin-left: 34px;
+      border: 1px solid #E5E7EB;
+      width: calc(100% - 34px);
+    }
+
+    .env-row {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .env-row:last-child { border-bottom: none; }
+
+    .env-key {
+      padding: 7px 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #111;
+      background: #F9FAFB;
+      border-right: 1px solid #E5E7EB;
+    }
+
+    .env-val {
+      padding: 7px 10px;
+      font-size: 10.5px;
+      color: #6B7280;
+      line-height: 1.4;
+    }
+    .env-val strong { color: #111; }
+
+    /* ── Netlify steps ── */
+    .netlify-steps {
+      margin-left: 34px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    /* ── Note box ── */
+    .note {
+      background: #FFF7ED;
+      border: 1px solid #FED7AA;
+      padding: 9px 12px;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      margin-left: 34px;
+    }
+    .note-icon { font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+    .note-text { font-size: 10.5px; color: #92400E; line-height: 1.45; }
+    .note-text strong { font-weight: 600; }
+
+    /* ── Divider ── */
+    .divider { height: 1px; background: #F3F4F6; }
+
+    /* ── Footer ── */
+    .footer {
+      background: #111;
+      color: #9CA3AF;
+      padding: 12px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9.5px;
+    }
+    .footer strong { color: #FC222D; }
+
+    /* ── Print button (hidden when printing) ── */
+    .print-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #FC222D;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(252,34,45,0.4);
+    }
+    @media print { .print-btn { display: none; } }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .resend-note {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      padding: 8px 10px;
+      font-size: 10px;
+      color: #166534;
+      margin-left: 34px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="logo-text">TUNED BY <span>PTEB</span></div>
+      <div class="header-sub">Prestige Team Euro Boost</div>
+    </div>
+    <div class="header-badge">Website Setup Guide</div>
+  </div>
+
+  <!-- Intro bar -->
+  <div class="intro-bar">
+    Your website is live and ready.
+    <span>Complete the 2 steps below to activate the buy buttons and contact form emails.</span>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+
+    <!-- Step 1: Shopify -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <div class="section-title">Shopify — Activate Buy Buttons</div>
+      </div>
+      <div class="section-desc">Connects your Shopify store so customers can purchase the Warport and Hoodie directly on the website.</div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-dot">A</div>
+          <div class="step-text">Log into your Shopify admin at <strong>your-store.myshopify.com/admin</strong></div>
+        </div>
+        <div class="step">
+          <div class="step-dot">B</div>
+          <div class="step-text">Go to <strong>Settings → Apps and sales channels → Develop apps</strong> → click <strong>Create an app</strong>. Name it <em>"PTEB Website"</em>.</div>
+        </div>
+        <div class="step">
+          <div class="step-dot">C</div>
+          <div class="step-text">Click <strong>Configure Storefront API scopes</strong>. Enable: <code>unauthenticated_read_product_listings</code> and <code>unauthenticated_write_checkouts</code>. Save.</div>
+        </div>
+        <div class="step">
+          <div class="step-dot">D</div>
+          <div class="step-text">Click <strong>Install app</strong>. Under API credentials, copy your <strong>Storefront API access token</strong>. You'll need it below.</div>
+        </div>
+      </div>
+
+      <div class="env-table">
+        <div class="env-row">
+          <div class="env-key">SHOPIFY_STORE_DOMAIN</div>
+          <div class="env-val">Your store URL, e.g. <strong>ptebtuning.myshopify.com</strong></div>
+        </div>
+        <div class="env-row">
+          <div class="env-key">SHOPIFY_STOREFRONT_ACCESS_TOKEN</div>
+          <div class="env-val">The token you copied in step D above</div>
+        </div>
+        <div class="env-row">
+          <div class="env-key">SHOPIFY_WARPORT_HANDLE</div>
+          <div class="env-val">Shopify product slug for Warport — default: <strong>pteb-warport</strong></div>
+        </div>
+        <div class="env-row">
+          <div class="env-key">SHOPIFY_HOODIE_HANDLE</div>
+          <div class="env-val">Shopify product slug for Hoodie — default: <strong>tuned-by-pteb-hoodie</strong></div>
+        </div>
+      </div>
+
+      <div class="note">
+        <div class="note-icon">⚠</div>
+        <div class="note-text"><strong>Product handles:</strong> these must exactly match the URL slug of each product in Shopify. Find it in Shopify admin → Products → click the product → scroll to <em>"Search engine listing"</em> → the handle is the last part of the URL.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Step 2: Resend -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <div class="section-title">Resend — Activate Contact Form Emails</div>
+      </div>
+      <div class="section-desc">Makes the contact page and Warport enquiry form deliver emails to your inbox. Free plan is sufficient.</div>
+
+      <div class="two-col">
+        <div class="steps">
+          <div class="step">
+            <div class="step-dot">A</div>
+            <div class="step-text">Go to <strong>resend.com</strong> and create a free account.</div>
+          </div>
+          <div class="step">
+            <div class="step-dot">B</div>
+            <div class="step-text">Go to <strong>API Keys → Create API key</strong>. Copy the key that starts with <code>re_</code>.</div>
+          </div>
+          <div class="step">
+            <div class="step-dot">C</div>
+            <div class="step-text">Go to <strong>Domains → Add domain</strong>. Enter <strong>ptebtuning.com</strong>. Resend will give you DNS records to add.</div>
+          </div>
+          <div class="step">
+            <div class="step-dot">D</div>
+            <div class="step-text">Add those DNS records in your domain registrar (wherever you registered ptebtuning.com). Wait ~5 min for verification.</div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div class="env-table" style="margin-left:0;width:100%;">
+            <div class="env-row">
+              <div class="env-key">RESEND_API_KEY</div>
+              <div class="env-val">The key from step B above</div>
+            </div>
+            <div class="env-row">
+              <div class="env-key">RESEND_FROM_EMAIL</div>
+              <div class="env-val"><strong>noreply@ptebtuning.com</strong> (once domain verified)</div>
+            </div>
+            <div class="env-row">
+              <div class="env-key">ADMIN_EMAIL</div>
+              <div class="env-val">Email that receives all enquiries — already set to <strong>prestigeteamhelp@gmail.com</strong></div>
+            </div>
+          </div>
+          <div class="resend-note">
+            <strong>Free plan covers 3,000 emails/month</strong> — more than enough for enquiries. No credit card required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Step 3: Netlify -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <div class="section-title">Add Variables to Netlify &amp; Redeploy</div>
+      </div>
+
+      <div class="netlify-steps">
+        <div class="step">
+          <div class="step-dot">A</div>
+          <div class="step-text">Log in at <strong>app.netlify.com</strong> → click your site (<em>ptebtuning</em>)</div>
+        </div>
+        <div class="step">
+          <div class="step-dot">B</div>
+          <div class="step-text">Go to <strong>Site configuration → Environment variables → Add a variable</strong></div>
+        </div>
+        <div class="step">
+          <div class="step-dot">C</div>
+          <div class="step-text">Add each variable from Steps 1 and 2 above. Key in the left box, value in the right box.</div>
+        </div>
+        <div class="step">
+          <div class="step-dot">D</div>
+          <div class="step-text">Go to <strong>Deploys → Trigger deploy → Deploy site</strong>. Wait ~2 minutes. Done.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div>Built by <strong>PTEB Dev</strong> — ptebtuning.com is live at GitHub → Netlify auto-deploy</div>
+    <div>Questions? Contact the developer who gave you this guide.</div>
+  </div>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">Save as PDF</button>
+
+</body>
+</html>
