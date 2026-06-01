@@ -90,6 +90,12 @@ export function VideoIntro() {
           object-fit: cover;
         }
 
+        @media (orientation: portrait) {
+          #intro-video {
+            object-fit: contain;
+          }
+        }
+
         #intro-skip {
           position: absolute;
           bottom: 32px;

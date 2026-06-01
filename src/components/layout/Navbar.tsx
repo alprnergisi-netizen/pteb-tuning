@@ -232,37 +232,50 @@ export function Navbar() {
           </Link>
 
           {/* Grouped sections */}
-          {NAV_LINKS.filter(n => n.children).map(({ label, children }) => (
-            <div key={label} className="border-b border-[#1a1a1a] py-3">
-              <p className="text-[10px] font-black tracking-[0.25em] uppercase text-[#FC222D] mb-2">{label}</p>
-              <div className="flex flex-col gap-0">
-                {children!
-                  .filter((child, idx, arr) => arr.findIndex(c => c.href === child.href) === idx)
-                  .map((child) => (
+          {NAV_LINKS.filter(n => n.children).map(({ label, children }) => {
+            const isContact = label === "Contact";
+            const uniqueChildren = children!.filter((child, idx, arr) => arr.findIndex(c => c.href === child.href) === idx);
+            return (
+              <div key={label} className="border-b border-[#1a1a1a] py-3">
+                <p className="text-[10px] font-black tracking-[0.25em] uppercase text-[#FC222D] mb-2">{label}</p>
+                {isContact ? (
+                  <div className="flex flex-col gap-2 mt-1">
                     <Link
-                      key={child.href}
-                      href={child.href}
-                      className={cn(
-                        "py-2.5 text-sm font-semibold tracking-wide uppercase transition-colors flex items-center justify-between",
-                        pathname === child.href ? "text-white" : "text-[#6B7280] hover:text-white"
-                      )}
+                      href="/contact"
+                      className="block text-center py-3.5 bg-[#FC222D] text-white text-sm font-black tracking-widest uppercase"
                     >
-                      {child.label}
-                      {pathname === child.href && <span className="w-1 h-1 rounded-full bg-[#FC222D]" aria-hidden="true" />}
+                      Book a Tune
                     </Link>
-                  ))}
+                    <Link
+                      href="/book"
+                      className="block text-center py-3.5 border border-[#FC222D] text-[#FC222D] text-sm font-black tracking-widest uppercase hover:bg-[#FC222D] hover:text-white transition-colors"
+                    >
+                      Book Online
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="flex flex-col gap-0">
+                    {uniqueChildren.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className={cn(
+                          "py-2.5 text-sm font-semibold tracking-wide uppercase transition-colors flex items-center justify-between",
+                          pathname === child.href ? "text-white" : "text-[#6B7280] hover:text-white"
+                        )}
+                      >
+                        {child.label}
+                        {pathname === child.href && <span className="w-1 h-1 rounded-full bg-[#FC222D]" aria-hidden="true" />}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
 
-          {/* CTA block */}
-          <div className="pt-4 flex flex-col gap-3">
-            <Link
-              href="/book"
-              className="block text-center py-4 bg-[#FC222D] text-white text-sm font-black tracking-widest uppercase"
-            >
-              Book a Tune
-            </Link>
+          {/* Phone CTA */}
+          <div className="pt-4">
             <a
               href="tel:+61422300859"
               className="flex items-center justify-center gap-2 py-3 border border-[#2a2a2a] text-[#9CA3AF] text-sm font-semibold tracking-wider"
