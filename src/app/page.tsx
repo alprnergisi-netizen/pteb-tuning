@@ -138,7 +138,7 @@ export default function HomePage() {
               <span className="text-[#FC222D]">Euro Boost</span>
             </h1>
 
-            <p className="text-base text-[#9CA3AF] mb-10 max-w-lg leading-relaxed" style={{ letterSpacing: '0.01em' }}>
+            <p className="text-base text-[#9CA3AF] mb-6 sm:mb-10 max-w-lg leading-relaxed" style={{ letterSpacing: '0.01em' }}>
               Melbourne&apos;s specialist for custom ECU & TCU remapping on European performance cars.
               BMW, Audi, VW, Mercedes, Porsche — every result dyno-logged and road-verified.
             </p>
@@ -169,7 +169,7 @@ export default function HomePage() {
       {/* Trust bar */}
       <div className="bg-[#111] border-b border-[#1a1a1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-wrap items-center justify-center md:justify-between gap-x-8 gap-y-2 py-3">
+          <div className="grid grid-cols-2 md:flex md:flex-wrap md:items-center md:justify-between gap-3 md:gap-x-8 md:gap-y-2 py-3">
             {[
               { icon: "★", text: "Rated Top ECU Tuner in Melbourne" },
               { icon: "✓", text: "Every Car Dyno-Logged & Road-Verified" },
@@ -186,7 +186,7 @@ export default function HomePage() {
       </div>
 
       {/* Car Brand Expertise Section */}
-      <section className="py-20 bg-black border-y border-[#2a2a2a]" data-scroll-reveal aria-labelledby="brands-heading">
+      <section className="py-12 sm:py-20 bg-black border-y border-[#2a2a2a]" data-scroll-reveal aria-labelledby="brands-heading">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-16" data-reveal-child>
             <h2
@@ -322,7 +322,7 @@ export default function HomePage() {
             {/* Right — product visual */}
             <div className="flex flex-col items-center gap-8" data-reveal-child>
               <div className="w-full rounded overflow-hidden" style={{ filter: 'contrast(1.12) saturate(0.88) brightness(0.97)' }}>
-                <Warport3DViewerClient variant="light" height={560} />
+                <Warport3DViewerClient variant="light" height="clamp(260px, 70vw, 560px)" />
               </div>
 
               <div className="w-full max-w-sm space-y-3">
@@ -494,7 +494,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6">
 
           {/* Top — image + intro */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-20">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-10 sm:mb-20">
             <div data-reveal-child>
               <div className="w-12 h-1 bg-[#FC222D] mb-6" aria-hidden="true" />
               <p className="text-[11px] font-black tracking-[0.3em] uppercase text-[#FC222D] mb-3">About Us</p>
@@ -557,7 +557,7 @@ export default function HomePage() {
           </div>
 
           {/* Why PTEB — differentiator grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#1a1a1a]" data-reveal-child>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#1a1a1a]" data-reveal-child>
             {[
               {
                 label: "Founder-Led",
