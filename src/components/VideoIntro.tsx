@@ -38,11 +38,22 @@ export function VideoIntro() {
     if (!isVisible) return;
     const video = videoRef.current;
     if (!video) return;
-    const onError = () => setTimeout(dismiss, 800);
-    video.addEventListener('ended', dismiss);
+
+    // Auto-dismiss if video doesn't start playing within 2.5s (autoplay blocked, slow network, etc.)
+    let started = false;
+    const fallback = setTimeout(() => { if (!started) dismiss(); }, 2500);
+
+    const onPlaying = () => { started = true; };
+    const onEnded = () => { clearTimeout(fallback); dismiss(); };
+    const onError = () => { clearTimeout(fallback); setTimeout(dismiss, 400); };
+
+    video.addEventListener('playing', onPlaying);
+    video.addEventListener('ended', onEnded);
     video.addEventListener('error', onError);
     return () => {
-      video.removeEventListener('ended', dismiss);
+      clearTimeout(fallback);
+      video.removeEventListener('playing', onPlaying);
+      video.removeEventListener('ended', onEnded);
       video.removeEventListener('error', onError);
     };
   }, [isVisible, dismiss]);
@@ -57,7 +68,6 @@ export function VideoIntro() {
         autoPlay
         muted
         playsInline
-        poster="/poster.jpg"
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
