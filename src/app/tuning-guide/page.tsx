@@ -439,10 +439,9 @@ export default function TuningGuidePage() {
                 src="/teslaui.jpg"
                 alt="PTEB Tuning — ECU performance calibration"
                 fill
-                priority
-                quality={80}
+                quality={45}
                 className="object-cover object-center"
-                sizes="(max-width: 1024px) 0vw, 640px"
+                sizes="640px"
               />
               {/* Fade all four edges into the page background */}
               <div className="absolute inset-y-0 left-0 w-32" style={{ background: 'linear-gradient(to right, #0a0a0a, transparent)' }} aria-hidden="true" />

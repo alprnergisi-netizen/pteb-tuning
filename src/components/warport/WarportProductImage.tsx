@@ -37,8 +37,8 @@ export function WarportProductImage() {
             alt="PTEB Warport OBD2 remote tuning device"
             fill
             sizes="(max-width: 1024px) 50vw, 30vw"
+            quality={75}
             className="object-contain"
-            priority
             itemProp="image"
           />
         </div>

@@ -140,7 +140,7 @@ export default function TeamPage() {
                 alt="PTEB Illyrian Racing — Besim Dani, Founder & Tuner"
                 fill
                 priority
-                quality={80}
+                quality={70}
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />

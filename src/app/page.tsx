@@ -115,6 +115,7 @@ export default function HomePage() {
           alt=""
           fill
           priority
+          quality={60}
           className="object-cover brightness-[0.35]"
           aria-hidden="true"
           sizes="100vw"
@@ -539,6 +540,7 @@ export default function HomePage() {
                 alt="Audi TT on the PTEB dyno — Melbourne professional ECU tuning"
                 width={1200}
                 height={800}
+                quality={70}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-auto object-contain brightness-90 group-hover:brightness-75 transition-all duration-300"
               />

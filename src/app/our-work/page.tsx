@@ -171,7 +171,7 @@ export default function OurWorkPage() {
             alt="Mercedes C63 AMG — PTEB tuned, road verified"
             fill
             priority
-            quality={80}
+            quality={60}
             className="object-cover object-[center_45%]"
             sizes="80vw"
           />
