@@ -57,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Melbourne local
     {
       url: `${BASE_URL}/melbourne-tuning`,
-      lastModified: new Date("2026-05-21"),
+      lastModified: new Date("2026-06-01"),
       changeFrequency: "monthly",
       priority: 0.95,
     },
@@ -67,6 +67,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date("2026-05-21"),
       changeFrequency: "monthly",
       priority: 0.95,
+    },
+    // Service pages
+    {
+      url: `${BASE_URL}/services/dsg-mechatronic-repair`,
+      lastModified: new Date("2026-06-01"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    // Build case studies
+    {
+      url: `${BASE_URL}/our-work/audi-tt-stage-3`,
+      lastModified: new Date("2026-06-01"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    // Comparison guide
+    {
+      url: `${BASE_URL}/remote-tuning/remote-vs-workshop`,
+      lastModified: new Date("2026-06-01"),
+      changeFrequency: "monthly",
+      priority: 0.85,
     },
     // Location pages
     ...LOCATIONS.map((loc) => ({

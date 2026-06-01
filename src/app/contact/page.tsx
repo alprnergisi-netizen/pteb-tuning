@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Book a Tune Melbourne — Contact PTEB | 0422 300 859",
     description: "Book your custom ECU tune with PTEB. Free pre-approval check. Call or WhatsApp 0422 300 859, or fill in the enquiry form. Response within 24 hours.",
     url: "/contact",
+    images: [{ url: "/dynoimage.jpg", width: 1200, height: 630, alt: "Book a tune — PTEB Tuning Melbourne workshop" }],
   },
 };
 

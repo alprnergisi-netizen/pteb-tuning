@@ -86,6 +86,18 @@ const homepageSchema = {
   ]
 };
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://ptebtuning.com/#webpage",
+  url: "https://ptebtuning.com",
+  name: "ECU Tuning Melbourne — Custom Dyno Tune | PTEB",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "#speakable-about", "#homepage-faq"],
+  },
+};
+
 const videoSchema = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
@@ -108,6 +120,7 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
 
       {/* Hero Section */}
       <section className="hero h-[100dvh] relative flex items-center overflow-hidden bg-[#0a0a0a]">
@@ -722,6 +735,46 @@ export default function HomePage() {
           </div>
 
           <p className="text-center text-xs text-[#4B5563] mt-8">Free pre-approval check · No obligation · We'll tell you exactly what your car will make</p>
+        </div>
+      </section>
+
+      {/* FAQ — visible HTML for AEO/AI answer engines */}
+      <section id="homepage-faq" className="py-14 sm:py-20 bg-[#0a0a0a] border-t border-[#1a1a1a]" data-scroll-reveal aria-labelledby="faq-heading">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <p className="eyebrow mb-4" data-reveal-child>Common Questions</p>
+          <h2 id="faq-heading" className="text-3xl sm:text-4xl font-black uppercase text-white mb-10" data-reveal-child>
+            ECU Tuning — FAQ
+          </h2>
+          <div className="space-y-0" data-reveal-child>
+            {([
+              {
+                q: "How much does ECU tuning cost in Melbourne?",
+                a: "Pricing depends on your platform, modification level, and tune complexity. Stage 1 software-only remaps are the most affordable entry point. Stage 2 and Stage 3 tunes require supporting hardware and are priced accordingly. Remote tuning via the PTEB Warport starts at $499 AUD. Contact us for a free pre-approval and exact quote with no obligation.",
+              },
+              {
+                q: "Which cars does PTEB Tuning specialise in?",
+                a: "PTEB Tuning specialises in European turbocharged vehicles: Audi (EA888, DAZA, EA825, EA839), BMW (B48, B58, N55, S55, S58), Volkswagen (Golf GTI, Golf R, Tiguan R), Mercedes-AMG (A45, CLA45, C63), and Porsche (911, Macan, Cayenne). Contact us to confirm your specific platform and engine code.",
+              },
+              {
+                q: "What is the difference between Stage 1, Stage 2, and Stage 3 tuning?",
+                a: "Stage 1 is a software-only ECU remap — no hardware changes needed, typically delivers 20–30% power gains on a stock car. Stage 2 requires a downpipe, upgraded intercooler, and/or intake to unlock further gains (30–40% increase). Stage 3 involves a full hardware build: upgraded turbocharger, high-flow injectors, fuelling system upgrades, and flex fuel capability — delivering maximum power potential.",
+              },
+              {
+                q: "Can I get my car ECU tuned remotely without visiting the workshop?",
+                a: "Yes. The PTEB Warport is an OBD2 device that ships worldwide. You plug it into your car's OBD port, connect via our software, and our tuner calibrates your ECU remotely — delivering the same quality as a workshop tune. Compatible with most VAG, BMW, and Mercedes platforms. Free compatibility check before purchase.",
+              },
+            ] as { q: string; a: string }[]).map(({ q, a }, i) => (
+              <div key={i} className="border-b border-[#1a1a1a] py-6">
+                <h3 className="text-white font-bold text-sm sm:text-base mb-2">{q}</h3>
+                <p className="text-[#9CA3AF] text-sm leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8" data-reveal-child>
+            <Link href="/tuning-guide" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FC222D] hover:opacity-80 transition-opacity">
+              Read the full tuning guide <ChevronRight size={12} aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </section>
 

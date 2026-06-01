@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "DSG Mechatronic Repair Melbourne — VW Group Specialist | PTEB",
     description: "Specialist DSG mechatronic unit repair, replacement, and TCU remapping. DQ200, DQ250, DQ381. Melbourne's VW Group DSG specialist.",
     url: "/services/dsg-mechatronic-repair",
+    images: [{ url: "/dynoimage.jpg", width: 1200, height: 630, alt: "DSG mechatronic repair and TCU remapping — PTEB Melbourne" }],
   },
 };
 
