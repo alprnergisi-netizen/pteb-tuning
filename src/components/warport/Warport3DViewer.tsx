@@ -248,10 +248,12 @@ export default function Warport3DViewer({ variant = 'dark', height = 560 }: Prop
         </button>
       </div>
 
-      {/* Status */}
-      <div className={`absolute bottom-4 left-4 text-[11px] pointer-events-none select-none ${statusColor}`}>
-        {status}
-      </div>
+      {/* Status — only show loading/error, not triangle count */}
+      {status !== '' && !status.includes('triangles') && (
+        <div className={`absolute bottom-4 left-4 text-[11px] pointer-events-none select-none ${statusColor}`}>
+          {status}
+        </div>
+      )}
 
       {/* Drag hint */}
       <div className={`absolute top-4 left-1/2 -translate-x-1/2 text-[11px] pointer-events-none select-none tracking-wider uppercase ${hintColor}`}>
