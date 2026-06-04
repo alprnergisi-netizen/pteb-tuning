@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { BuildsGrid } from "@/components/ui/BuildsGrid";
+import { DragStripStat } from "@/components/ui/DragStripStat";
 
 export const metadata: Metadata = {
   title: "Dyno Tuning Results — Audi TT Stage 3 Flex, BMW M4, Audi RS3 | PTEB",
@@ -215,6 +216,9 @@ export default function OurWorkPage() {
           <BuildsGrid builds={BUILDS} />
         </div>
       </section>
+
+      {/* ── Drag strip stat ───────────────────────────────────────────── */}
+      <DragStripStat />
 
       {/* ── Capabilities ──────────────────────────────────────────────── */}
       <section className="py-12 sm:py-20 border-t border-[#1E1E1E]" style={{ backgroundColor: '#000000' }} aria-labelledby="caps-heading">
