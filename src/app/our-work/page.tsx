@@ -135,6 +135,34 @@ const breadcrumbSchema = {
   ],
 };
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://ptebtuning.com/our-work#webpage",
+  "url": "https://ptebtuning.com/our-work",
+  "name": "Dyno Tuning Results — Audi TT Stage 3 Flex, BMW M4, Audi RS3 | PTEB",
+  "description": "Real dyno results from PTEB Tuning. Audi TT 2023 Stage 3 Flex: 348.5kW / 592.4Nm. BMW M4 Competition: 334kW (+74kW). Audi RS3 DAZA: 318kW (+68kW). Every result dyno-logged and road-verified.",
+  "isPartOf": { "@id": "https://ptebtuning.com/#website" },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", "h2", "h3"]
+  }
+};
+
+const dragStripSchema = {
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Volkswagen Tiguan R — PTEB Stage 3 Flex Quarter Mile Run",
+  "description": "PTEB-tuned Volkswagen Tiguan R ran 11.35 seconds at 198 km/h in the quarter mile at a verified drag strip. Stage 3 flex fuel build by PTEB Tuning Melbourne. 60ft: 1.770s, 1/8 mile: 7.355s @ 156 km/h, 1000ft: 9.518s.",
+  "organizer": { "@type": "Organization", "@id": "https://ptebtuning.com/#business" },
+  "location": { "@type": "Place", "name": "Drag Strip, Australia" },
+  "about": {
+    "@type": "Car",
+    "name": "Volkswagen Tiguan R",
+    "description": "PTEB Stage 3 Flex build — 11.35s @ 198 km/h quarter mile",
+  }
+};
+
 const buildSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -155,10 +183,9 @@ export default function OurWorkPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(dragStripSchema) }} />
 
       {/* ── Page hero ─────────────────────────────────────────────────── */}
       <section

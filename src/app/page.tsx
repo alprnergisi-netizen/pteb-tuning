@@ -4,6 +4,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { ChevronRight, Phone, Search, BarChart2, ShieldCheck, FileText } from "lucide-react";
 import { TrackedLink } from "@/components/ui/TrackedLink";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { WarportTilt } from "@/components/home/WarportTilt";
 import { ReviewsCarousel } from "@/components/home/ReviewsCarousel";
 
@@ -51,34 +52,34 @@ const homepageSchema = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is ECU tuning?",
+          "name": "How much does ECU tuning cost in Melbourne?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ECU tuning (also called engine remapping or chip tuning) is the process of modifying the software inside your car's Engine Control Unit to unlock performance headroom left by the manufacturer. A professional tuner rewrites boost, fuelling, ignition, and other maps to deliver more power, torque, and throttle response."
+            "text": "Pricing depends on your platform, modification level, and tune complexity. Stage 1 software-only remaps are the most affordable entry point. Stage 2 and Stage 3 tunes require supporting hardware and are priced accordingly. Remote tuning via the PTEB Warport starts at $499 AUD. Contact us for a free pre-approval and exact quote with no obligation."
           }
         },
         {
           "@type": "Question",
-          "name": "How do I book a custom dyno tune in Melbourne?",
+          "name": "Which cars does PTEB Tuning specialise in?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Contact PTEB Tuning via phone, WhatsApp, or the enquiry form. Tell us your vehicle, modifications, fuel type, and goals. We'll pre-approve your vehicle and confirm exactly what your tune will deliver before you commit to anything."
+            "text": "PTEB Tuning specialises in European turbocharged vehicles: Audi (EA888, DAZA, EA825, EA839), BMW (B48, B58, N55, S55, S58), Volkswagen (Golf GTI, Golf R, Tiguan R), Mercedes-AMG (A45, CLA45, C63), and Porsche (911, Macan, Cayenne). Contact us to confirm your specific platform and engine code."
           }
         },
         {
           "@type": "Question",
-          "name": "What cars does PTEB Tuning work on?",
+          "name": "What is the difference between Stage 1, Stage 2, and Stage 3 tuning?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "PTEB Tuning specialises in European performance vehicles including Audi (EA888, DAZA, EA825), BMW (B48, B58, S55, S58), Mercedes-AMG (M133, M177, M157), Volkswagen (EA888 GTI/Golf R), and Porsche (9A1, 9A2 flat-six platforms)."
+            "text": "Stage 1 is a software-only ECU remap — no hardware changes needed, typically delivers 20–30% power gains on a stock car. Stage 2 requires a downpipe, upgraded intercooler, and/or intake to unlock further gains (30–40% increase). Stage 3 involves a full hardware build: upgraded turbocharger, high-flow injectors, fuelling system upgrades, and flex fuel capability — delivering maximum power potential."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the PTEB Warport remote tuning device?",
+          "name": "Can I get my car ECU tuned remotely without visiting the workshop?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The PTEB Warport is a remote ECU tuning device that plugs into your OBD2 port. It connects to the PTEB app and allows our tuners to recalibrate your engine remotely from anywhere in the world — no workshop visit required. It costs $499 AUD and delivers a full custom tune file."
+            "text": "Yes. The PTEB Warport is an OBD2 device that ships worldwide. You plug it into your car's OBD port, connect via our software, and our tuner calibrates your ECU remotely — delivering the same quality as a workshop tune. Compatible with most VAG, BMW, and Mercedes platforms. Free compatibility check before purchase."
           }
         }
       ]
@@ -185,7 +186,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col sm:grid sm:grid-cols-2 md:flex md:flex-row md:flex-wrap md:items-center md:justify-between gap-2 sm:gap-3 md:gap-x-8 md:gap-y-2 py-3">
             {[
-              { icon: "★", text: "Rated Top ECU Tuner in Melbourne", href: "https://www.google.com/maps/search/?api=1&query=PTEB+Tuning+Melbourne" },
+              { icon: "★", text: "Rated Top ECU Tuner in Melbourne", href: "https://share.google/llErYNUiUHo3MqDS2" },
               { icon: "✓", text: "Every Car Dyno-Logged & Road-Verified", href: undefined },
               { icon: "◎", text: "Fully Custom Maps — Never Off-the-Shelf", href: undefined },
               { icon: "⟳", text: "Reply Within 24 Hours", href: undefined },
@@ -636,7 +637,7 @@ export default function HomePage() {
               </div>
             </div>
             <a
-              href="https://www.google.com/maps/search/?api=1&query=PTEB+Tuning+Melbourne"
+              href="https://share.google/llErYNUiUHo3MqDS2"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#2a2a2a] text-white text-xs font-bold tracking-widest uppercase hover:border-[#FC222D] hover:bg-[#FC222D]/5 transition-all shrink-0"
@@ -745,8 +746,8 @@ export default function HomePage() {
           <h2 id="faq-heading" className="text-3xl sm:text-4xl font-black uppercase text-white mb-10" data-reveal-child>
             ECU Tuning — FAQ
           </h2>
-          <div className="space-y-0" data-reveal-child>
-            {([
+          <div data-reveal-child>
+            <FaqAccordion items={[
               {
                 q: "How much does ECU tuning cost in Melbourne?",
                 a: "Pricing depends on your platform, modification level, and tune complexity. Stage 1 software-only remaps are the most affordable entry point. Stage 2 and Stage 3 tunes require supporting hardware and are priced accordingly. Remote tuning via the PTEB Warport starts at $499 AUD. Contact us for a free pre-approval and exact quote with no obligation.",
@@ -763,12 +764,7 @@ export default function HomePage() {
                 q: "Can I get my car ECU tuned remotely without visiting the workshop?",
                 a: "Yes. The PTEB Warport is an OBD2 device that ships worldwide. You plug it into your car's OBD port, connect via our software, and our tuner calibrates your ECU remotely — delivering the same quality as a workshop tune. Compatible with most VAG, BMW, and Mercedes platforms. Free compatibility check before purchase.",
               },
-            ] as { q: string; a: string }[]).map(({ q, a }, i) => (
-              <div key={i} className="border-b border-[#1a1a1a] py-6">
-                <h3 className="text-white font-bold text-sm sm:text-base mb-2">{q}</h3>
-                <p className="text-[#9CA3AF] text-sm leading-relaxed">{a}</p>
-              </div>
-            ))}
+            ]} />
           </div>
           <div className="mt-8" data-reveal-child>
             <Link href="/tuning-guide" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FC222D] hover:opacity-80 transition-opacity">

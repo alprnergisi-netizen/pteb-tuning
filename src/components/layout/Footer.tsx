@@ -45,7 +45,7 @@ export function Footer() {
           {/* NAP — visible for local SEO */}
           <address className="not-italic mb-6 space-y-2">
             <a
-              href="https://maps.google.com/?q=168+McIntyre+Rd+Sunshine+North+VIC+3020"
+              href="https://share.google/llErYNUiUHo3MqDS2"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-start gap-2 text-sm hover:text-white transition-colors"

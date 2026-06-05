@@ -235,6 +235,7 @@ const siteSchema = {
         "https://tiktok.com/@ptebtuning",
         "https://wa.me/61422300859",
         "https://www.facebook.com/permalink.php?story_fbid=pfbid02USJdKfm1fMy5NCbSU3U6szY5LNmP8NdobuZm4PxPkbPLWw1AdSGGgHkf6E8X5iQwl&id=61552644926281",
+        "https://share.google/llErYNUiUHo3MqDS2",
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
@@ -329,7 +330,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Always dark mode */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `document.documentElement.setAttribute('data-theme','dark')`,
+            __html: `document.documentElement.setAttribute('data-theme','dark');try{if(!sessionStorage.getItem('pteb-intro-seen')){document.documentElement.classList.add('intro-active');}}catch(e){}`,
           }}
         />
         <ScrollToTop />

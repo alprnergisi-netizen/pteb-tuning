@@ -3,7 +3,12 @@ import { z } from "zod";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { createCheckout } from "@/lib/shopify";
 
-const ALLOWED_ORIGINS = new Set(["https://ptebtuning.com", "http://localhost:3000", "http://localhost:3001"]);
+const ALLOWED_ORIGINS = new Set([
+  "https://ptebtuning.com",
+  "https://inspiring-starlight-2aa4d7.netlify.app",
+  "http://localhost:3000",
+  "http://localhost:3001",
+]);
 
 const schema = z.object({
   variantId: z.string().min(1).max(200),

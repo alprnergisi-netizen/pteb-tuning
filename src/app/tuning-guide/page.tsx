@@ -374,6 +374,18 @@ const unifiedSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://ptebtuning.com/tuning-guide#webpage",
+      "url": "https://ptebtuning.com/tuning-guide",
+      "name": "ECU Tuning Guide: How Dyno Tuning Works, Stage 1 vs Stage 2 vs Stage 3 | PTEB",
+      "description": "A comprehensive guide to ECU tuning — how dyno mapping works, Stage 1 vs Stage 2 vs Stage 3 differences, flex fuel and E85 calibration, anti-lag, launch control, and per-brand guides for Audi, BMW, VW, Mercedes, Porsche.",
+      "isPartOf": { "@id": "https://ptebtuning.com/#website" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", "h3"]
+      }
+    },
+    {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ptebtuning.com" },

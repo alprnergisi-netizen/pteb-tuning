@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
+import Script from 'next/script';
 import { Waves } from '@/components/ui/Waves';
-
-const BookingWidget = dynamic(
-  () => import('@/components/booking-calendar/booking-widget').then((m) => m.BookingWidget),
-  { loading: () => <div className="h-96 bg-[#111] animate-pulse" /> }
-);
+import { BookingWidget } from '@/components/booking-calendar/booking-widget';
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -25,12 +21,18 @@ export const metadata: Metadata = {
     description: 'Schedule your custom ECU tuning appointment online. PTEB Tuning — Melbourne specialist for BMW, Audi, VW, Mercedes, Porsche. Free pre-health check included.',
     url: '/book',
   },
+  other: {
+    'link-preconnect-cal': '<link rel="preconnect" href="https://app.cal.com" />',
+  },
 };
 
 export default function BookPage() {
   return (
     <div className="bg-[#0A0A0A]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {/* Start loading Cal.com embed script as early as possible */}
+      <Script src="https://app.cal.com/embed/embed.js" strategy="afterInteractive" />
+      <link rel="preconnect" href="https://app.cal.com" />
 
       {/* Hero with waves */}
       <div className="relative overflow-hidden pt-28 pb-12 border-b border-[#1a1a1a]">

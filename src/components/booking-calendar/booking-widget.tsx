@@ -64,39 +64,36 @@ export function BookingWidget() {
   const [selected, setSelected] = useState<DeptId>('tuning');
   const initialised = useRef(new Set<DeptId>());
 
-  useEffect(() => { setupCal(); }, []);
+  const initDept = (deptId: DeptId) => {
+    if (initialised.current.has(deptId)) return;
+    initialised.current.add(deptId);
 
-  useEffect(() => {
-    if (initialised.current.has(selected)) return;
-    initialised.current.add(selected);
+    const dept = DEPARTMENTS.find((d) => d.id === deptId)!;
+    const elId = `cal-embed-${deptId}`;
 
-    const dept = DEPARTMENTS.find((d) => d.id === selected)!;
-    const elId = `cal-embed-${selected}`;
-
-    // Cal queues all calls if embed.js hasn't loaded yet — no polling needed.
-    // But we need window.Cal to exist (setupCal runs on mount, so it will be).
     const tryInit = () => {
-      if (!window.Cal) { setTimeout(tryInit, 50); return; }
-
-      // Calling Cal('init', namespace) both loads embed.js (first call) and
-      // sets up window.Cal.ns[namespace] synchronously as a queue.
+      if (!window.Cal) { setTimeout(() => tryInit(), 50); return; }
       window.Cal('init', dept.namespace, { origin: 'https://app.cal.com' });
-
       window.Cal.ns[dept.namespace]('inline', {
         elementOrSelector: `#${elId}`,
         config: { layout: 'month_view', useSlotsViewOnSmallScreen: 'true' },
         calLink: dept.calLink,
       });
-
       window.Cal.ns[dept.namespace]('ui', {
         cssVarsPerTheme: { dark: dept.cssVars },
         hideEventTypeDetails: true,
         layout: 'month_view',
       });
     };
-
     tryInit();
-  }, [selected]);
+  };
+
+  useEffect(() => {
+    setupCal();
+    // Pre-initialize all departments immediately so they're ready before user picks
+    DEPARTMENTS.forEach((d) => initDept(d.id));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="max-w-4xl mx-auto">

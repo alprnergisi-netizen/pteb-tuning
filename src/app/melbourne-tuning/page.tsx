@@ -18,6 +18,18 @@ const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://ptebtuning.com/melbourne-tuning#webpage",
+      "url": "https://ptebtuning.com/melbourne-tuning",
+      "name": "ECU Tuning Melbourne — Custom Dyno Tune Specialist | PTEB",
+      "description": "Melbourne's specialist for custom ECU and TCU remapping. PTEB Tuning delivers dyno-logged, road-verified results for BMW, Audi, VW, Mercedes and Porsche. 500+ vehicles tuned. Free pre-approval.",
+      "isPartOf": { "@id": "https://ptebtuning.com/#website" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", "h3"]
+      }
+    },
+    {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://ptebtuning.com" },

@@ -18,6 +18,18 @@ const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://ptebtuning.com/services/dsg-mechatronic-repair#webpage",
+      "url": "https://ptebtuning.com/services/dsg-mechatronic-repair",
+      "name": "DSG Mechatronic Repair & TCU Tuning Melbourne — VW Audi | PTEB",
+      "description": "Specialist DSG mechatronic unit repair, replacement and TCU remapping in Melbourne. DQ200, DQ250, DQ381 DSG gearboxes serviced by PTEB — genuine diagnosis before any parts replaced.",
+      "isPartOf": { "@id": "https://ptebtuning.com/#website" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", "h3"]
+      }
+    },
+    {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://ptebtuning.com" },

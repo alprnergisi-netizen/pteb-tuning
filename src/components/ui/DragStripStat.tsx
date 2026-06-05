@@ -28,7 +28,7 @@ export function DragStripStat() {
                 <span className="text-[#FC222D]">11.35 sec @ 198 km/h.</span>
               </h2>
               <p className="text-sm text-[#9CA3AF] max-w-md leading-relaxed">
-                Stock Tiguan Rs run the quarter mile in 13–14 seconds. This one does it in <strong className="text-white">11.35 seconds at 198 km/h</strong> — a full 2 seconds faster than factory. Same car. Different tune.
+                <strong className="text-white">11.35 seconds at 198 km/h</strong> — fully built, fully tuned by PTEB. Every number on this card is real, logged, and verified at the strip.
               </p>
             </div>
 

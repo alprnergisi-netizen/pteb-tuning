@@ -69,6 +69,21 @@ const breadcrumbSchema = {
   ],
 };
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://ptebtuning.com/team#webpage",
+  "url": "https://ptebtuning.com/team",
+  "name": "Besim Dani — Founder & Tuner | PTEB Tuning Melbourne",
+  "description": "Meet Besim Dani, founder of PTEB Tuning. Expert in V.A.G diagnostics and VW/Audi software. Specialising in MQB platforms, flex fuel, and remote ECU tuning worldwide.",
+  "isPartOf": { "@id": "https://ptebtuning.com/#website" },
+  "about": { "@id": "https://ptebtuning.com/#besim" },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", "h2", "h3"]
+  }
+};
+
 const PLATFORMS = [
   { brand: "BMW", engines: "B48, B58, S55, S58, N54, N55", logo: "/bmwlogo.png" },
   { brand: "Audi", engines: "EA888 Gen3/4, DAZA, EA825, EA839", logo: "/audilogo.png" },
@@ -97,6 +112,7 @@ export default function TeamPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       {/* Hero */}
       <section className="pt-28 pb-20 md:pt-36 border-b border-[#1E1E1E]" style={{ backgroundColor: "#0a0a0a" }}>

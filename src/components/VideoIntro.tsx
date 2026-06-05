@@ -9,13 +9,12 @@ export function VideoIntro() {
   useEffect(() => {
     if (!sessionStorage.getItem('pteb-intro-seen')) {
       setIsVisible(true);
-      document.body.classList.add('intro-active');
     }
   }, []);
 
   const dismiss = useCallback(() => {
     setIsVisible(false);
-    document.body.classList.remove('intro-active');
+    document.documentElement.classList.remove('intro-active');
     sessionStorage.setItem('pteb-intro-seen', '1');
 
     // Stagger-reveal nav → hero → each subsequent section
@@ -119,8 +118,8 @@ export function VideoIntro() {
         }
 
         /* Hide all rows while intro plays */
-        body.intro-active nav,
-        body.intro-active main > section {
+        html.intro-active nav,
+        html.intro-active main > section {
           opacity: 0;
           transform: translateY(22px);
         }
@@ -131,7 +130,7 @@ export function VideoIntro() {
           transform: translateY(0) !important;
         }
 
-        body.intro-active {
+        html.intro-active body {
           overflow: hidden;
         }
       `}</style>

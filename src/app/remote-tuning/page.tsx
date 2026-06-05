@@ -19,6 +19,18 @@ const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://ptebtuning.com/remote-tuning#webpage",
+      "url": "https://ptebtuning.com/remote-tuning",
+      "name": "Remote ECU Tuning Worldwide — PTEB Warport | $499",
+      "description": "Get a professional custom ECU tune delivered anywhere in the world. The PTEB Warport OBD2 device ships internationally — plug in, connect, and our Melbourne tuner calibrates your engine remotely.",
+      "isPartOf": { "@id": "https://ptebtuning.com/#website" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", "h3"]
+      }
+    },
+    {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://ptebtuning.com" },
