@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
     const checkoutUrl = await createCheckout(parsed.data.variantId, parsed.data.quantity);
     return NextResponse.json({ checkoutUrl });
   } catch (error) {
-    console.error("Shopify checkout error");
+    console.error("Shopify checkout error:", error instanceof Error ? error.message : String(error));
     return NextResponse.json({ error: "Failed to create checkout" }, { status: 500 });
   }
 }
