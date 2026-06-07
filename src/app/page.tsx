@@ -104,16 +104,11 @@ const videoSchema = {
   "@type": "VideoObject",
   name: "PTEB Tuning — Melbourne's ECU Remapping Specialist",
   description: "PTEB Tuning showcase: custom ECU and TCU remapping for European performance vehicles in Melbourne. Audi, BMW, Volkswagen, Mercedes-AMG, Porsche — all results dyno-logged and road-verified.",
-  thumbnailUrl: "https://ptebtuning.com/poster.jpg",
+  thumbnailUrl: "https://ptebtuning.com/og-image.png",
   contentUrl: "https://ptebtuning.com/hero.mp4",
   uploadDate: "2025-01-01",
   duration: "PT0M30S",
-  publisher: {
-    "@type": "Organization",
-    "@id": "https://ptebtuning.com/#business",
-    name: "PTEB Tuning",
-    logo: { "@type": "ImageObject", url: "https://ptebtuning.com/logo.png" },
-  },
+  publisher: { "@id": "https://ptebtuning.com/#business" },
 };
 
 export default function HomePage() {

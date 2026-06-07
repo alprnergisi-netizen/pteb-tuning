@@ -36,28 +36,7 @@ const schema = {
         { "@type": "ListItem", position: 2, name: "ECU Tuning Melbourne", item: "https://ptebtuning.com/melbourne-tuning" },
       ],
     },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://ptebtuning.com/#business",
-      name: "PTEB Tuning",
-      description: "Melbourne's specialist ECU and TCU remapping workshop for European performance vehicles. Custom dyno-mapped tunes for Audi, BMW, Volkswagen, Mercedes-AMG and Porsche — dyno-logged and road-verified.",
-      url: "https://ptebtuning.com",
-      telephone: "+61422300859",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "168 McIntyre Rd",
-        addressLocality: "Sunshine North",
-        addressRegion: "VIC",
-        postalCode: "3020",
-        addressCountry: "AU",
-      },
-      geo: { "@type": "GeoCoordinates", latitude: -37.7591, longitude: 144.8299 },
-      aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "48", bestRating: "5" },
-      openingHoursSpecification: [
-        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "08:00", closes: "17:00" },
-        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Saturday"], opens: "09:00", closes: "14:00" },
-      ],
-    },
+    { "@id": "https://ptebtuning.com/#business" },
     {
       "@type": "FAQPage",
       mainEntity: [

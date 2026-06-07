@@ -41,11 +41,7 @@ const schema = {
       "@type": "Service",
       name: "DSG Mechatronic Unit Repair & TCU Remapping Melbourne",
       description: "Specialist repair, rebuild, and replacement of DSG mechatronic units for VW Group vehicles. Covers DQ200, DQ250, DQ381 gearboxes. Genuine diagnosis before parts replacement. TCU remapping available after repair.",
-      provider: {
-        "@type": "AutomotiveBusiness",
-        "@id": "https://ptebtuning.com/#business",
-        name: "PTEB Tuning",
-      },
+      provider: { "@id": "https://ptebtuning.com/#business" },
       areaServed: { "@type": "City", name: "Melbourne", addressRegion: "VIC", addressCountry: "AU" },
     },
     {

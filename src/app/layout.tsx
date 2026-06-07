@@ -175,19 +175,8 @@ const siteSchema = {
           closes: "14:00",
         },
       ],
-      // E-E-A-T: named founder with expertise
-      founder: {
-        "@type": "Person",
-        "@id": `${BASE_URL}/#besim`,
-        name: "Besim",
-        jobTitle: "Lead Tuner & Founder",
-        worksFor: { "@id": `${BASE_URL}/#business` },
-        knowsAbout: [
-          "ECU tuning", "TCU remapping", "Dyno calibration", "Flex fuel tuning",
-          "Anti-lag systems", "Launch control", "Audi TFSI tuning", "BMW M-series tuning",
-          "Volkswagen EA888 tuning", "Mercedes AMG calibration", "Bosch ECU remapping",
-        ],
-      },
+      // E-E-A-T: named founder — full Person definition lives on /team, referenced here
+      founder: { "@id": `${BASE_URL}/#besim` },
       employee: [{ "@id": `${BASE_URL}/#besim` }],
       // Topical authority signals
       knowsAbout: [

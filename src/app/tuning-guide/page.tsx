@@ -26,19 +26,8 @@ const articleSchema = {
   image: "https://ptebtuning.com/dynoimage.jpg",
   datePublished: "2025-01-01",
   dateModified: "2026-05-29",
-  author: {
-    "@type": "Person",
-    "@id": "https://ptebtuning.com/#besim",
-    name: "Besim",
-    jobTitle: "Lead Tuner & Founder",
-    worksFor: { "@id": "https://ptebtuning.com/#business" },
-  },
-  publisher: {
-    "@type": "Organization",
-    "@id": "https://ptebtuning.com/#business",
-    name: "PTEB Tuning",
-    logo: { "@type": "ImageObject", url: "https://ptebtuning.com/logo.png" },
-  },
+  author: { "@id": "https://ptebtuning.com/#besim" },
+  publisher: { "@id": "https://ptebtuning.com/#business" },
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://ptebtuning.com/tuning-guide" },
   about: [
     { "@type": "Thing", name: "ECU tuning" },
@@ -414,7 +403,7 @@ const unifiedSchema = {
     {
       "@type": "AutoRepair",
       "name": "Prestige Team Euro Boost",
-      "image": "https://ptebtuning.com/images/pteb-workshop.jpg",
+      "image": "https://ptebtuning.com/og-image.png",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Melbourne",

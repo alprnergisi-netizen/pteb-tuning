@@ -34,19 +34,8 @@ const schema = {
       image: "https://ptebtuning.com/dynoimage.jpg",
       datePublished: "2026-06-01",
       dateModified: "2026-06-01",
-      author: {
-        "@type": "Person",
-        "@id": "https://ptebtuning.com/#besim",
-        name: "Besim",
-        jobTitle: "Lead Tuner & Founder",
-        worksFor: { "@id": "https://ptebtuning.com/#business" },
-      },
-      publisher: {
-        "@type": "Organization",
-        "@id": "https://ptebtuning.com/#business",
-        name: "PTEB Tuning",
-        logo: { "@type": "ImageObject", url: "https://ptebtuning.com/logo.png" },
-      },
+      author: { "@id": "https://ptebtuning.com/#besim" },
+      publisher: { "@id": "https://ptebtuning.com/#business" },
     },
     {
       "@type": "FAQPage",

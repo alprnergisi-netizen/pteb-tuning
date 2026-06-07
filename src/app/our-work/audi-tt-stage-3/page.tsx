@@ -30,7 +30,7 @@ const schema = {
       "@type": "CreativeWork",
       name: "Audi TT 2023 Stage 3 Flex Fuel — 348.5kW / 592.4Nm",
       description: "Full Stage 3 Flex Fuel build on a 2023 Audi TT by PTEB Tuning Melbourne. ECU converted from Simos 18.10 to 18.1. Garrett PMAX 2 turbocharger. MPI 980cc injectors. 7.5R mechatronic conversion. WMI and full E85 flex fuel system. Result: 348.5kW / 592.4Nm at wheel on Dyno Innovations equipment.",
-      author: { "@type": "Organization", "@id": "https://ptebtuning.com/#business", name: "PTEB Tuning" },
+      author: { "@id": "https://ptebtuning.com/#business" },
       image: "https://ptebtuning.com/builds/audi-tt-dyno.jpg",
     },
   ],

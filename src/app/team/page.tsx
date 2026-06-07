@@ -24,11 +24,7 @@ const personSchema = {
   description: "Founder & Tuner of PTEB, Besim Dani is an expert in V.A.G diagnostics and has been specialising in VW/Audi software for years. Besim is your go-to for all your racing needs, with remote support available worldwide through the PTEB Warport device.",
   url: "https://ptebtuning.com/team",
   image: "https://ptebtuning.com/ourteam.jpg",
-  worksFor: {
-    "@type": "AutomotiveBusiness",
-    "@id": "https://ptebtuning.com/#business",
-    name: "PTEB Tuning",
-  },
+  worksFor: { "@id": "https://ptebtuning.com/#business" },
   knowsAbout: [
     "ECU tuning",
     "TCU remapping",

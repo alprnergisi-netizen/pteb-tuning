@@ -154,7 +154,7 @@ const dragStripSchema = {
   "@type": "SportsEvent",
   "name": "Volkswagen Tiguan R — PTEB Stage 3 Flex Quarter Mile Run",
   "description": "PTEB-tuned Volkswagen Tiguan R ran 11.35 seconds at 198 km/h in the quarter mile at a verified drag strip. Stage 3 flex fuel build by PTEB Tuning Melbourne. 60ft: 1.770s, 1/8 mile: 7.355s @ 156 km/h, 1000ft: 9.518s.",
-  "organizer": { "@type": "Organization", "@id": "https://ptebtuning.com/#business" },
+  "organizer": { "@id": "https://ptebtuning.com/#business" },
   "location": { "@type": "Place", "name": "Drag Strip, Australia" },
   "about": {
     "@type": "Car",
