@@ -26,7 +26,6 @@ const NAV_LINKS: NavItem[] = [
     children: [
       { href: "/tuning-guide",       label: "Tuning Guide",        desc: "Platform guide, services & ECU overview" },
       { href: "/melbourne-tuning",   label: "Melbourne Tuning",    desc: "Book an in-person dyno session" },
-      { href: "/remote-tuning",      label: "Remote Tuning",       desc: "Full custom tune anywhere in the world" },
     ],
   },
   {
@@ -34,7 +33,6 @@ const NAV_LINKS: NavItem[] = [
     label: "Products",
     children: [
       { href: "/products",           label: "All Products",        desc: "Shop PTEB tools & merchandise" },
-      { href: "/warport",            label: "PTEB Warport",        desc: "Remote ECU tuning device" },
       { href: "/products#hoodie",    label: "PTEB Hoodie",         desc: "Official PTEB merchandise" },
     ],
   },

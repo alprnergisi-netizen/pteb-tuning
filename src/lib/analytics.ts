@@ -6,7 +6,7 @@ function gtag(...args: unknown[]) {
   if (typeof w.gtag === "function") w.gtag(...args);
 }
 
-export function trackEvent(name: string, params?: Record<string, string>) {
+function trackEvent(name: string, params?: Record<string, string>) {
   gtag("event", name, params);
 }
 

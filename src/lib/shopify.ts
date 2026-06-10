@@ -27,7 +27,7 @@ export interface ShopifyVariant {
   price: { amount: string; currencyCode: string };
 }
 
-export interface ShopifyProduct {
+interface ShopifyProduct {
   id: string;
   handle: string;
   title: string;

@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     template: "%s | PTEB Tuning",
   },
   description:
-    "PTEB Tuning is Melbourne's specialist for custom ECU & TCU remapping on European cars. 500+ vehicles dyno-tuned. BMW, Audi, VW, Mercedes, Porsche. Anti-lag, flex fuel, boost-by-gear — all results dyno-logged and road-verified.",
+    "Melbourne's specialist for custom ECU & TCU remapping on European cars — BMW, Audi, VW, Mercedes, Porsche. 500+ vehicles dyno-tuned, road-verified.",
   authors: [
     { name: "Besim — PTEB Tuning", url: BASE_URL },
   ],
@@ -113,7 +113,7 @@ const siteSchema = {
       logo: `${BASE_URL}/logo.png`,
       image: `${BASE_URL}/og-image.png`,
       description:
-        "PTEB Tuning is Melbourne's specialist in custom ECU and TCU remapping for European performance vehicles. Led by founder Besim, the workshop delivers data-driven dyno tuning, flex fuel calibration, rolling anti-lag, launch control, and remote tuning via the PTEB Warport OBD2 device — all results dyno-logged and road-verified.",
+        "PTEB Tuning is Melbourne's specialist in custom ECU and TCU remapping for European performance vehicles. Led by founder Besim, the workshop delivers data-driven dyno tuning, flex fuel calibration, rolling anti-lag, and launch control — all results dyno-logged and road-verified.",
       telephone: "+61422300859",
       email: "prestigeteamhelp@gmail.com",
       priceRange: "$$",
@@ -239,18 +239,6 @@ const siteSchema = {
               description: "Full custom ECU calibration on a rolling road dynamometer. Includes pre-health checks, baseline pull, iterative calibration, repeatability verification, and road validation. All results logged and provided to the customer.",
               provider: { "@id": `${BASE_URL}/#business` },
               areaServed: { "@type": "City", name: "Melbourne" },
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              "@id": `${BASE_URL}/#service-warport`,
-              name: "PTEB Warport Remote ECU Tuning",
-              description: "Remote OBD2 ECU tuning via the PTEB Warport device. Plug into your OBD port, connect via app, and PTEB tuners recalibrate your engine remotely. Available worldwide. Includes full custom calibration, live data logging, and ongoing revisions.",
-              provider: { "@id": `${BASE_URL}/#business` },
-              areaServed: { "@type": "Place", name: "Worldwide" },
-              offers: { "@type": "Offer", price: "499.00", priceCurrency: "AUD", availability: "https://schema.org/InStock" },
             },
           },
           {

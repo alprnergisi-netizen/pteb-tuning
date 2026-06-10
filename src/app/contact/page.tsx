@@ -67,11 +67,6 @@ const contactSchema = {
           name: "How long does a dyno tune take?",
           acceptedAnswer: { "@type": "Answer", text: "A full custom dyno tune typically takes 4–8 hours depending on the platform. This includes a pre-health inspection, baseline pull, iterative calibration, repeatability verification, and road validation. You receive full data logs and a dyno graph." },
         },
-        {
-          "@type": "Question",
-          name: "Does PTEB offer remote ECU tuning?",
-          acceptedAnswer: { "@type": "Answer", text: "Yes. PTEB offers remote ECU tuning Australia-wide via the PTEB Warport — an OBD2 device that ships to you and allows our tuners to calibrate your engine remotely through the PTEB app. No workshop visit required. Available for BMW, Audi, VW, Mercedes, and Porsche platforms." },
-        },
       ],
     },
   ],
@@ -251,23 +246,8 @@ export default function ContactPage() {
                     168 McIntyre Rd, Sunshine North VIC 3020
                   </a>
                 </address>
-                <p className="mt-1 text-xs text-[#6B7280]">Remote tuning via PTEB Warport — Australia-wide.</p>
               </div>
             </div>
-          </div>
-
-          <div className="mt-8 p-5 border border-[#FC222D]/20 bg-[#FC222D]/5">
-            <h3
-              className="text-base font-black uppercase text-white mb-2"
-             
-            >
-              Important — Remote Tune Disclaimer
-            </h3>
-            <p className="text-xs text-[#9CA3AF] leading-relaxed">
-              Remote ECU tuning carries inherent risk. All vehicles must be pre-approved for platform
-              compatibility before ordering a Warport. A battery stabiliser is strongly recommended.
-              PTEB Tuning provides no warranty on third-party hardware faults.
-            </p>
           </div>
         </section>
       </div>

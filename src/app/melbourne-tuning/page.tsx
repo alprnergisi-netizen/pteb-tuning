@@ -165,12 +165,11 @@ export default function MelbourneTuningPage() {
           <p className="text-sm mb-10 max-w-xl" style={{ color: '#9CA3AF' }}>
             Every vehicle is different — pricing depends on your platform, modification level, and tune complexity. Contact us for a free pre-approval and exact quote with no obligation.
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
             {[
               { stage: "Stage 1", desc: "Software-only ECU remap. No hardware modifications required. Suitable for stock or lightly modified vehicles.", from: "Contact for quote" },
               { stage: "Stage 2", desc: "ECU remap with supporting hardware: downpipe, intercooler, and/or intake. Significant power gain over Stage 1.", from: "Contact for quote" },
               { stage: "Stage 3", desc: "Full performance build — upgraded turbo, high-flow injectors, fuelling upgrades, flex fuel. Maximum power potential.", from: "Contact for quote" },
-              { stage: "Remote Tune", desc: "Full custom ECU tune delivered anywhere in the world via the PTEB Warport OBD2 device. No workshop visit needed.", from: "$499 AUD" },
             ].map(({ stage, desc, from }) => (
               <div key={stage} className="p-6 border border-[#1E1E1E]" style={{ backgroundColor: '#111' }}>
                 <p className="text-xs font-black tracking-widest uppercase text-[#FC222D] mb-2">{stage}</p>

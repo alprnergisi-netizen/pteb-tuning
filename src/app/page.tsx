@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import { ChevronRight, Phone, Search, BarChart2, ShieldCheck, FileText } from "lucide-react";
 import { TrackedLink } from "@/components/ui/TrackedLink";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
-import { WarportTilt } from "@/components/home/WarportTilt";
 import { ReviewsCarousel } from "@/components/home/ReviewsCarousel";
 
 const SocialFeed = dynamic(
@@ -13,11 +12,9 @@ const SocialFeed = dynamic(
   { loading: () => <div className="h-64 bg-[#0D0D0D] animate-pulse rounded" /> }
 );
 
-import { Warport3DViewerClient } from "@/components/warport/Warport3DViewerClient";
-
 export const metadata: Metadata = {
-  title: "ECU Tuning Melbourne — Custom Dyno Tune for BMW, Audi, VW | PTEB",
-  description: "Melbourne's specialist ECU tuning workshop. Custom dyno-mapped tunes for Audi, BMW, Volkswagen, Mercedes and Porsche — all results logged and road-verified. Get a free pre-approval check today.",
+  title: "ECU Tuning Melbourne | Custom Dyno Tune — PTEB",
+  description: "Melbourne's specialist ECU tuning workshop. Custom dyno-mapped tunes for Audi, BMW, VW, Mercedes & Porsche — all results logged and road-verified.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "ECU Tuning Melbourne | Prestige Team Euro Boost",
@@ -37,7 +34,7 @@ const homepageSchema = {
       "alternateName": "PTEB Tuning",
       "url": "https://ptebtuning.com",
       "logo": "https://ptebtuning.com/logo.png",
-      "description": "Melbourne's specialist ECU and TCU tuning workshop. PTEB delivers fully custom dyno-mapped calibrations for European performance vehicles — Audi, BMW, Volkswagen, Mercedes-AMG, and Porsche. 4.9 Google rating. Worldwide remote tuning via the PTEB Warport.",
+      "description": "Melbourne's specialist ECU and TCU tuning workshop. PTEB delivers fully custom dyno-mapped calibrations for European performance vehicles — Audi, BMW, Volkswagen, Mercedes-AMG, and Porsche. 4.9 Google rating.",
       "areaServed": { "@type": "Place", "name": "Worldwide" },
       "address": { "@type": "PostalAddress", "streetAddress": "168 McIntyre Rd", "addressLocality": "Sunshine North", "addressRegion": "VIC", "postalCode": "3020", "addressCountry": "AU" },
       "contactPoint": { "@type": "ContactPoint", "telephone": "+61422300859", "contactType": "customer service", "availableLanguage": "English" },
@@ -55,7 +52,7 @@ const homepageSchema = {
           "name": "How much does ECU tuning cost in Melbourne?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pricing depends on your platform, modification level, and tune complexity. Stage 1 software-only remaps are the most affordable entry point. Stage 2 and Stage 3 tunes require supporting hardware and are priced accordingly. Remote tuning via the PTEB Warport starts at $499 AUD. Contact us for a free pre-approval and exact quote with no obligation."
+            "text": "Pricing depends on your platform, modification level, and tune complexity. Stage 1 software-only remaps are the most affordable entry point. Stage 2 and Stage 3 tunes require supporting hardware and are priced accordingly. Contact us for a free pre-approval and exact quote with no obligation."
           }
         },
         {
@@ -72,14 +69,6 @@ const homepageSchema = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Stage 1 is a software-only ECU remap — no hardware changes needed, typically delivers 20–30% power gains on a stock car. Stage 2 requires a downpipe, upgraded intercooler, and/or intake to unlock further gains (30–40% increase). Stage 3 involves a full hardware build: upgraded turbocharger, high-flow injectors, fuelling system upgrades, and flex fuel capability — delivering maximum power potential."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I get my car ECU tuned remotely without visiting the workshop?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. The PTEB Warport is an OBD2 device that ships worldwide. You plug it into your car's OBD port, connect via our software, and our tuner calibrates your ECU remotely — delivering the same quality as a workshop tune. Compatible with most VAG, BMW, and Mercedes platforms. Free compatibility check before purchase."
           }
         }
       ]
@@ -247,118 +236,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Warport Product Section */}
-      <section className="bg-white" data-scroll-reveal aria-labelledby="warport-product-heading">
-        {/* Pattern interrupt — announcement bar */}
-        <div className="bg-white border-y border-[#E5E7EB] py-8 px-4 sm:px-6 text-center mt-8 sm:mt-16">
-          <p className="text-2xl sm:text-3xl font-black uppercase font-heading leading-tight">
-            <span className="text-[#111]">New — </span>
-            <span className="text-[#FC222D]">Remote ECU Tuning</span>
-            <span className="text-[#111]"> from Around the World</span>
-          </p>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20 md:py-28">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-
-            {/* Left — copy */}
-            <div data-reveal-child>
-              <p className="eyebrow mb-5" style={{ fontSize: '0.85rem' }}>
-                <span className="block w-5 h-px bg-[#FC222D] shrink-0" aria-hidden="true" />
-                PTEB Warport
-              </p>
-              <h2
-                id="warport-product-heading"
-                className="text-4xl sm:text-5xl lg:text-6xl font-black text-black leading-none mb-6"
-              >
-                Your Car Is Leaving<br />
-                <span className="text-[#FC222D]">Power on the Table.</span>
-              </h2>
-              <p className="text-[#374151] text-lg leading-relaxed mb-8 max-w-lg">
-                Factory ECU calibrations are conservative by design. The PTEB Warport plugs into your OBD port, pairs with our software, and our tuner recalibrates your engine remotely — no workshop visit, no waiting weeks for a booking.
-              </p>
-
-              {/* Benefit stack — rapid fire */}
-              <ul className="space-y-3 mb-10">
-                {[
-                  { stat: "Fast", label: "delivery to your door, worldwide" },
-                  { stat: "Fully", label: "custom calibration — never an off-the-shelf map" },
-                  { stat: "Free", label: "pre-approval check before you spend a cent" },
-                ].map(({ stat, label }) => (
-                  <li key={stat} className="flex items-center gap-4">
-                    <span className="text-2xl font-black text-[#FC222D] shrink-0 w-20 text-right font-heading">
-                      {stat}
-                    </span>
-                    <span className="w-px h-6 bg-[#E5E7EB] shrink-0" aria-hidden="true" />
-                    <span className="text-sm text-[#374151]">{label}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Warport nudge */}
-              <div className="p-5 border border-[#FC222D]/30 bg-[#FC222D]/5 mb-8">
-                <p className="text-xs font-bold text-[#6B7280] uppercase tracking-widest mb-1">Consider the alternative</p>
-                <p className="text-sm text-[#374151]">
-                  A workshop dyno tune requires you to physically bring your car in. With the <strong className="text-[#FC222D]">PTEB Warport</strong>, PTEB calibrates your ECU remotely — no matter where you are. No travel, no waiting for a dyno slot, and all tuning is handled exclusively by PTEB.
-                </p>
-              </div>
-
-              {/* Social proof nudge */}
-              <div className="flex items-center gap-3 mb-8">
-                <div className="flex -space-x-2">
-                  {["BMW", "VW", "AU"].map((l) => (
-                    <div key={l} className="w-8 h-8 rounded-full bg-[#FC222D] border-2 border-white flex items-center justify-center text-white text-[9px] font-black">{l}</div>
-                  ))}
-                </div>
-                <p className="text-sm text-[#6B7280]">
-                  <span className="text-black font-bold">Trusted</span> by drivers worldwide
-                </p>
-              </div>
-
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="/warport"
-                  className="px-8 py-4 bg-[#FC222D] text-white text-sm font-black tracking-widest uppercase hover:bg-[#CC1B25] transition-colors flex items-center justify-center gap-2 w-full sm:w-auto"
-                >
-                  Learn More <ChevronRight size={14} aria-hidden="true" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="px-8 py-4 border-2 border-black text-black text-sm font-black tracking-widest uppercase hover:bg-black hover:text-white transition-all text-center w-full sm:w-auto"
-                >
-                  Free Pre-Approval
-                </Link>
-              </div>
-              <p className="text-[11px] text-[#9CA3AF] mt-3">No payment required for pre-approval · Response within 24 hours</p>
-            </div>
-
-            {/* Right — product visual */}
-            <div className="flex flex-col items-center gap-8" data-reveal-child>
-              <div className="w-full rounded overflow-hidden" style={{ filter: 'contrast(1.12) saturate(0.88) brightness(0.97)' }}>
-                <Warport3DViewerClient variant="light" height="clamp(260px, 70vw, 560px)" />
-              </div>
-
-              <div className="w-full max-w-sm space-y-3">
-                {["BMW M4 F82", "Audi RS3 DAZA", "Audi TT 2023"].map((car) => (
-                  <div key={car} className="flex items-center gap-3 p-4 border border-[#E5E7EB] bg-[#F9FAFB]">
-                    <span className="w-2 h-2 rounded-full bg-[#FC222D] shrink-0" aria-hidden="true" />
-                    <p className="text-sm font-bold text-black">{car}</p>
-                    <span className="ml-auto text-[10px] font-bold uppercase tracking-widest text-[#FC222D]">Tuned</span>
-                  </div>
-                ))}
-              </div>
-
-              <Link href="/our-work" className="text-xs font-bold uppercase tracking-widest text-[#6B7280] hover:text-black transition-colors flex items-center gap-1">
-                See our work <ChevronRight size={12} />
-              </Link>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
       {/* Services Overview */}
       <section className="py-14 sm:py-24 bg-[#111111]" data-scroll-reveal aria-labelledby="services-heading">
         <div className="container mx-auto px-4 sm:px-6">
@@ -520,15 +397,12 @@ export default function HomePage() {
               </h2>
 
               {/* SEO/AEO paragraph — answers "who is PTEB?" for AI engines */}
-              <div className="space-y-5 text-white text-base leading-[1.85] max-w-[65ch]">
+              <div id="speakable-about" className="space-y-5 text-white text-base leading-[1.85] max-w-[65ch]">
                 <p>
-                  <strong className="text-[#FC222D]">Prestige Team Euro Boost (PTEB)</strong> is Melbourne&apos;s dedicated European performance tuning workshop, staffed by specialists with years of hands-on ECU calibration experience. Based in Melbourne, Victoria, PTEB delivers fully custom ECU and TCU remapping for Audi, BMW, Volkswagen, Mercedes-AMG, and Porsche — every result dyno-logged and road-verified before delivery.
+                  <strong className="text-[#FC222D]">Prestige Team Euro Boost (PTEB)</strong> is Melbourne&apos;s dedicated European performance tuning workshop, staffed by specialists with years of hands-on ECU calibration experience. Based in Melbourne, Victoria, PTEB delivers fully custom ECU and TCU remapping for Audi, BMW, Volkswagen, Mercedes-AMG, and Porsche. Every result is dyno-logged and road-verified before delivery.
                 </p>
                 <p>
-                  Unlike generic tuning shops that flash off-the-shelf maps, PTEB builds each calibration from scratch: custom boost curves, bespoke fuelling tables, and precision ignition timing tailored to your specific vehicle, modifications, and fuel grade. The reputation speaks for itself — built entirely on results, not promises.
-                </p>
-                <p>
-                  PTEB also operates <strong className="text-[#FC222D]">worldwide via the PTEB Warport</strong> — a proprietary OBD2 remote tuning device that lets the PTEB team calibrate your ECU from anywhere in the world. No workshop visit. No waiting weeks for a dyno slot. The same full custom tune, delivered remotely through the PTEB app.
+                  Unlike generic tuning shops that flash off-the-shelf maps, PTEB builds each calibration from scratch. Custom boost curves, bespoke fuelling tables, and precision ignition timing are tailored to your specific vehicle, modifications, and fuel grade. The reputation speaks for itself — built entirely on results, not promises.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 mt-8">
@@ -584,10 +458,6 @@ export default function HomePage() {
               {
                 label: "Dyno + Road Verified",
                 detail: "Every tune is validated on our in-house dyno and confirmed on road before it leaves the workshop.",
-              },
-              {
-                label: "Worldwide",
-                detail: "Can't reach Melbourne? The PTEB Warport delivers a full custom remote tune anywhere in the world.",
               },
             ].map(({ label, detail }) => (
               <div key={label} className="bg-[#0a0a0a] p-5 sm:p-8">
@@ -745,7 +615,7 @@ export default function HomePage() {
             <FaqAccordion items={[
               {
                 q: "How much does ECU tuning cost in Melbourne?",
-                a: "Pricing depends on your platform, modification level, and tune complexity. Stage 1 software-only remaps are the most affordable entry point. Stage 2 and Stage 3 tunes require supporting hardware and are priced accordingly. Remote tuning via the PTEB Warport starts at $499 AUD. Contact us for a free pre-approval and exact quote with no obligation.",
+                a: "Pricing depends on your platform, modification level, and tune complexity. Stage 1 software-only remaps are the most affordable entry point. Stage 2 and Stage 3 tunes require supporting hardware and are priced accordingly. Contact us for a free pre-approval and exact quote with no obligation.",
               },
               {
                 q: "Which cars does PTEB Tuning specialise in?",
@@ -754,10 +624,6 @@ export default function HomePage() {
               {
                 q: "What is the difference between Stage 1, Stage 2, and Stage 3 tuning?",
                 a: "Stage 1 is a software-only ECU remap — no hardware changes needed, typically delivers 20–30% power gains on a stock car. Stage 2 requires a downpipe, upgraded intercooler, and/or intake to unlock further gains (30–40% increase). Stage 3 involves a full hardware build: upgraded turbocharger, high-flow injectors, fuelling system upgrades, and flex fuel capability — delivering maximum power potential.",
-              },
-              {
-                q: "Can I get my car ECU tuned remotely without visiting the workshop?",
-                a: "Yes. The PTEB Warport is an OBD2 device that ships worldwide. You plug it into your car's OBD port, connect via our software, and our tuner calibrates your ECU remotely — delivering the same quality as a workshop tune. Compatible with most VAG, BMW, and Mercedes platforms. Free compatibility check before purchase.",
               },
             ]} />
           </div>

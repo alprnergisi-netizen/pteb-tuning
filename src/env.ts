@@ -8,7 +8,6 @@ const serverSchema = z.object({
   CALCOM_API_URL: z.string().url().default("https://api.cal.com/v2"),
   SHOPIFY_STORE_DOMAIN: z.string().optional(),
   SHOPIFY_STOREFRONT_ACCESS_TOKEN: z.string().optional(),
-  SHOPIFY_WARPORT_HANDLE: z.string().default("pteb-warport"),
   SHOPIFY_HOODIE_HANDLE: z.string().default("tuned-by-pteb-hoodie"),
   GOOGLE_SITE_VERIFICATION: z.string().optional(),
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),

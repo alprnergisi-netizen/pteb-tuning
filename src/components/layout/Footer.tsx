@@ -4,8 +4,6 @@ import { Instagram, Phone, MessageCircle, MapPin } from "lucide-react";
 const LINKS = {
   services: [
     { href: "/melbourne-tuning", label: "Dyno Tuning Melbourne" },
-    { href: "/remote-tuning", label: "Remote Tuning" },
-    { href: "/warport", label: "Warport Device" },
     { href: "/our-work", label: "Our Work" },
     { href: "/tuning-guide", label: "Tuning Guide" },
     { href: "/products", label: "Shop" },
@@ -142,7 +140,7 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2">
             <p>© {new Date().getFullYear()} PTEB Tuning — Prestige Team Euro Boost. All rights reserved.</p>
             <p>
-              Remote tuning involves risk. Pre-approval required.{" "}
+              Ready to book a tune?{" "}
               <Link href="/contact" className="hover:text-white transition-colors underline underline-offset-2">
                 Get assessed
               </Link>

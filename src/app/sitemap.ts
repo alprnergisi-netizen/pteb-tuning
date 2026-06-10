@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import env from "@/env";
-import { LOCATIONS } from "@/lib/locations";
 
 const BASE_URL = env.NEXT_PUBLIC_APP_URL;
 
@@ -31,12 +30,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/warport`,
-      lastModified: new Date("2026-05-01"),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
       url: `${BASE_URL}/contact`,
       lastModified: new Date("2026-04-01"),
       changeFrequency: "monthly",
@@ -61,13 +54,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.95,
     },
-    // Remote tuning hub
-    {
-      url: `${BASE_URL}/remote-tuning`,
-      lastModified: new Date("2026-05-21"),
-      changeFrequency: "monthly",
-      priority: 0.95,
-    },
     // Service pages
     {
       url: `${BASE_URL}/services/dsg-mechatronic-repair`,
@@ -82,19 +68,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    // Comparison guide
-    {
-      url: `${BASE_URL}/remote-tuning/remote-vs-workshop`,
-      lastModified: new Date("2026-06-01"),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    // Location pages
-    ...LOCATIONS.map((loc) => ({
-      url: `${BASE_URL}/remote-tuning/${loc.slug}`,
-      lastModified: new Date("2026-05-21"),
-      changeFrequency: "monthly" as const,
-      priority: 0.85,
-    })),
   ];
 }

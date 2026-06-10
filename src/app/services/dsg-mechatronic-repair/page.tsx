@@ -233,10 +233,9 @@ export default function DSGMechatronicPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <p className="eyebrow mb-4">Related Services</p>
           <h2 className="text-3xl font-black uppercase text-white mb-8">Also from PTEB</h2>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4">
             {[
               { title: "Custom ECU Tuning", desc: "Full dyno-mapped calibrations for Audi, BMW, VW, Mercedes, Porsche.", href: "/tuning-guide" },
-              { title: "Remote Tuning Worldwide", desc: "Get a custom tune delivered anywhere via the PTEB Warport OBD2 device.", href: "/warport" },
               { title: "Our Work — Dyno Results", desc: "Real dyno results from Stage 1 through Stage 3 Flex builds.", href: "/our-work" },
             ].map(({ title, desc, href }) => (
               <Link

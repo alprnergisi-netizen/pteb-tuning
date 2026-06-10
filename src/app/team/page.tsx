@@ -5,7 +5,7 @@ import { ChevronRight, Award, Wrench, MapPin, Car } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Besim Dani — Founder & Tuner | PTEB Tuning Melbourne",
-  description: "Besim Dani is the founder and tuner at PTEB Tuning Melbourne. An expert in V.A.G diagnostics specialising in VW/Audi software. Your go-to for racing builds and remote tuning support worldwide.",
+  description: "Besim Dani is the founder and tuner at PTEB Tuning Melbourne, an expert in V.A.G diagnostics specialising in VW/Audi software for performance builds.",
   alternates: { canonical: "/team" },
   openGraph: {
     title: "Besim Dani — Founder & Tuner | PTEB Tuning Melbourne",
@@ -21,7 +21,7 @@ const personSchema = {
   "@id": "https://ptebtuning.com/#besim",
   name: "Besim Dani",
   jobTitle: "Founder & Tuner",
-  description: "Founder & Tuner of PTEB, Besim Dani is an expert in V.A.G diagnostics and has been specialising in VW/Audi software for years. Besim is your go-to for all your racing needs, with remote support available worldwide through the PTEB Warport device.",
+  description: "Founder & Tuner of PTEB, Besim Dani is an expert in V.A.G diagnostics and has been specialising in VW/Audi software for years. Besim is your go-to for all your racing needs.",
   url: "https://ptebtuning.com/team",
   image: "https://ptebtuning.com/ourteam.jpg",
   worksFor: { "@id": "https://ptebtuning.com/#business" },
@@ -201,9 +201,6 @@ export default function TeamPage() {
                 <p>
                   The approach at PTEB is data-first. Every tune starts with a baseline dyno pull, full data log review, and a pre-health inspection. No calibration leaves the dyno until repeatability is confirmed across multiple consecutive runs — then it is road-validated before the customer takes delivery.
                 </p>
-                <p>
-                  Besim also designed the <strong className="text-white">PTEB Warport</strong> — a remote OBD2 tuning device that brings the same full custom calibration process to customers anywhere in the world, without requiring a workshop visit.
-                </p>
               </div>
             </div>
             <div>
@@ -259,7 +256,6 @@ export default function TeamPage() {
               { title: "Rolling anti-lag", desc: "Closed-throttle boost retention between shifts. Calibrated to stay within safe exhaust temperature limits." },
               { title: "Adjustable launch control", desc: "Allows you to launch at any RPM you desire from the click of a button, mapped to your steering wheel." },
               { title: "Boost by gear", desc: "Smoother boost delivery per gear. Full boost by 3rd." },
-              { title: "Remote tuning via Warport", desc: "Full custom calibration delivered anywhere in the world through the PTEB Warport OBD2 device." },
             ].map(({ title, desc }) => (
               <div key={title} className="p-6 border border-[#1E1E1E]" style={{ backgroundColor: "#111" }}>
                 <h3 className="text-white font-bold text-sm uppercase tracking-wide mb-2">{title}</h3>

@@ -285,10 +285,6 @@ const FAQ_GUIDE = [
     q: "What is the difference between Stage 1 and Stage 2?",
     a: "Stage 1 is a software-only tune — no hardware modifications required. It targets the factory ECU limits and extracts power from the existing turbo, intercooler, and fuelling system. Most turbocharged European cars gain 20–30% power at Stage 1. Stage 2 requires supporting hardware: a high-flow downpipe (replacing the catalytic converter), upgraded intercooler, and typically an intake. This unlocks additional headroom for 30–40% gains. Stage 3 goes further with a larger turbocharger, upgraded injectors, and fuel pump.",
   },
-  {
-    q: "Can I tune my car remotely without visiting a workshop?",
-    a: "Yes. PTEB offers remote ECU tuning worldwide via the PTEB Warport — an OBD2 device that ships to you, reads your ECU, and allows PTEB's tuner in Melbourne to build and flash a fully custom calibration remotely through the PTEB app. The result is comparable to an in-person dyno session for supported platforms. The Warport is $499 AUD and supports Audi, BMW, VW, Mercedes-AMG, and Porsche. A free compatibility check is available before purchase.",
-  },
 ];
 
 const guideSchema = {

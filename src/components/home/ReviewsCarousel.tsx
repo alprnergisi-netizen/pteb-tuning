@@ -39,7 +39,7 @@ const REVIEWS = [
   },
   {
     name: "Michael Papadopoulos",
-    text: "Used the Warport device for remote tuning from Sydney and honestly couldn't be happier. Got constant updates from the team, the tune file was perfect first time, and the car pulls so much harder. Wouldn't hesitate to use PTEB again.",
+    text: "Got my Golf R tuned at PTEB and honestly couldn't be happier. Got constant updates from the team, the tune file was perfect first time, and the car pulls so much harder. Wouldn't hesitate to use PTEB again.",
     date: "1 month ago",
     href: "https://www.google.com/maps/search/?api=1&query=PTEB+Tuning+Melbourne",
   },
