@@ -305,7 +305,7 @@ export default function HomePage() {
             <div className="lg:sticky lg:top-28" data-reveal-child>
               <div className="relative">
                 <Image
-                  src="/rs3-stock-ecu.jpg"
+                  src="/rs3landing.png"
                   alt="Audi RS3 on the PTEB dyno — stock ECU features including anti-lag, flex fuel, traction control, and overboost safety"
                   width={800}
                   height={1100}
