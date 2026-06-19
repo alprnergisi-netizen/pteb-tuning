@@ -232,9 +232,9 @@ export default function HomePage() {
                     { icon: Fuel, name: "Low Fuel Pressure Safety", desc: "Cuts power if fuel delivery drops. Prevents lean-out failure." },
                     { icon: Gauge, name: "Overboost Safety", desc: "Catches and neutralizes boost spikes instantly." },
                   ].map(({ icon: Icon, name, desc }) => (
-                    <div key={name} className="flex gap-3 p-3 bg-[#111] border border-[#1a1a1a]">
-                      <Icon size={16} className="text-[#FC222D] shrink-0 mt-0.5" aria-hidden="true" />
-                      <div>
+                    <div key={name} className="shine-red group relative flex gap-3 p-3 bg-[#111] border border-[#1a1a1a] hover:border-[#FC222D]/50 transition-colors cursor-default overflow-hidden">
+                      <Icon size={16} className="relative z-10 text-[#FC222D] shrink-0 mt-0.5" aria-hidden="true" />
+                      <div className="relative z-10">
                         <p className="text-white font-bold text-sm">{name}</p>
                         <p className="text-white/80 text-xs">{desc}</p>
                       </div>
@@ -256,9 +256,9 @@ export default function HomePage() {
                     { icon: Cog, name: "Multi Map (4 Slots)", desc: "Daily, track, or high-power maps. Switch on the fly." },
                     { icon: Cable, name: "MAC Valve & CAN IO Control", desc: "Aftermarket sensors and boost strategies from the stock ECU." },
                   ].map(({ icon: Icon, name, desc }) => (
-                    <div key={name} className="flex gap-3 p-3 bg-[#111] border border-[#1a1a1a]">
-                      <Icon size={16} className="text-white/70 shrink-0 mt-0.5" aria-hidden="true" />
-                      <div>
+                    <div key={name} className="shine-white group relative flex gap-3 p-3 bg-[#111] border border-[#1a1a1a] hover:border-white/30 transition-colors cursor-default overflow-hidden">
+                      <Icon size={16} className="relative z-10 text-white/70 shrink-0 mt-0.5" aria-hidden="true" />
+                      <div className="relative z-10">
                         <p className="text-white font-bold text-sm">{name}</p>
                         <p className="text-white/80 text-xs">{desc}</p>
                       </div>
@@ -280,9 +280,9 @@ export default function HomePage() {
                     { icon: Zap, name: "2 Way Adjustable Launch", desc: "On the fly and static. Dialed to your tire and prep." },
                     { icon: Gauge, name: "Full Port Injection Control", desc: "Native control for massive horsepower builds." },
                   ].map(({ icon: Icon, name, desc }) => (
-                    <div key={name} className="flex gap-3 p-3 bg-[#111] border border-[#1a1a1a]">
-                      <Icon size={16} className="text-[#FC222D] shrink-0 mt-0.5" aria-hidden="true" />
-                      <div>
+                    <div key={name} className="shine-red group relative flex gap-3 p-3 bg-[#111] border border-[#1a1a1a] hover:border-[#FC222D]/50 transition-colors cursor-default overflow-hidden">
+                      <Icon size={16} className="relative z-10 text-[#FC222D] shrink-0 mt-0.5" aria-hidden="true" />
+                      <div className="relative z-10">
                         <p className="text-white font-bold text-sm">{name}</p>
                         <p className="text-white/80 text-xs">{desc}</p>
                       </div>
@@ -365,13 +365,20 @@ export default function HomePage() {
               </div>
 
               <style>{`
-                .maslow-icon::after {
+                .maslow-icon::after,
+                .shine-red::after,
+                .shine-white::after {
                   content: '';
                   position: absolute;
                   top: 0;
                   left: -100%;
                   width: 100%;
                   height: 100%;
+                  transition: none;
+                  pointer-events: none;
+                }
+                .maslow-icon::after,
+                .shine-red::after {
                   background: linear-gradient(
                     90deg,
                     transparent 0%,
@@ -380,12 +387,23 @@ export default function HomePage() {
                     rgba(252, 34, 45, 0.08) 70%,
                     transparent 100%
                   );
-                  transition: none;
                 }
-                .maslow-icon:hover::after {
-                  animation: maslow-shine 1s ease-out forwards;
+                .shine-white::after {
+                  background: linear-gradient(
+                    90deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.04) 30%,
+                    rgba(255, 255, 255, 0.12) 50%,
+                    rgba(255, 255, 255, 0.04) 70%,
+                    transparent 100%
+                  );
                 }
-                @keyframes maslow-shine {
+                .maslow-icon:hover::after,
+                .shine-red:hover::after,
+                .shine-white:hover::after {
+                  animation: box-shine 0.8s ease-out forwards;
+                }
+                @keyframes box-shine {
                   0%   { left: -100%; }
                   100% { left: 100%; }
                 }
