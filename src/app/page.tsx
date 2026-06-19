@@ -213,7 +213,7 @@ export default function HomePage() {
                     WebkitTextFillColor: "transparent",
                   }}
                 >More Control.</span>
-                <span className="block" style={{ WebkitTextStroke: "1.5px rgba(255,255,255,0.35)", color: "transparent" }}>More Safety.</span>
+                <span className="block text-white">More Safety.</span>
               </h2>
 
               <p className="text-white/90 text-base leading-relaxed max-w-xl mb-14">
