@@ -16,7 +16,7 @@ export function ContactForm() {
           <CheckCircle size={26} className="text-green-400" aria-hidden="true" />
         </div>
         <h3 className="text-xl font-black uppercase text-white mb-2">Enquiry Sent</h3>
-        <p className="text-sm text-[#9CA3AF] max-w-sm leading-relaxed">
+        <p className="text-sm text-white/90 max-w-sm leading-relaxed">
           We&apos;ll review your vehicle details and get back to you within 24 hours.
           For urgent requests, WhatsApp us on 0422 300 859.
         </p>
@@ -28,7 +28,7 @@ export function ContactForm() {
     <form action={action} className="space-y-4" aria-label="Tune enquiry form" noValidate>
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="name" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
+          <label htmlFor="name" className="block text-xs font-medium tracking-wider uppercase text-white/90 mb-1.5">
             Full Name <span className="text-[#FC222D]" aria-label="required">*</span>
           </label>
           <input
@@ -38,7 +38,7 @@ export function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="phone" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
+          <label htmlFor="phone" className="block text-xs font-medium tracking-wider uppercase text-white/90 mb-1.5">
             Phone
           </label>
           <input
@@ -50,7 +50,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
+        <label htmlFor="email" className="block text-xs font-medium tracking-wider uppercase text-white/90 mb-1.5">
           Email <span className="text-[#FC222D]" aria-label="required">*</span>
         </label>
         <input
@@ -61,7 +61,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="car" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
+        <label htmlFor="car" className="block text-xs font-medium tracking-wider uppercase text-white/90 mb-1.5">
           Vehicle (Year, Make, Model, Engine) <span className="text-[#FC222D]" aria-label="required">*</span>
         </label>
         <input
@@ -72,7 +72,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="mods" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
+        <label htmlFor="mods" className="block text-xs font-medium tracking-wider uppercase text-white/90 mb-1.5">
           Current Modifications
         </label>
         <input
@@ -83,7 +83,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="fuel" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
+        <label htmlFor="fuel" className="block text-xs font-medium tracking-wider uppercase text-white/90 mb-1.5">
           Fuel Type
         </label>
         <select
@@ -100,7 +100,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="goals" className="block text-xs font-medium tracking-wider uppercase text-[#9CA3AF] mb-1.5">
+        <label htmlFor="goals" className="block text-xs font-medium tracking-wider uppercase text-white/90 mb-1.5">
           Goals &amp; Notes <span className="text-[#FC222D]" aria-label="required">*</span>
         </label>
         <textarea

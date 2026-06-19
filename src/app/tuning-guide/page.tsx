@@ -439,7 +439,7 @@ export default function TuningGuidePage() {
               <br />
               <span className="text-[#e63946]">Guide</span>
             </h1>
-            <p className="text-lg text-[#9CA3AF] max-w-lg leading-relaxed">
+            <p className="text-lg text-white/90 max-w-lg leading-relaxed">
               Everything you need to know about ECU tuning, dyno remapping, flex fuel, and performance
               calibration — written by professional tuners with real dyno results to back it up.
             </p>
@@ -473,7 +473,7 @@ export default function TuningGuidePage() {
         <aside aria-label="Table of contents" className="hidden lg:block">
           <div className="sticky top-24">
             <h2
-              className="text-xs font-bold tracking-[0.2em] uppercase text-[#9CA3AF] mb-4"
+              className="text-xs font-bold tracking-[0.2em] uppercase text-white/90 mb-4"
              
             >
               Contents
@@ -484,7 +484,7 @@ export default function TuningGuidePage() {
                   <li key={id}>
                     <a
                       href={`#${id}`}
-                      className="flex items-center gap-2 text-sm text-[#6B7280] hover:text-white transition-colors py-1 group"
+                      className="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors py-1 group"
                     >
                       <span className="text-[10px] text-[#e63946] font-bold w-5 shrink-0 group-hover:text-[#e63946]">
                         {String(i + 1).padStart(2, "0")}
@@ -511,7 +511,7 @@ export default function TuningGuidePage() {
             >
               What Is ECU Tuning?
             </h2>
-            <div className="space-y-4 text-sm text-[#9CA3AF] leading-relaxed">
+            <div className="space-y-4 text-sm text-white/90 leading-relaxed">
               <p>
                 <strong className="text-white">ECU tuning</strong> (also called engine remapping,
                 chip tuning, or custom calibration) is the process of modifying the software inside
@@ -556,7 +556,7 @@ export default function TuningGuidePage() {
             >
               How Dyno Tuning Works
             </h2>
-            <div className="space-y-4 text-sm text-[#9CA3AF] leading-relaxed">
+            <div className="space-y-4 text-sm text-white/90 leading-relaxed">
               <p>
                 A <strong className="text-white">rolling road dynamometer (dyno)</strong> measures
                 the power and torque your engine delivers to the wheels in real time. The car sits
@@ -606,7 +606,7 @@ export default function TuningGuidePage() {
             >
               Stage 1 vs Stage 2 vs Stage 3
             </h2>
-            <div className="space-y-4 text-sm text-[#9CA3AF] leading-relaxed">
+            <div className="space-y-4 text-sm text-white/90 leading-relaxed">
               <p>
                 The &quot;stage&quot; system describes the level of supporting hardware modifications
                 a tune requires. There is no universal industry standard — different tuning companies
@@ -647,14 +647,14 @@ export default function TuningGuidePage() {
                       {stage}
                     </h3>
                     <p className="text-white font-semibold text-base mb-1">{gains}</p>
-                    <p className="text-[10px] text-[#6B7280] mb-3 uppercase tracking-wider">{req}</p>
-                    <p className="text-xs text-[#9CA3AF] leading-relaxed">{notes}</p>
+                    <p className="text-[10px] text-white/80 mb-3 uppercase tracking-wider">{req}</p>
+                    <p className="text-xs text-white/90 leading-relaxed">{notes}</p>
                   </div>
                 ))}
               </div>
               <div className="flex items-start gap-3 p-4 bg-[#111111] border border-[#2A2A2A]">
                 <AlertTriangle size={15} className="text-yellow-500 mt-0.5 shrink-0" aria-hidden="true" />
-                <p className="text-xs text-[#9CA3AF]">
+                <p className="text-xs text-white/90">
                   <strong className="text-white">Stage definitions are platform-dependent.</strong>{" "}
                   A &quot;Stage 2&quot; on an Audi S3 means something different from a Stage 2 on a
                   BMW M3. Always discuss your specific platform with your tuner before purchasing
@@ -674,7 +674,7 @@ export default function TuningGuidePage() {
             >
               Flex Fuel &amp; Ethanol Tuning
             </h2>
-            <div className="space-y-4 text-sm text-[#9CA3AF] leading-relaxed">
+            <div className="space-y-4 text-sm text-white/90 leading-relaxed">
               <p>
                 <strong className="text-white">Ethanol (E85)</strong> is a high-octane fuel blend
                 of 85% ethanol and 15% petrol. Its effective octane rating (~105 RON equivalent)
@@ -737,7 +737,7 @@ export default function TuningGuidePage() {
             >
               Anti-Lag, Launch Control &amp; Advanced Features
             </h2>
-            <div className="space-y-6 text-sm text-[#9CA3AF] leading-relaxed">
+            <div className="space-y-6 text-sm text-white/90 leading-relaxed">
               {[
                 {
                   title: "Rolling Anti-Lag (RAL)",
@@ -779,7 +779,7 @@ export default function TuningGuidePage() {
             >
               Safety Considerations
             </h2>
-            <div className="space-y-4 text-sm text-[#9CA3AF] leading-relaxed">
+            <div className="space-y-4 text-sm text-white/90 leading-relaxed">
               <p>
                 A tune on your vehicle can and will increase cylinder pressure, and it may expose
                 weaknesses that were not visible before. A tune demands every component and every
@@ -824,7 +824,7 @@ export default function TuningGuidePage() {
             >
               How to Choose a Tuner
             </h2>
-            <div className="space-y-4 text-sm text-[#9CA3AF] leading-relaxed">
+            <div className="space-y-4 text-sm text-white/90 leading-relaxed">
               <p>
                 Choosing the wrong tuner is more damaging than no tune. The ECU calibration
                 directly controls your engine&apos;s fuelling, timing, and boost. A poorly executed
@@ -892,7 +892,7 @@ export default function TuningGuidePage() {
                 </h2>
               </div>
               <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#e63946] mb-6">{brand.tagline}</p>
-              <p className="text-sm text-[#9CA3AF] leading-relaxed mb-8">{brand.intro}</p>
+              <p className="text-sm text-white/90 leading-relaxed mb-8">{brand.intro}</p>
 
               {/* Platform table */}
               <h3 className="text-xl font-black uppercase text-white mb-4">
@@ -904,7 +904,7 @@ export default function TuningGuidePage() {
                   <thead>
                     <tr className="border-b border-[#2A2A2A]">
                       {["Engine", "Models", "Notes"].map((h) => (
-                        <th key={h} scope="col" className="text-left py-3 px-3 text-xs font-bold uppercase tracking-wider text-[#6B7280]">
+                        <th key={h} scope="col" className="text-left py-3 px-3 text-xs font-bold uppercase tracking-wider text-white/80">
                           {h}
                         </th>
                       ))}
@@ -914,8 +914,8 @@ export default function TuningGuidePage() {
                     {brand.platforms.map((p) => (
                       <tr key={p.engine} className="hover:bg-[#111111] transition-colors">
                         <td className="py-3 px-3 text-xs text-white font-semibold whitespace-nowrap">{p.engine}</td>
-                        <td className="py-3 px-3 text-xs text-[#9CA3AF]">{p.models}</td>
-                        <td className="py-3 px-3 text-xs text-[#6B7280]">{p.notes}</td>
+                        <td className="py-3 px-3 text-xs text-white/90">{p.models}</td>
+                        <td className="py-3 px-3 text-xs text-white/80">{p.notes}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -925,12 +925,12 @@ export default function TuningGuidePage() {
               {/* Features + ECU */}
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="p-5 border border-[#1E1E1E] bg-[#0D0D0D]">
-                  <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[#9CA3AF] mb-3">
+                  <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-white/90 mb-3">
                     Available Tuning Features
                   </h4>
                   <ul className="space-y-2">
                     {brand.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-[#9CA3AF]">
+                      <li key={f} className="flex items-center gap-2 text-sm text-white/90">
                         <CheckCircle size={12} className="text-[#e63946] shrink-0" aria-hidden="true" />
                         {f}
                       </li>
@@ -938,10 +938,10 @@ export default function TuningGuidePage() {
                   </ul>
                 </div>
                 <div className="p-5 border border-[#1E1E1E] bg-[#0D0D0D]">
-                  <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[#9CA3AF] mb-3">
+                  <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-white/90 mb-3">
                     ECU Platforms
                   </h4>
-                  <p className="text-sm text-[#9CA3AF] leading-relaxed">{brand.ecu}</p>
+                  <p className="text-sm text-white/90 leading-relaxed">{brand.ecu}</p>
                   <div className="mt-4 pt-4 border-t border-[#1E1E1E]">
                     <Link
                       href="/contact"
@@ -976,7 +976,7 @@ export default function TuningGuidePage() {
             >
               Ready to Tune Your Car?
             </h2>
-            <p className="text-sm text-[#9CA3AF] mb-6">
+            <p className="text-sm text-white/90 mb-6">
               Talk to us about your platform. We will pre-approve your vehicle and outline exactly
               what your tune will deliver.
             </p>

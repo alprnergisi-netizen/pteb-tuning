@@ -92,7 +92,7 @@ function ReviewCard({ review }: { review: typeof REVIEWS[0] }) {
         </div>
         <div>
           <p className="text-[#111] text-xs font-bold">{review.name}</p>
-          <p className="text-[#9CA3AF] text-[10px]">{review.date}</p>
+          <p className="text-white/90 text-[10px]">{review.date}</p>
         </div>
       </div>
     </a>
@@ -119,6 +119,8 @@ export function ReviewsCarousel() {
         }}
         onMouseEnter={e => (e.currentTarget.style.animationPlayState = 'paused')}
         onMouseLeave={e => (e.currentTarget.style.animationPlayState = 'running')}
+        onFocusCapture={e => (e.currentTarget.style.animationPlayState = 'paused')}
+        onBlurCapture={e => (e.currentTarget.style.animationPlayState = 'running')}
       >
         {doubled.map((review, i) => (
           <ReviewCard key={`${review.name}-${i}`} review={review} />

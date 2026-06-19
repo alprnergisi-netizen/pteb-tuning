@@ -99,10 +99,10 @@ export default function ContactPage() {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <nav className="flex items-center gap-2 text-xs text-[#6B7280] mb-6" aria-label="Breadcrumb">
+          <nav className="flex items-center gap-2 text-xs text-white/80 mb-6" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={12} aria-hidden="true" />
-            <span className="text-[#9CA3AF]">Contact</span>
+            <span className="text-white/90">Contact</span>
           </nav>
           <p className="eyebrow mb-4">
             Get In Touch
@@ -113,7 +113,7 @@ export default function ContactPage() {
           >
             Book a Tune
           </h1>
-          <p className="text-base text-[#9CA3AF] max-w-xl leading-relaxed">
+          <p className="text-base text-white/90 max-w-xl leading-relaxed">
             Tell us your platform, current mods, fuel type, and goals. We assess compatibility and
             pre-approve your vehicle before confirming any booking.
           </p>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                 <Phone size={18} className="text-[#FC222D]" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-xs text-[#6B7280] uppercase tracking-wider mb-0.5">Phone</p>
+                <p className="text-xs text-white/80 uppercase tracking-wider mb-0.5">Phone</p>
                 <p className="text-white font-semibold">0422 300 859</p>
               </div>
             </a>
@@ -170,7 +170,7 @@ export default function ContactPage() {
                 <MessageCircle size={18} className="text-[#FC222D]" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-xs text-[#6B7280] uppercase tracking-wider mb-0.5">WhatsApp</p>
+                <p className="text-xs text-white/80 uppercase tracking-wider mb-0.5">WhatsApp</p>
                 <p className="text-white font-semibold">Message us directly</p>
               </div>
             </a>
@@ -186,7 +186,7 @@ export default function ContactPage() {
                 <Instagram size={18} className="text-[#FC222D]" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-xs text-[#6B7280] uppercase tracking-wider mb-0.5">Instagram</p>
+                <p className="text-xs text-white/80 uppercase tracking-wider mb-0.5">Instagram</p>
                 <p className="text-white font-semibold">@ptebtuning</p>
               </div>
             </a>
@@ -207,13 +207,13 @@ export default function ContactPage() {
                 </svg>
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-xs text-[#6B7280] uppercase tracking-wider mb-0.5">Google</p>
+                <p className="text-xs text-white/80 uppercase tracking-wider mb-0.5">Google</p>
                 <p className="text-white font-semibold">Find us on Google Maps</p>
                 <div className="flex items-center gap-1 mt-1" aria-label="5 star rating">
                   {[1,2,3,4,5].map((s) => (
                     <Star key={s} size={10} className="fill-yellow-400 text-yellow-400" aria-hidden="true" />
                   ))}
-                  <span className="text-[10px] text-[#6B7280] ml-1">5.0 stars</span>
+                  <span className="text-[10px] text-white/80 ml-1">5.0 stars</span>
                 </div>
               </div>
               <ExternalLink
@@ -225,14 +225,14 @@ export default function ContactPage() {
           </div>
 
           <div className="space-y-4">
-            <div className="flex items-start gap-3 text-sm text-[#9CA3AF]">
+            <div className="flex items-start gap-3 text-sm text-white/90">
               <Clock size={15} className="text-[#FC222D] mt-0.5 shrink-0" aria-hidden="true" />
               <div>
                 <p className="text-white font-medium mb-0.5">Response Time</p>
                 <p>We aim to respond to all enquiries within 24 hours.</p>
               </div>
             </div>
-            <div className="flex items-start gap-3 text-sm text-[#9CA3AF]">
+            <div className="flex items-start gap-3 text-sm text-white/90">
               <MapPin size={15} className="text-[#FC222D] mt-0.5 shrink-0" aria-hidden="true" />
               <div>
                 <p className="text-white font-medium mb-0.5">Workshop Address</p>
@@ -295,7 +295,7 @@ export default function ContactPage() {
               aria-label="Map showing PTEB Tuning location in Melbourne"
             />
           </div>
-          <p className="text-xs text-[#4B5563] mt-3 text-center">
+          <p className="text-xs text-white/80 mt-3 text-center">
             View on{" "}
             <a
               href="https://www.google.com/maps/search/?api=1&query=PTEB+Tuning+Melbourne"
@@ -307,6 +307,24 @@ export default function ContactPage() {
             </a>{" "}
             for directions and reviews.
           </p>
+        </div>
+      </section>
+
+      {/* Internal links */}
+      <section className="border-t border-[#1E1E1E] py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap gap-6 justify-center">
+          <Link href="/book" className="inline-flex items-center gap-1 text-sm font-bold text-white/80 uppercase tracking-widest hover:text-white transition-colors">
+            Book Online <ChevronRight size={13} aria-hidden="true" />
+          </Link>
+          <Link href="/tuning-guide" className="inline-flex items-center gap-1 text-sm font-bold text-white/80 uppercase tracking-widest hover:text-white transition-colors">
+            Tuning Guide <ChevronRight size={13} aria-hidden="true" />
+          </Link>
+          <Link href="/our-work" className="inline-flex items-center gap-1 text-sm font-bold text-white/80 uppercase tracking-widest hover:text-white transition-colors">
+            Our Work <ChevronRight size={13} aria-hidden="true" />
+          </Link>
+          <Link href="/team" className="inline-flex items-center gap-1 text-sm font-bold text-white/80 uppercase tracking-widest hover:text-white transition-colors">
+            Meet the Team <ChevronRight size={13} aria-hidden="true" />
+          </Link>
         </div>
       </section>
     </>

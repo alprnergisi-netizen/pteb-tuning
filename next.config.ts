@@ -5,8 +5,8 @@ const isDev = process.env.NODE_ENV === "development";
 // unsafe-eval is needed by React in development for call-stack reconstruction.
 // It is intentionally excluded from production.
 const scriptSrc = isDev
-  ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://app.cal.com"
-  : "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://app.cal.com";
+  ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://app.cal.com https://www.googletagmanager.com https://www.clarity.ms"
+  : "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://app.cal.com https://www.googletagmanager.com https://www.clarity.ms";
 
 const CSP = [
   "default-src 'self'",
@@ -14,7 +14,7 @@ const CSP = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self' https://fonts.gstatic.com",
-  "connect-src 'self' https://api.cal.com https://app.cal.com https://api.resend.com",
+  "connect-src 'self' https://api.cal.com https://app.cal.com https://api.resend.com https://www.google-analytics.com https://region1.google-analytics.com https://www.clarity.ms",
   "frame-src https://www.google.com https://www.instagram.com https://www.tiktok.com https://www.facebook.com https://app.cal.com https://cal.com",
   "object-src 'none'",
   "base-uri 'self'",

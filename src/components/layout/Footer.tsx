@@ -3,23 +3,23 @@ import { Instagram, Phone, MessageCircle, MapPin } from "lucide-react";
 
 const LINKS = {
   services: [
-    { href: "/melbourne-tuning", label: "Dyno Tuning Melbourne" },
-    { href: "/our-work", label: "Our Work" },
     { href: "/tuning-guide", label: "Tuning Guide" },
-    { href: "/products", label: "Shop" },
+    { href: "/melbourne-tuning", label: "Dyno Tuning Melbourne" },
+    { href: "/services/dsg-mechatronic-repair", label: "DSG & Mechatronic Repair" },
+    { href: "/our-work", label: "Our Work" },
   ],
   company: [
     { href: "/team", label: "Our Team" },
     { href: "/book", label: "Book a Tune" },
     { href: "/contact", label: "Contact" },
-    { href: "/tuning-guide#faq", label: "FAQ" },
+    { href: "/products", label: "Shop" },
   ],
 };
 
 export function Footer() {
   return (
     <footer
-      className="bg-[#0A0A0A] border-t border-[#1E1E1E] text-[#9CA3AF]"
+      className="bg-[#0A0A0A] border-t border-[#1E1E1E] text-white/90"
       role="contentinfo"
       aria-label="PTEB Tuning footer"
     >
@@ -29,7 +29,7 @@ export function Footer() {
         {/* Brand + contact */}
         <div className="lg:col-span-2">
           <div className="mb-4">
-            <span className="block text-[10px] font-medium tracking-[0.25em] uppercase text-[#6B7280]">
+            <span className="block text-[10px] font-medium tracking-[0.25em] uppercase text-white/80">
               Tuned By
             </span>
             <span className="block text-3xl font-extrabold tracking-tight text-[#FC222D]">
@@ -124,7 +124,7 @@ export function Footer() {
           </ul>
           <div className="p-4 border border-[#FC222D]/30 bg-[#FC222D]/5">
             <p className="text-xs font-bold text-white mb-1">Ready to tune?</p>
-            <p className="text-xs text-[#6B7280] mb-3">Tell us your platform, mods, and goals.</p>
+            <p className="text-xs text-white/80 mb-3">Tell us your platform, mods, and goals.</p>
             <Link
               href="/contact"
               className="block text-center py-2 bg-[#FC222D] text-white text-xs font-bold tracking-widest uppercase hover:bg-[#CC1B25] transition-colors"
@@ -150,7 +150,7 @@ export function Footer() {
             href="https://nexiomarketing.com.au"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-400 hover:text-blue-300 transition-colors font-medium tracking-wide"
+            className="text-white/60 hover:text-white transition-colors font-medium tracking-wide"
           >
             by nexio marketing.com.au
           </a>

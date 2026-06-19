@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { BuildsGrid } from "@/components/ui/BuildsGrid";
-import { DragStripStat } from "@/components/ui/DragStripStat";
+
 
 export const metadata: Metadata = {
   title: "Dyno Tuning Results — Audi TT Stage 3 Flex, BMW M4, Audi RS3 | PTEB",
@@ -212,7 +212,7 @@ export default function OurWorkPage() {
 
         {/* Text */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pb-12 md:pb-16 pt-28">
-          <nav className="flex items-center gap-2 text-xs text-[#6B7280] mb-5" aria-label="Breadcrumb">
+          <nav className="flex items-center gap-2 text-xs text-white/80 mb-5" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-white transition-colors" style={{ color: '#6B7280' }}>Home</Link>
             <ChevronRight size={12} aria-hidden="true" />
             <span style={{ color: '#9CA3AF' }}>Our Work</span>
@@ -243,9 +243,6 @@ export default function OurWorkPage() {
           <BuildsGrid builds={BUILDS} />
         </div>
       </section>
-
-      {/* ── Drag strip stat ───────────────────────────────────────────── */}
-      <DragStripStat />
 
       {/* ── Capabilities ──────────────────────────────────────────────── */}
       <section className="py-12 sm:py-20 border-t border-[#1E1E1E]" style={{ backgroundColor: '#000000' }} aria-labelledby="caps-heading">

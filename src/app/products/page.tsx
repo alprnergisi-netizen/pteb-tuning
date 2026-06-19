@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 import { HoodieGallery } from "@/components/ui/HoodieGallery";
 import { HoodieCheckout, HoodieCheckoutFallback } from "@/components/ui/HoodieCheckout";
 
@@ -79,7 +81,7 @@ export default async function ProductsPage() {
             <div className="flex flex-col">
 
               {/* Category */}
-              <p className="text-xs font-medium tracking-[0.2em] uppercase text-[#6B7280] mb-3">Official Merchandise</p>
+              <p className="text-xs font-medium tracking-[0.2em] uppercase text-white/80 mb-3">Official Merchandise</p>
 
               {/* Name */}
               <h2 id="hoodie-heading" className="text-3xl font-black uppercase text-[#111] leading-tight mb-4" itemProp="name">
@@ -95,7 +97,7 @@ export default async function ProductsPage() {
                     </svg>
                   ))}
                 </div>
-                <span className="text-xs text-[#6B7280]">38 Reviews</span>
+                <span className="text-xs text-white/80">38 Reviews</span>
               </div>
 
               {/* Price */}
@@ -103,14 +105,14 @@ export default async function ProductsPage() {
                 <meta itemProp="priceCurrency" content="AUD" />
                 <meta itemProp="availability" content="https://schema.org/InStock" />
                 <p className="text-2xl font-bold text-[#111] mb-8" itemProp="price" content="89.99">
-                  $89.99 <span className="text-sm font-normal text-[#6B7280]">AUD</span>
+                  $89.99 <span className="text-sm font-normal text-white/80">AUD</span>
                 </p>
               </div>
 
               {/* Colour */}
               <div className="mb-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-[#111] mb-3">
-                  Colour — <span className="font-normal text-[#6B7280]">Black</span>
+                  Colour — <span className="font-normal text-white/80">Black</span>
                 </p>
                 <button
                   className="w-8 h-8 rounded-full bg-[#111] ring-2 ring-[#111] ring-offset-2"
@@ -133,7 +135,7 @@ export default async function ProductsPage() {
                   ["Shipping", "Ships directly from PTEB"],
                 ].map(([label, value]) => (
                   <div key={label} className="flex gap-4 text-sm">
-                    <span className="w-20 shrink-0 text-[#6B7280]">{label}</span>
+                    <span className="w-20 shrink-0 text-white/80">{label}</span>
                     <span className="text-[#111]">{value}</span>
                   </div>
                 ))}
@@ -141,6 +143,24 @@ export default async function ProductsPage() {
 
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Internal links */}
+      <section className="bg-[#0a0a0a] border-t border-[#1a1a1a] py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-wrap gap-6 justify-center">
+          <Link href="/book" className="inline-flex items-center gap-1 text-sm font-bold text-white/80 uppercase tracking-widest hover:text-white transition-colors">
+            Book a Tune <ChevronRight size={13} aria-hidden="true" />
+          </Link>
+          <Link href="/our-work" className="inline-flex items-center gap-1 text-sm font-bold text-white/80 uppercase tracking-widest hover:text-white transition-colors">
+            Our Work <ChevronRight size={13} aria-hidden="true" />
+          </Link>
+          <Link href="/team" className="inline-flex items-center gap-1 text-sm font-bold text-white/80 uppercase tracking-widest hover:text-white transition-colors">
+            Meet the Team <ChevronRight size={13} aria-hidden="true" />
+          </Link>
+          <Link href="/contact" className="inline-flex items-center gap-1 text-sm font-bold text-white/80 uppercase tracking-widest hover:text-white transition-colors">
+            Contact Us <ChevronRight size={13} aria-hidden="true" />
+          </Link>
         </div>
       </section>
     </>

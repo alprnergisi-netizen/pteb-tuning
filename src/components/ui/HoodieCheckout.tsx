@@ -42,7 +42,7 @@ export function HoodieCheckout({ variants }: Props) {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-3">
           <p className="text-xs font-semibold uppercase tracking-widest text-[#111]">Size</p>
-          <span className="text-xs text-[#6B7280] underline underline-offset-2 cursor-pointer">Size guide</span>
+          <span className="text-xs text-white/80 underline underline-offset-2 cursor-pointer">Size guide</span>
         </div>
         <div className="flex flex-wrap gap-2">
           {variants.map((v) => (
@@ -97,7 +97,7 @@ export function HoodieCheckoutFallback() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-3">
           <p className="text-xs font-semibold uppercase tracking-widest text-[#111]">Size</p>
-          <span className="text-xs text-[#6B7280] underline underline-offset-2 cursor-pointer">Size guide</span>
+          <span className="text-xs text-white/80 underline underline-offset-2 cursor-pointer">Size guide</span>
         </div>
         <div className="flex flex-wrap gap-2">
           {sizes.map((sz) => (

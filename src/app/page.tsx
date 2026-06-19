@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { ChevronRight, Phone, Search, BarChart2, ShieldCheck, FileText } from "lucide-react";
+import { ChevronRight, Phone, Search, BarChart2, ShieldCheck, FileText, Shield, Flame, Gauge, Zap, Lock, Fuel, Layers, Sliders, Cog, Cable, HeartPulse, Activity } from "lucide-react";
 import { TrackedLink } from "@/components/ui/TrackedLink";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { ReviewsCarousel } from "@/components/home/ReviewsCarousel";
@@ -137,7 +137,7 @@ export default function HomePage() {
               <span className="text-[#FC222D]">Euro Boost</span>
             </h1>
 
-            <p className="text-base text-[#9CA3AF] mb-6 sm:mb-10 max-w-lg leading-relaxed" style={{ letterSpacing: '0.01em' }}>
+            <p className="text-base text-white/90 mb-6 sm:mb-10 max-w-lg leading-relaxed" style={{ letterSpacing: '0.01em' }}>
               Melbourne&apos;s specialist for custom ECU & TCU remapping on European performance cars.
               BMW, Audi, VW, Mercedes, Porsche — every result dyno-logged and road-verified.
             </p>
@@ -178,15 +178,223 @@ export default function HomePage() {
               <div key={text} className="flex items-center gap-2 shrink-0">
                 <span className="text-[#FC222D] text-xs" aria-hidden="true">{icon}</span>
                 {href ? (
-                  <a href={href} target="_blank" rel="noopener noreferrer" className="text-[10px] font-medium tracking-wide text-[#9CA3AF] whitespace-nowrap hover:text-white transition-colors underline underline-offset-2">{text}</a>
+                  <a href={href} target="_blank" rel="noopener noreferrer" className="text-[10px] font-medium tracking-wide text-white/90 whitespace-nowrap hover:text-white transition-colors underline underline-offset-2">{text}</a>
                 ) : (
-                  <span className="text-[10px] font-medium tracking-wide text-[#9CA3AF] whitespace-nowrap">{text}</span>
+                  <span className="text-[10px] font-medium tracking-wide text-white/90 whitespace-nowrap">{text}</span>
                 )}
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* RS3 Stock ECU Features */}
+      <section className="py-20 sm:py-32 bg-[#0a0a0a] border-b border-[#1a1a1a] overflow-hidden" data-scroll-reveal aria-labelledby="rs3-heading">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+            {/* Left — headline + benefit tiers */}
+            <div data-reveal-child>
+
+              <h2
+                id="rs3-heading"
+                className="font-black uppercase leading-[0.95] mb-8"
+                style={{ fontSize: "clamp(2.4rem, 6vw, 4.5rem)" }}
+              >
+                <span className="text-[#FC222D] block">More Power.</span>
+                <span
+                  className="block italic"
+                  style={{
+                    backgroundImage: "url('/noise-texture.svg')",
+                    backgroundSize: "200px 200px",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    color: "transparent",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >More Control.</span>
+                <span className="block" style={{ WebkitTextStroke: "1.5px rgba(255,255,255,0.35)", color: "transparent" }}>More Safety.</span>
+              </h2>
+
+              <p className="text-white/90 text-base leading-relaxed max-w-xl mb-14">
+                Your RS3 was built to perform. PTEB&apos;s stock ECU feature suite unlocks what the factory left on the table — more explosive power when you want it, surgical control over every variable, and failsafes that protect your engine when it matters most.
+              </p>
+
+              {/* Tier 1: Safety */}
+              <div className="mb-10">
+                <div className="flex items-center gap-3 mb-5">
+                  <Shield size={16} className="text-[#FC222D] shrink-0" aria-hidden="true" />
+                  <h3 className="text-white font-black uppercase text-sm tracking-widest">Protect Your Investment</h3>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    { icon: Lock, name: "Anti Theft", desc: "Full immobilization. Your RS3 stays yours." },
+                    { icon: Fuel, name: "Low Fuel Pressure Safety", desc: "Cuts power if fuel delivery drops. Prevents lean-out failure." },
+                    { icon: Gauge, name: "Overboost Safety", desc: "Catches and neutralizes boost spikes instantly." },
+                  ].map(({ icon: Icon, name, desc }) => (
+                    <div key={name} className="flex gap-3 p-3 bg-[#111] border border-[#1a1a1a]">
+                      <Icon size={16} className="text-[#FC222D] shrink-0 mt-0.5" aria-hidden="true" />
+                      <div>
+                        <p className="text-white font-bold text-sm">{name}</p>
+                        <p className="text-white/80 text-xs">{desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tier 2: Control */}
+              <div className="mb-10">
+                <div className="flex items-center gap-3 mb-5">
+                  <Sliders size={16} className="text-white shrink-0" aria-hidden="true" />
+                  <h3 className="text-white font-black uppercase text-sm tracking-widest">Command Every Variable</h3>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    { icon: Sliders, name: "8 Level Traction Control", desc: "Dial in the exact grip for any surface." },
+                    { icon: Layers, name: "Boost by Gear", desc: "Torque delivery optimized per gear. No wasted wheelspin." },
+                    { icon: Cog, name: "Multi Map (4 Slots)", desc: "Daily, track, or high-power maps. Switch on the fly." },
+                    { icon: Cable, name: "MAC Valve & CAN IO Control", desc: "Aftermarket sensors and boost strategies from the stock ECU." },
+                  ].map(({ icon: Icon, name, desc }) => (
+                    <div key={name} className="flex gap-3 p-3 bg-[#111] border border-[#1a1a1a]">
+                      <Icon size={16} className="text-white/70 shrink-0 mt-0.5" aria-hidden="true" />
+                      <div>
+                        <p className="text-white font-bold text-sm">{name}</p>
+                        <p className="text-white/80 text-xs">{desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tier 3: Power */}
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <Zap size={16} className="text-[#FC222D] shrink-0" aria-hidden="true" />
+                  <h3 className="text-white font-black uppercase text-sm tracking-widest">Unlock Everything</h3>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    { icon: Fuel, name: "True Flex Fuel", desc: "E85 or pump gas. ECU adjusts automatically." },
+                    { icon: Flame, name: "Rolling Anti Lag", desc: "Instant explosive boost while rolling." },
+                    { icon: Zap, name: "2 Way Adjustable Launch", desc: "On the fly and static. Dialed to your tire and prep." },
+                    { icon: Gauge, name: "Full Port Injection Control", desc: "Native control for massive horsepower builds." },
+                  ].map(({ icon: Icon, name, desc }) => (
+                    <div key={name} className="flex gap-3 p-3 bg-[#111] border border-[#1a1a1a]">
+                      <Icon size={16} className="text-[#FC222D] shrink-0 mt-0.5" aria-hidden="true" />
+                      <div>
+                        <p className="text-white font-bold text-sm">{name}</p>
+                        <p className="text-white/80 text-xs">{desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-12">
+                <Link
+                  href="/book"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#FC222D] text-white text-sm font-bold tracking-widest uppercase hover:bg-[#CC1B25] transition-colors"
+                >
+                  Book Your Tune <ChevronRight size={14} aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right — RS3 image + Maslow icons (sticky on desktop) */}
+            <div className="lg:sticky lg:top-28" data-reveal-child>
+              <div className="relative">
+                <Image
+                  src="/rs3-stock-ecu.jpg"
+                  alt="Audi RS3 on the PTEB dyno — stock ECU features including anti-lag, flex fuel, traction control, and overboost safety"
+                  width={800}
+                  height={1100}
+                  quality={85}
+                  className="w-full h-auto"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+
+              {/* Benefit cards */}
+              <div className="space-y-3 mt-8">
+                {[
+                  {
+                    icon: Shield,
+                    label: "Safety",
+                    desc: "Boost spikes, fuel drops, theft — handled before you even notice. Your engine stays alive, your investment stays protected.",
+                  },
+                  {
+                    icon: HeartPulse,
+                    label: "Engine Health",
+                    desc: "Every critical parameter monitored in real time. Problems get caught early — not after they cost you a rebuild.",
+                  },
+                  {
+                    icon: null,
+                    label: "Control",
+                    desc: "Traction, boost, maps — you decide how the power hits the wheels. Dial it in for any surface, any situation.",
+                    customIcon: (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#FC222D]" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="3" />
+                        <line x1="12" y1="2" x2="12" y2="6" />
+                        <line x1="12" y1="18" x2="12" y2="22" />
+                        <line x1="2" y1="12" x2="6" y2="12" />
+                        <line x1="18" y1="12" x2="22" y2="12" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    icon: Zap,
+                    label: "Power",
+                    desc: "Flex fuel, anti-lag, launch control — the features that make the car feel completely different. This is what you came for.",
+                  },
+                ].map(({ icon: Icon, label, desc, customIcon }) => (
+                  <div
+                    key={label}
+                    className="maslow-icon group relative flex gap-4 p-4 bg-[#111] border border-[#1a1a1a] hover:border-[#FC222D]/50 transition-colors cursor-default overflow-hidden"
+                  >
+                    <div className="relative z-10 shrink-0 mt-0.5 transition-all duration-300 group-hover:scale-110">
+                      {customIcon ?? (Icon && <Icon size={20} className="text-[#FC222D]" aria-hidden="true" />)}
+                    </div>
+                    <div className="relative z-10">
+                      <p className="text-white font-bold text-sm mb-1">{label}</p>
+                      <p className="text-white/90 text-xs leading-relaxed">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <style>{`
+                .maslow-icon::after {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: -100%;
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(
+                    90deg,
+                    transparent 0%,
+                    rgba(252, 34, 45, 0.08) 30%,
+                    rgba(252, 34, 45, 0.2) 50%,
+                    rgba(252, 34, 45, 0.08) 70%,
+                    transparent 100%
+                  );
+                  transition: none;
+                }
+                .maslow-icon:hover::after {
+                  animation: maslow-shine 1s ease-out forwards;
+                }
+                @keyframes maslow-shine {
+                  0%   { left: -100%; }
+                  100% { left: 100%; }
+                }
+              `}</style>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* Car Brand Expertise Section */}
       <section className="py-12 sm:py-20 bg-black border-y border-[#2a2a2a]" data-scroll-reveal aria-labelledby="brands-heading">
@@ -226,7 +434,7 @@ export default function HomePage() {
                     unoptimized={brand.logo.endsWith(".svg")}
                   />
                 </div>
-                <span className="text-[9px] sm:text-xs font-bold text-[#6B7280] group-hover:text-[#FC222D] transition-colors uppercase tracking-wider text-center leading-tight">
+                <span className="text-[9px] sm:text-xs font-bold text-white/80 group-hover:text-[#FC222D] transition-colors uppercase tracking-wider text-center leading-tight">
                   {brand.name}
                 </span>
               </Link>
@@ -267,10 +475,10 @@ export default function HomePage() {
               },
               {
                 num: "03",
-                title: "Mechatronic Repair",
-                desc: "DSG mechatronic unit rebuild and replacement. We stock and service units for the full VW Group range. Genuine diagnosis before any part is replaced.",
-                href: "/services/dsg-mechatronic-repair",
-                cta: "View Service",
+                title: "In-Person Dyno Tuning Melbourne",
+                desc: "Book a session at our Sunshine North workshop. Full baseline pull, iterative calibration, and road validation — all in one visit.",
+                href: "/melbourne-tuning",
+                cta: "Learn More",
               },
               {
                 num: "04",
@@ -309,7 +517,7 @@ export default function HomePage() {
             >
               MQB Race Features
             </h2>
-            <p className="text-[#9CA3AF] text-lg leading-relaxed">
+            <p className="text-white/90 text-lg leading-relaxed">
               Every PTEB tune includes access to our full suite of advanced ECU mapping capabilities, engineered for performance, reliability, and precision.
             </p>
           </div>
@@ -407,7 +615,7 @@ export default function HomePage() {
               </div>
               <div className="flex flex-wrap gap-3 mt-8">
                 <Link href="/team" className="inline-flex items-center gap-2 text-sm font-bold text-[#FC222D] uppercase tracking-widest hover:underline underline-offset-4 transition-colors">
-                  Meet the tuner <ChevronRight size={13} aria-hidden="true" />
+                  Meet the team <ChevronRight size={13} aria-hidden="true" />
                 </Link>
                 <Link href="/our-work" className="inline-flex items-center gap-2 text-sm font-bold text-white/60 uppercase tracking-widest hover:text-white transition-colors">
                   See our work <ChevronRight size={13} aria-hidden="true" />
@@ -449,7 +657,7 @@ export default function HomePage() {
             {[
               {
                 label: "Founder-Led",
-                detail: "You deal directly with the calibrators, not a junior technician. Every car gets the full attention of the PTEB team.",
+                detail: "You deal directly with the co-founders — Besim on tuning, Paras on mechanical. Every car gets the full attention of the PTEB team.",
               },
               {
                 label: "100% Custom Maps",
@@ -463,7 +671,7 @@ export default function HomePage() {
               <div key={label} className="bg-[#0a0a0a] p-5 sm:p-8">
                 <div className="w-6 h-0.5 bg-[#FC222D] mb-4" aria-hidden="true" />
                 <h3 className="text-white font-black uppercase text-sm tracking-widest mb-3">{label}</h3>
-                <p className="text-[#6B7280] text-xs leading-relaxed">{detail}</p>
+                <p className="text-white/80 text-xs leading-relaxed">{detail}</p>
               </div>
             ))}
           </div>
@@ -484,7 +692,7 @@ export default function HomePage() {
                   <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
                   <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
                 </svg>
-                <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#9CA3AF]">Google Reviews</span>
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-white/90">Google Reviews</span>
               </div>
               <h2 id="reviews-heading" className="text-3xl sm:text-4xl font-black uppercase text-white">
                 What Our Customers Say
@@ -498,7 +706,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <span className="text-white font-bold text-sm">4.9</span>
-                <span className="text-[#6B7280] text-xs">· 48 reviews · Google</span>
+                <span className="text-white/80 text-xs">· 48 reviews · Google</span>
               </div>
             </div>
             <a
@@ -529,11 +737,11 @@ export default function HomePage() {
               </h2>
             </div>
             <div className="flex items-center gap-4">
-              <a href="https://instagram.com/ptebtuning" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#9CA3AF] hover:text-white transition-colors">
+              <a href="https://instagram.com/ptebtuning" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white/90 hover:text-white transition-colors">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
                 @ptebtuning
               </a>
-              <a href="https://www.tiktok.com/@prestigeteameuroboost" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#9CA3AF] hover:text-white transition-colors">
+              <a href="https://www.tiktok.com/@prestigeteameuroboost" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white/90 hover:text-white transition-colors">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.16 8.16 0 0 0 4.78 1.52V6.74a4.85 4.85 0 0 1-1.01-.05z"/></svg>
                 TikTok
               </a>
@@ -558,7 +766,7 @@ export default function HomePage() {
               <div key={sub} className="bg-[#0a0a0a] p-5 sm:p-8 text-center">
                 <p className="text-3xl font-black text-white font-heading mb-1">{value}</p>
                 <p className="text-[#FC222D] text-xs font-bold uppercase tracking-widest mb-1">{sub}</p>
-                <p className="text-[#6B7280] text-xs">{detail}</p>
+                <p className="text-white/80 text-xs">{detail}</p>
               </div>
             ))}
           </div>
@@ -581,7 +789,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="text-white font-bold text-base mb-0.5">Message on WhatsApp</p>
-                <p className="text-[#6B7280] text-sm">Fastest way to reach us — we reply within the hour</p>
+                <p className="text-white/80 text-sm">Fastest way to reach us — we reply within the hour</p>
               </div>
             </TrackedLink>
 
@@ -595,12 +803,12 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="text-white font-bold text-base mb-0.5">Call 0422 300 859</p>
-                <p className="text-[#6B7280] text-sm">Talk to the team directly — Mon–Fri 8am–5pm, Sat 9am–2pm</p>
+                <p className="text-white/80 text-sm">Talk to the team directly — Mon–Fri 8am–5pm, Sat 9am–2pm</p>
               </div>
             </a>
           </div>
 
-          <p className="text-center text-xs text-[#4B5563] mt-8">Free pre-approval check · No obligation · We'll tell you exactly what your car will make</p>
+          <p className="text-center text-xs text-white/80 mt-8">Free pre-approval check · No obligation · We'll tell you exactly what your car will make</p>
         </div>
       </section>
 

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import Link from 'next/link';
+import { ChevronRight } from 'lucide-react';
 import { Waves } from '@/components/ui/Waves';
 import { BookingWidget } from '@/components/booking-calendar/booking-widget';
 
@@ -54,12 +56,24 @@ export default function BookPage() {
           <h1 className="text-4xl sm:text-5xl font-black uppercase text-white leading-none mb-2 font-heading">
             Book a Tune
           </h1>
-          <p className="text-sm text-[#6B7280]">Pick a date and time — we&apos;ll confirm within 24 hours.</p>
+          <p className="text-sm text-white/80">Pick a date and time — we&apos;ll confirm within 24 hours.</p>
         </div>
       </div>
 
       <div className="px-4 sm:px-6 py-12 max-w-4xl mx-auto">
         <BookingWidget />
+
+        <div className="mt-12 pt-8 border-t border-[#1a1a1a] flex flex-wrap gap-6">
+          <Link href="/tuning-guide" className="inline-flex items-center gap-1 text-sm font-bold text-white/80 uppercase tracking-widest hover:text-white transition-colors">
+            Read the Tuning Guide <ChevronRight size={13} aria-hidden="true" />
+          </Link>
+          <Link href="/contact" className="inline-flex items-center gap-1 text-sm font-bold text-white/80 uppercase tracking-widest hover:text-white transition-colors">
+            Prefer to Enquire First? <ChevronRight size={13} aria-hidden="true" />
+          </Link>
+          <Link href="/team" className="inline-flex items-center gap-1 text-sm font-bold text-white/80 uppercase tracking-widest hover:text-white transition-colors">
+            Meet the Team <ChevronRight size={13} aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </div>
   );

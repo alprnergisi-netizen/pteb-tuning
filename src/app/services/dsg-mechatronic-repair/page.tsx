@@ -104,19 +104,19 @@ export default function DSGMechatronicPage() {
       {/* Hero */}
       <section className="pt-28 pb-16 md:pt-36 md:pb-20 border-b border-[#1E1E1E]" style={{ backgroundColor: "#0a0a0a" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <nav className="flex items-center gap-2 text-xs text-[#6B7280] mb-8" aria-label="Breadcrumb">
+          <nav className="flex items-center gap-2 text-xs text-white/80 mb-8" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={12} aria-hidden="true" />
-            <span className="text-[#6B7280]">Services</span>
+            <span className="text-white/80">Services</span>
             <ChevronRight size={12} aria-hidden="true" />
-            <span className="text-[#9CA3AF]">DSG Mechatronic Repair</span>
+            <span className="text-white/90">DSG Mechatronic Repair</span>
           </nav>
           <p className="eyebrow mb-4">VW Group Specialist</p>
           <h1 className="font-black uppercase leading-none mb-6 text-white" style={{ fontSize: "clamp(2rem, 6vw, 4.5rem)" }}>
             DSG Mechatronic<br />
             <span className="text-[#FC222D]">Repair & Service</span>
           </h1>
-          <p className="text-lg text-[#9CA3AF] max-w-2xl leading-relaxed mb-8">
+          <p className="text-lg text-white/90 max-w-2xl leading-relaxed mb-8">
             Melbourne's VW Group DSG specialist. PTEB repairs, rebuilds, and replaces mechatronic units for DQ200, DQ250, and DQ381 gearboxes — with genuine diagnosis before any parts are recommended.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -150,7 +150,7 @@ export default function DSGMechatronicPage() {
               <div key={title} className="p-6 border border-[#1E1E1E]" style={{ backgroundColor: "#0a0a0a" }}>
                 <Icon size={24} className="text-[#FC222D] mb-4" aria-hidden="true" />
                 <h3 className="text-white font-black uppercase text-sm tracking-widest mb-2">{title}</h3>
-                <p className="text-xs text-[#6B7280] leading-relaxed">{desc}</p>
+                <p className="text-xs text-white/80 leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -167,13 +167,13 @@ export default function DSGMechatronicPage() {
               <div key={unit.code} className="p-6 border border-[#1E1E1E]" style={{ backgroundColor: "#111" }}>
                 <div className="flex flex-wrap items-center gap-3 mb-3">
                   <span className="text-2xl font-black text-[#FC222D] font-heading">{unit.code}</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF] px-2 py-0.5 border border-[#2A2A2A]">{unit.name}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-white/90 px-2 py-0.5 border border-[#2A2A2A]">{unit.name}</span>
                   <span className="text-xs text-[#4B5563]">Max torque: {unit.torque}</span>
                 </div>
-                <p className="text-xs text-[#9CA3AF] mb-2">
+                <p className="text-xs text-white/90 mb-2">
                   <strong className="text-white">Compatible vehicles: </strong>{unit.models}
                 </p>
-                <p className="text-xs text-[#6B7280] leading-relaxed">{unit.notes}</p>
+                <p className="text-xs text-white/80 leading-relaxed">{unit.notes}</p>
               </div>
             ))}
           </div>
@@ -197,7 +197,7 @@ export default function DSGMechatronicPage() {
                   "Complete loss of forward or reverse gears",
                   "DSG oil temperature warnings during normal driving",
                 ].map((s) => (
-                  <li key={s} className="flex items-start gap-3 text-sm text-[#9CA3AF]">
+                  <li key={s} className="flex items-start gap-3 text-sm text-white/90">
                     <AlertTriangle size={14} className="text-yellow-500 mt-0.5 shrink-0" aria-hidden="true" />
                     {s}
                   </li>
@@ -218,7 +218,7 @@ export default function DSGMechatronicPage() {
                     <span className="text-2xl font-black text-[#FC222D]/40 font-heading shrink-0">{n}</span>
                     <div>
                       <p className="text-white font-bold text-sm mb-1">{title}</p>
-                      <p className="text-xs text-[#6B7280] leading-relaxed">{body}</p>
+                      <p className="text-xs text-white/80 leading-relaxed">{body}</p>
                     </div>
                   </li>
                 ))}
@@ -245,7 +245,7 @@ export default function DSGMechatronicPage() {
                 style={{ backgroundColor: "#111" }}
               >
                 <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-2 group-hover:text-[#FC222D] transition-colors">{title}</h3>
-                <p className="text-xs text-[#6B7280] leading-relaxed">{desc}</p>
+                <p className="text-xs text-white/80 leading-relaxed">{desc}</p>
                 <span className="inline-flex items-center gap-1 mt-3 text-[#FC222D] text-xs font-bold uppercase tracking-widest group-hover:gap-2 transition-all">
                   Learn more <ChevronRight size={11} aria-hidden="true" />
                 </span>

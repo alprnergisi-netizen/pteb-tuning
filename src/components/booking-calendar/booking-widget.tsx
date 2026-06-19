@@ -98,7 +98,7 @@ export function BookingWidget() {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
-        <p className="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-4">Select department</p>
+        <p className="text-xs font-bold uppercase tracking-widest text-white/80 mb-4">Select department</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {DEPARTMENTS.map((dept) => (
             <button
@@ -116,7 +116,7 @@ export function BookingWidget() {
               }`}>
                 {dept.label}
               </p>
-              <p className="text-xs text-[#6B7280] leading-relaxed">{dept.desc}</p>
+              <p className="text-xs text-white/80 leading-relaxed">{dept.desc}</p>
             </button>
           ))}
         </div>

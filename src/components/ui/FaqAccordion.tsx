@@ -43,7 +43,7 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
           {openIndex === index && (
             <dd
               id={`faq-answer-${index}`}
-              className="mt-3 pl-7 text-sm text-[#9CA3AF] leading-relaxed animate-in fade-in duration-200"
+              className="mt-3 pl-7 text-sm text-white/90 leading-relaxed animate-in fade-in duration-200"
             >
               {a}
             </dd>

@@ -13,35 +13,32 @@ type NavItem = { href: string; label: string; children?: NavChild[] };
 const NAV_LINKS: NavItem[] = [
   { href: "/", label: "Home" },
   {
-    href: "/our-work",
-    label: "Our Work",
+    href: "/team",
+    label: "About",
     children: [
-      { href: "/our-work",           label: "Customer Builds",     desc: "Gallery of tuned cars & dyno results" },
-      { href: "/melbourne-tuning",   label: "Melbourne Tuning",    desc: "In-person dyno tuning at the workshop" },
+      { href: "/team",                              label: "Meet the Team",        desc: "Besim Dani & Paras Ionnou — co-founders" },
+      { href: "/our-work",                          label: "Our Work",             desc: "Gallery of tuned cars & dyno results" },
     ],
   },
   {
     href: "/tuning-guide",
-    label: "Tuning Guide",
+    label: "Services",
     children: [
-      { href: "/tuning-guide",       label: "Tuning Guide",        desc: "Platform guide, services & ECU overview" },
-      { href: "/melbourne-tuning",   label: "Melbourne Tuning",    desc: "Book an in-person dyno session" },
+      { href: "/tuning-guide",                      label: "Tuning Guide",         desc: "Platforms, stages & ECU overview" },
+      { href: "/melbourne-tuning",                  label: "Melbourne Tuning",     desc: "In-person dyno tuning at the workshop" },
+      { href: "/services/dsg-mechatronic-repair",   label: "DSG & Mechatronic",    desc: "Transmission diagnostics & repair" },
     ],
   },
   {
     href: "/products",
-    label: "Products",
-    children: [
-      { href: "/products",           label: "All Products",        desc: "Shop PTEB tools & merchandise" },
-      { href: "/products#hoodie",    label: "PTEB Hoodie",         desc: "Official PTEB merchandise" },
-    ],
+    label: "Shop",
   },
   {
     href: "/contact",
     label: "Contact",
     children: [
-      { href: "/contact",            label: "Book a Tune",         desc: "Enquire about a custom ECU calibration" },
-      { href: "/book",               label: "Book Online",         desc: "Select a date & confirm your dyno slot" },
+      { href: "/contact",                           label: "Enquire",              desc: "Ask about a custom ECU calibration" },
+      { href: "/book",                              label: "Book Online",          desc: "Select a date & confirm your dyno slot" },
     ],
   },
 ];
@@ -74,7 +71,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "backdrop-blur-md border-b bg-black/95 border-[#222]" : "bg-transparent"
+        scrolled ? "backdrop-blur-md border-b bg-black/95 border-[#222]" : "bg-black"
       )}
       role="banner"
     >
@@ -118,7 +115,7 @@ export function Navbar() {
                   href={href}
                   className={cn(
                     "flex items-center gap-1 text-sm font-medium tracking-wider uppercase transition-colors duration-200 relative group py-2",
-                    isActive ? "text-[#FC222D]" : "text-[#9CA3AF] hover:text-white"
+                    isActive ? "text-[#FC222D]" : "text-white/90 hover:text-white"
                   )}
                   aria-expanded={children ? isOpen : undefined}
                   aria-haspopup={children ? "true" : undefined}
@@ -162,7 +159,7 @@ export function Navbar() {
                             <span className="text-white text-xs font-black uppercase tracking-widest group-hover/item:text-[#FC222D] transition-colors">
                               {child.label}
                             </span>
-                            <span className="text-[#6B7280] text-[11px] mt-0.5 leading-snug">
+                            <span className="text-white/80 text-[11px] mt-0.5 leading-snug">
                               {child.desc}
                             </span>
                           </Link>
@@ -259,7 +256,7 @@ export function Navbar() {
                         href={child.href}
                         className={cn(
                           "py-2.5 text-sm font-semibold tracking-wide uppercase transition-colors flex items-center justify-between",
-                          pathname === child.href ? "text-white" : "text-[#6B7280] hover:text-white"
+                          pathname === child.href ? "text-white" : "text-white/80 hover:text-white"
                         )}
                       >
                         {child.label}
@@ -276,7 +273,7 @@ export function Navbar() {
           <div className="pt-4">
             <a
               href="tel:+61422300859"
-              className="flex items-center justify-center gap-2 py-3 border border-[#2a2a2a] text-[#9CA3AF] text-sm font-semibold tracking-wider"
+              className="flex items-center justify-center gap-2 py-3 border border-[#2a2a2a] text-white/90 text-sm font-semibold tracking-wider"
             >
               <Phone size={14} aria-hidden="true" />
               0422 300 859

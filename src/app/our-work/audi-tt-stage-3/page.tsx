@@ -55,12 +55,12 @@ export default function AudiTTStage3Page() {
       {/* Hero */}
       <section className="pt-28 pb-0 border-b border-[#1E1E1E] overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12">
-          <nav className="flex items-center gap-2 text-xs text-[#6B7280] mb-8" aria-label="Breadcrumb">
+          <nav className="flex items-center gap-2 text-xs text-white/80 mb-8" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={12} aria-hidden="true" />
             <Link href="/our-work" className="hover:text-white transition-colors">Our Work</Link>
             <ChevronRight size={12} aria-hidden="true" />
-            <span className="text-[#9CA3AF]">Audi TT Stage 3 Flex</span>
+            <span className="text-white/90">Audi TT Stage 3 Flex</span>
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
@@ -70,7 +70,7 @@ export default function AudiTTStage3Page() {
                 Audi TT 2023<br />
                 <span className="text-[#FC222D]">Garrett PMAX 2</span>
               </h1>
-              <p className="text-[#9CA3AF] text-sm leading-relaxed mb-8 max-w-lg">
+              <p className="text-white/90 text-sm leading-relaxed mb-8 max-w-lg">
                 Full Stage 3 Flex Fuel build — ECU conversion, Garrett PMAX 2 turbo, MPI 980cc injectors, 7.5R mechatronic conversion, WMI, and true E85 flex fuel system. Built and calibrated exclusively by PTEB. Every result logged on Dyno Innovations equipment.
               </p>
 
@@ -79,7 +79,7 @@ export default function AudiTTStage3Page() {
                 <div className="p-5 border border-[#FC222D]/40 bg-[#111]">
                   <div className="flex items-center gap-2 mb-2">
                     <Gauge size={14} className="text-[#FC222D]" aria-hidden="true" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#6B7280]">Peak Power</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/80">Peak Power</span>
                   </div>
                   <p className="text-4xl font-black text-white font-heading">348.5</p>
                   <p className="text-sm text-[#FC222D] font-bold">kW at wheel</p>
@@ -88,7 +88,7 @@ export default function AudiTTStage3Page() {
                 <div className="p-5 border border-[#1E1E1E] bg-[#111]">
                   <div className="flex items-center gap-2 mb-2">
                     <TrendingUp size={14} className="text-[#FC222D]" aria-hidden="true" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#6B7280]">Peak Torque</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/80">Peak Torque</span>
                   </div>
                   <p className="text-4xl font-black text-white font-heading">592.4</p>
                   <p className="text-sm text-[#FC222D] font-bold">Nm at wheel</p>
@@ -126,7 +126,7 @@ export default function AudiTTStage3Page() {
               <div className="absolute bottom-0 left-0 right-0 p-4 flex items-center gap-3" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.9), transparent)" }}>
                 <span className="text-[10px] font-bold uppercase tracking-widest text-[#FC222D]">Dyno Innovations verified</span>
                 <span className="w-px h-3 bg-white/20" />
-                <span className="text-[10px] text-[#6B7280]">Road-validated after session</span>
+                <span className="text-[10px] text-white/80">Road-validated after session</span>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function AudiTTStage3Page() {
                 <CheckCircle size={16} className="text-[#FC222D] shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
                   <p className="text-white font-bold text-sm mb-1">{title}</p>
-                  <p className="text-xs text-[#6B7280] leading-relaxed">{detail}</p>
+                  <p className="text-xs text-white/80 leading-relaxed">{detail}</p>
                 </div>
               </div>
             ))}
@@ -157,7 +157,7 @@ export default function AudiTTStage3Page() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <p className="eyebrow mb-4">Build Context</p>
           <h2 className="text-3xl font-black uppercase text-white mb-8">What makes this result significant</h2>
-          <div className="space-y-5 text-sm text-[#9CA3AF] leading-relaxed max-w-3xl">
+          <div className="space-y-5 text-sm text-white/90 leading-relaxed max-w-3xl">
             <p>
               The Audi TT on the <strong className="text-white">Simos 18.1 ECU</strong> (converted from the stock 18.10) opens access to full calibration tables that the factory-locked ECU restricts. The conversion is a non-trivial process — it requires remapping the loom to accept the new engine management, integrating the lambda sensor, and adapting the injector system for MPI fuelling at E85 volumes.
             </p>
@@ -192,7 +192,7 @@ export default function AudiTTStage3Page() {
                 style={{ backgroundColor: "#0a0a0a" }}
               >
                 <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-2 group-hover:text-[#FC222D] transition-colors">{title}</h3>
-                <p className="text-xs text-[#6B7280] leading-relaxed">{desc}</p>
+                <p className="text-xs text-white/80 leading-relaxed">{desc}</p>
                 <span className="inline-flex items-center gap-1 mt-3 text-[#FC222D] text-xs font-bold uppercase tracking-widest group-hover:gap-2 transition-all">
                   Read more <ChevronRight size={11} aria-hidden="true" />
                 </span>

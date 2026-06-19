@@ -113,7 +113,7 @@ const siteSchema = {
       logo: `${BASE_URL}/logo.png`,
       image: `${BASE_URL}/og-image.png`,
       description:
-        "PTEB Tuning is Melbourne's specialist in custom ECU and TCU remapping for European performance vehicles. Led by founder Besim, the workshop delivers data-driven dyno tuning, flex fuel calibration, rolling anti-lag, and launch control — all results dyno-logged and road-verified.",
+        "PTEB Tuning is Melbourne's specialist in custom ECU and TCU remapping for European performance vehicles. Co-founded by Besim Dani (tuning) and Paras Ionnou (mechanical repairs), the workshop delivers data-driven dyno tuning, flex fuel calibration, rolling anti-lag, and launch control — all results dyno-logged and road-verified.",
       telephone: "+61422300859",
       email: "prestigeteamhelp@gmail.com",
       priceRange: "$$",
@@ -175,9 +175,15 @@ const siteSchema = {
           closes: "14:00",
         },
       ],
-      // E-E-A-T: named founder — full Person definition lives on /team, referenced here
-      founder: { "@id": `${BASE_URL}/#besim` },
-      employee: [{ "@id": `${BASE_URL}/#besim` }],
+      // E-E-A-T: named co-founders — full Person definitions live on /team, referenced here
+      founder: [
+        { "@id": `${BASE_URL}/#besim` },
+        { "@id": `${BASE_URL}/#paras` },
+      ],
+      employee: [
+        { "@id": `${BASE_URL}/#besim` },
+        { "@id": `${BASE_URL}/#paras` },
+      ],
       // Topical authority signals
       knowsAbout: [
         "Custom ECU tuning", "Dyno tuning Melbourne", "ECU remapping Australia",

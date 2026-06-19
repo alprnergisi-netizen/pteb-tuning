@@ -69,28 +69,28 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
                 <div>
                   <span className="text-[10px] font-black tracking-[0.2em] uppercase text-[#FC222D]">{build.stage}</span>
                   <h3 className="text-2xl font-black uppercase text-white leading-tight">{build.car}</h3>
-                  <p className="text-xs text-[#6B7280]">{build.variant}</p>
+                  <p className="text-xs text-white/80">{build.variant}</p>
                 </div>
                 <div className="text-right">
                   <span className="block text-xs font-bold text-[#FC222D]">{build.gain}</span>
-                  <span className="block text-[10px] text-[#6B7280]">{build.gainTorque}</span>
+                  <span className="block text-[10px] text-white/80">{build.gainTorque}</span>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-3 mb-4 p-3 bg-black/50 border border-[#1A1A1A]">
                 <div>
-                  <div className="flex items-center gap-1.5 mb-1"><Gauge size={11} className="text-[#FC222D]" /><span className="text-[10px] uppercase tracking-wider text-[#6B7280]">Power</span></div>
+                  <div className="flex items-center gap-1.5 mb-1"><Gauge size={11} className="text-[#FC222D]" /><span className="text-[10px] uppercase tracking-wider text-white/80">Power</span></div>
                   <p className="text-xl font-black text-white">{build.power}</p>
                   <p className="text-[10px] text-[#4B5563]">{build.powerRPM}</p>
                 </div>
                 <div>
-                  <div className="flex items-center gap-1.5 mb-1"><TrendingUp size={11} className="text-[#FC222D]" /><span className="text-[10px] uppercase tracking-wider text-[#6B7280]">Torque</span></div>
+                  <div className="flex items-center gap-1.5 mb-1"><TrendingUp size={11} className="text-[#FC222D]" /><span className="text-[10px] uppercase tracking-wider text-white/80">Torque</span></div>
                   <p className="text-xl font-black text-white">{build.torque}</p>
                   <p className="text-[10px] text-[#4B5563]">{build.torqueRPM}</p>
                 </div>
               </div>
               <ul className="space-y-1.5 mb-4">
                 {build.mods.map((mod) => (
-                  <li key={mod} className="flex items-start gap-2 text-xs text-[#9CA3AF]">
+                  <li key={mod} className="flex items-start gap-2 text-xs text-white/90">
                     <span className="text-[#FC222D] shrink-0">›</span>{mod}
                   </li>
                 ))}

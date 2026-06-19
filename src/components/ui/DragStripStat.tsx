@@ -20,14 +20,14 @@ export function DragStripStat() {
 
             {/* Car name + context */}
             <div>
-              <p className="text-[10px] font-black tracking-[0.3em] uppercase text-[#6B7280] mb-2">
+              <p className="text-[10px] font-black tracking-[0.3em] uppercase text-white/80 mb-2">
                 Volkswagen Tiguan R · PTEB Stage 3 Flex
               </p>
               <h2 className="text-3xl sm:text-5xl font-black uppercase text-white leading-none mb-4">
                 Quarter Mile.<br />
                 <span className="text-[#FC222D]">11.35 sec @ 198 km/h.</span>
               </h2>
-              <p className="text-sm text-[#9CA3AF] max-w-md leading-relaxed">
+              <p className="text-sm text-white/90 max-w-md leading-relaxed">
                 <strong className="text-white">11.35 seconds at 198 km/h</strong> — fully built, fully tuned by PTEB. Every number on this card is real, logged, and verified at the strip.
               </p>
             </div>
@@ -35,12 +35,12 @@ export function DragStripStat() {
             {/* Stat blocks */}
             <div className="grid grid-cols-2 sm:grid-cols-1 gap-3 sm:min-w-[180px]">
               <div className="border border-[#1E1E1E] bg-black p-4 text-center">
-                <p className="text-[9px] font-black tracking-[0.25em] uppercase text-[#6B7280] mb-1">¼ Mile Time</p>
+                <p className="text-[9px] font-black tracking-[0.25em] uppercase text-white/80 mb-1">¼ Mile Time</p>
                 <p className="text-3xl sm:text-4xl font-black text-white tabular-nums leading-none">11.35</p>
                 <p className="text-[10px] text-[#FC222D] font-bold mt-1">seconds</p>
               </div>
               <div className="border border-[#1E1E1E] bg-black p-4 text-center">
-                <p className="text-[9px] font-black tracking-[0.25em] uppercase text-[#6B7280] mb-1">Trap Speed</p>
+                <p className="text-[9px] font-black tracking-[0.25em] uppercase text-white/80 mb-1">Trap Speed</p>
                 <p className="text-3xl sm:text-4xl font-black text-white tabular-nums leading-none">198</p>
                 <p className="text-[10px] text-[#FC222D] font-bold mt-1">km/h</p>
               </div>
