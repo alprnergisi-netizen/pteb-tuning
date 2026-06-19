@@ -234,7 +234,7 @@ export default function TeamPage() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="order-2 lg:order-1">
               <p className="eyebrow mb-4">Co-Founder & Head of Mechanical Repairs</p>
-              <h2 className="text-3xl sm:text-4xl font-black uppercase text-white mb-6 leading-tight">
+              <h2 className="font-black uppercase text-white mb-6 leading-none" style={{ fontSize: "clamp(2.2rem, 7vw, 5.5rem)" }}>
                 Paras Ionnou
               </h2>
               <div className="space-y-5 text-white/90 text-sm leading-relaxed">
