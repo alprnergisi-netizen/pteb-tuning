@@ -17,9 +17,9 @@ const NAV_LINKS: NavItem[] = [
     label: "About",
     children: [
       { href: "/team",                              label: "Meet the Team",        desc: "Besim Dani & Paras Ionnou — co-founders" },
-      { href: "/our-work",                          label: "Our Work",             desc: "Gallery of tuned cars & dyno results" },
     ],
   },
+  { href: "/our-work", label: "Our Work" },
   {
     href: "/tuning-guide",
     label: "Services",
